@@ -5,171 +5,196 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sibel Demirel | Psikoloji</title>
   <meta name="description" content="Psikolojiyi rüyalar, zihin ve günlük hayatla buluşturan bilgilendirici içerikler.">
-  <meta name="theme-color" content="#faf5ef">
+  <meta name="theme-color" content="#0d0713">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:#faf5ef; --card:#ffffff; --rose:#f2e2dd; --head:#5a1c2d; --accent:#7a2a3f;
-      --btn:#7a2a3f; --btn2:#5a1c2d; --gold:#b8935a; --text:#3a2b2e; --muted:#7d6c6e;
-      --line:rgba(122,42,63,0.15); --navbg:rgba(250,245,239,0.85); --shadow:rgba(122,42,63,0.10);
+      --bg:#0d0713; --bg2:#1c0c22; --text:#e6dce3; --muted:#a898ab; --head:#f6e9e4;
+      --gold:#d9b878; --gold2:#e9cf97; --rose:#e8a6b6; --accent:#c76a86;
+      --glass:rgba(255,255,255,0.05); --glass2:rgba(255,255,255,0.08);
+      --line:rgba(233,207,151,0.22);
+      --glow1:rgba(160,50,100,0.45); --glow2:rgba(70,60,150,0.40); --glow3:rgba(217,184,120,0.16);
+      --btnbg:#d9b878; --btntext:#1a0b1f; --modalbg:#0f0816; --navbg:rgba(13,7,19,0.72);
     }
-    html.gece {
-      --bg:#140b12; --card:#211320; --rose:#2a1824; --head:#f4e3dd; --accent:#e5a5b3;
-      --btn:#8e2f4a; --btn2:#a63b58; --gold:#d4b073; --text:#eadfdb; --muted:#b5a3a7;
-      --line:rgba(229,165,179,0.22); --navbg:rgba(20,11,18,0.85); --shadow:rgba(0,0,0,0.35);
+    html.gunduz {
+      --bg:#fbf4ee; --bg2:#f3e3df; --text:#3a2b2e; --muted:#7d6c6e; --head:#4a1424;
+      --gold:#a97f43; --gold2:#b98a47; --rose:#9a3452; --accent:#9a3452;
+      --glass:rgba(255,255,255,0.6); --glass2:rgba(255,255,255,0.85);
+      --line:rgba(122,42,63,0.18);
+      --glow1:rgba(232,166,182,0.55); --glow2:rgba(201,170,200,0.45); --glow3:rgba(217,184,120,0.35);
+      --btnbg:#7a2a3f; --btntext:#ffffff; --modalbg:#fbf4ee; --navbg:rgba(251,244,238,0.8);
     }
     * { box-sizing:border-box; margin:0; padding:0; }
     html { scroll-behavior:smooth; }
-    body { font-family:'Inter',Arial,sans-serif; font-weight:300; background:var(--bg); color:var(--text); line-height:1.85; -webkit-font-smoothing:antialiased; transition:background .5s, color .5s; }
-    h1,h2,h3 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:500; line-height:1.12; color:var(--head); }
+    body { font-family:'Inter',Arial,sans-serif; font-weight:300; background:var(--bg); color:var(--text); line-height:1.85; -webkit-font-smoothing:antialiased; transition:background .6s, color .6s; overflow-x:hidden; }
+    h1,h2,h3 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:400; line-height:1.1; color:var(--head); }
     a { color:inherit; text-decoration:none; }
     button { font-family:inherit; }
 
-    .yildizlar { position:fixed; inset:0; pointer-events:none; z-index:0; opacity:0; transition:opacity 1s; }
-    html.gece .yildizlar { opacity:1; }
-    .yildizlar span { position:absolute; background:#fff; border-radius:50%; animation:parla 4s ease-in-out infinite, suzul 18s linear infinite; }
-    @keyframes parla { 0%,100%{opacity:.15;} 50%{opacity:.9;} }
-    @keyframes suzul { from{transform:translateY(0);} to{transform:translateY(26px);} }
+    .fon { position:fixed; inset:0; z-index:0; overflow:hidden; background:radial-gradient(ellipse at 50% 0%, var(--bg2), var(--bg) 70%); pointer-events:none; }
+    .blob { position:absolute; border-radius:50%; filter:blur(90px); animation:suzul 24s ease-in-out infinite; }
+    .b1 { width:520px; height:520px; background:var(--glow1); top:-120px; left:-140px; }
+    .b2 { width:560px; height:560px; background:var(--glow2); bottom:-160px; right:-160px; animation-delay:-8s; }
+    .b3 { width:380px; height:380px; background:var(--glow3); top:45%; left:55%; animation-delay:-15s; }
+    @keyframes suzul { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(40px,-50px) scale(1.12);} }
+    .yildizlar { position:absolute; inset:0; transition:opacity 1s; }
+    html.gunduz .yildizlar { opacity:0; }
+    .yildizlar span { position:absolute; background:#fff; border-radius:50%; animation:parla 5s ease-in-out infinite, kay 26s linear infinite; }
+    @keyframes parla { 0%,100%{opacity:.1;} 50%{opacity:.85;} }
+    @keyframes kay { from{transform:translateY(0);} to{transform:translateY(30px);} }
 
-    nav { position:fixed; top:0; left:0; right:0; z-index:20; display:flex; justify-content:space-between; align-items:center; padding:16px 40px; background:var(--navbg); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
-    nav .logo { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; letter-spacing:1px; color:var(--accent); }
+    nav { position:fixed; top:0; left:0; right:0; z-index:30; display:flex; justify-content:space-between; align-items:center; padding:16px 40px; background:var(--navbg); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
+    nav .logo { font-family:'Cormorant Garamond',serif; font-size:1.5rem; letter-spacing:2px; color:var(--gold2); }
     nav .sag { display:flex; align-items:center; }
-    nav .links a { margin-left:28px; font-size:0.72rem; letter-spacing:3px; text-transform:uppercase; color:var(--muted); font-weight:400; transition:color .3s; }
-    nav .links a:hover { color:var(--accent); }
-    .ay { margin-left:26px; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:transparent; color:var(--accent); font-size:1.05rem; cursor:pointer; transition:transform .3s; }
-    .ay:hover { transform:rotate(20deg); }
+    nav .links a { margin-left:28px; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; color:var(--muted); font-weight:400; transition:color .3s; }
+    nav .links a:hover { color:var(--gold2); }
+    .tema { margin-left:24px; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:var(--glass); color:var(--gold2); font-size:1rem; cursor:pointer; transition:transform .3s; }
+    .tema:hover { transform:rotate(25deg); }
 
     main { position:relative; z-index:1; }
 
-    .hero { max-width:1080px; margin:0 auto; min-height:100vh; display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center; padding:130px 28px 80px; }
-    .hero .metin > * { animation:fadeUp 1.1s ease both; }
-    .ust { font-size:0.72rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:22px; }
-    .hero h1 { font-size:clamp(3rem,8vw,5.4rem); font-weight:400; animation-delay:.12s; }
-    .hero h1 em { font-style:italic; color:var(--accent); }
-    .hero p { margin:26px 0 38px; max-width:440px; color:var(--muted); font-size:1.04rem; animation-delay:.25s; }
-    .butonlar { animation-delay:.38s; }
-    .gorsel { display:flex; justify-content:center; animation:fadeUp 1.3s ease .3s both; }
-    .kemer { position:relative; width:100%; max-width:340px; aspect-ratio:3/4; border-radius:999px 999px 24px 24px; background:linear-gradient(165deg,#f0d3cd 0%,#c98a95 55%,#7a2a3f 100%); display:flex; align-items:center; justify-content:center; box-shadow:0 40px 80px var(--shadow); }
-    .kemer::before { content:''; position:absolute; inset:-14px; border:1px solid var(--gold); border-radius:999px 999px 34px 34px; opacity:0.6; }
-    .kemer span { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:6rem; color:#fff; text-shadow:0 6px 30px rgba(90,28,45,0.35); }
-    @keyframes fadeUp { from{opacity:0; transform:translateY(26px);} to{opacity:1; transform:none;} }
+    .hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:130px 28px 90px; position:relative; }
+    .hilal { width:118px; height:118px; border-radius:50%; margin:0 auto 38px; box-shadow:inset -30px -8px 0 0 var(--gold2); filter:drop-shadow(0 0 30px rgba(233,207,151,0.45)); animation:nefes 8s ease-in-out infinite, belir 1.6s ease both; }
+    @keyframes nefes { 0%,100%{transform:translateY(0) rotate(-8deg);} 50%{transform:translateY(-14px) rotate(-3deg);} }
+    @keyframes belir { from{opacity:0;} to{opacity:1;} }
+    .ust { font-size:0.7rem; letter-spacing:6px; text-transform:uppercase; color:var(--gold); font-weight:400; margin-bottom:26px; animation:fadeUp 1.2s ease .2s both; }
+    .hero h1 { font-size:clamp(3.2rem,11vw,7rem); font-weight:300; letter-spacing:1px; animation:fadeUp 1.3s ease .35s both; }
+    .hero h1 em { display:block; font-style:italic; color:var(--rose); }
+    .hero p { max-width:440px; margin:30px auto 42px; color:var(--muted); font-size:1.05rem; animation:fadeUp 1.3s ease .55s both; }
+    .butonlar { animation:fadeUp 1.3s ease .7s both; }
+    .kaydir { position:absolute; bottom:34px; left:50%; transform:translateX(-50%); font-size:0.62rem; letter-spacing:4px; text-transform:uppercase; color:var(--muted); display:flex; flex-direction:column; align-items:center; gap:12px; animation:belir 2s ease 1.2s both; }
+    .kaydir::after { content:''; width:1px; height:46px; background:linear-gradient(var(--gold),transparent); }
+    @keyframes fadeUp { from{opacity:0; transform:translateY(28px);} to{opacity:1; transform:none;} }
 
-    .buton { display:inline-block; padding:15px 36px; margin:6px 10px 6px 0; font-size:0.72rem; letter-spacing:3px; text-transform:uppercase; font-weight:500; border-radius:999px; border:1px solid var(--btn); transition:all .35s; cursor:pointer; background:transparent; }
-    .buton.dolu { background:var(--btn); color:#fff; box-shadow:0 12px 28px var(--shadow); }
-    .buton.dolu:hover { background:var(--btn2); transform:translateY(-3px); }
-    .buton.bos { color:var(--accent); border-color:var(--accent); }
-    .buton.bos:hover { background:rgba(122,42,63,0.07); transform:translateY(-3px); }
+    .buton { display:inline-block; padding:15px 36px; margin:6px; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; font-weight:500; border-radius:999px; border:1px solid var(--gold); transition:all .35s; cursor:pointer; background:transparent; color:var(--gold2); }
+    .buton.dolu { background:var(--btnbg); color:var(--btntext); border-color:var(--btnbg); box-shadow:0 12px 34px rgba(217,184,120,0.25); }
+    .buton.dolu:hover { transform:translateY(-3px); box-shadow:0 18px 44px rgba(217,184,120,0.35); }
+    .buton.bos:hover { background:var(--glass2); transform:translateY(-3px); }
 
-    section { max-width:1040px; margin:0 auto; padding:120px 28px 0; }
-    .baslik { text-align:center; margin-bottom:56px; }
-    .baslik small { display:block; font-size:0.72rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:14px; }
-    .baslik h2 { font-size:clamp(2.2rem,6vw,3.3rem); }
-    .baslik::after { content:''; display:block; width:50px; height:1px; background:var(--gold); margin:24px auto 0; }
-    .altnot { text-align:center; color:var(--muted); font-size:0.88rem; margin:-30px 0 40px; }
+    section { max-width:1000px; margin:0 auto; padding:130px 28px 0; }
+    .baslik { margin-bottom:56px; }
+    .baslik small { display:block; font-size:0.7rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold); font-weight:400; margin-bottom:16px; }
+    .baslik h2 { font-size:clamp(2.4rem,7vw,4rem); font-weight:300; }
+    .baslik h2 em { font-style:italic; color:var(--rose); }
+    .baslik::after { content:''; display:block; width:70px; height:1px; background:linear-gradient(90deg,var(--gold),transparent); margin-top:26px; }
+    .altnot { color:var(--muted); font-size:0.9rem; margin:-30px 0 40px; font-style:italic; }
 
-    .hakkimda { background:var(--rose); border-radius:32px; padding:64px 52px; display:grid; grid-template-columns:200px 1fr; gap:52px; align-items:center; }
-    .daire { width:200px; height:200px; border-radius:50%; background:var(--card); border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:4rem; color:var(--accent); box-shadow:0 0 0 10px rgba(255,255,255,0.12); }
-    .hakkimda p { font-size:1.1rem; color:var(--text); opacity:.85; }
+    .hakkimda { text-align:center; }
+    .monogram { width:96px; height:96px; margin:0 auto 34px; border-radius:50%; border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:2rem; color:var(--gold2); box-shadow:0 0 0 10px var(--glass), 0 0 60px rgba(217,184,120,0.18); }
+    .hakkimda p { font-family:'Cormorant Garamond',serif; font-size:clamp(1.5rem,4vw,2.2rem); line-height:1.5; font-weight:300; color:var(--head); max-width:760px; margin:0 auto; }
+    .hakkimda p em { color:var(--rose); }
 
-    .kartlar { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
-    .kart { background:var(--card); border-radius:24px; padding:38px 24px; border-top:3px solid var(--accent); box-shadow:0 14px 40px var(--shadow); transition:transform .4s, box-shadow .4s; }
-    .kart:hover { transform:translateY(-9px); }
-    .kart .no { font-family:'Cormorant Garamond',serif; font-size:1rem; letter-spacing:4px; color:var(--gold); }
-    .kart h3 { font-size:1.55rem; margin:14px 0 12px; }
-    .kart p { color:var(--muted); font-size:0.93rem; }
+    .liste .sat { display:grid; grid-template-columns:100px 1fr; gap:20px; padding:36px 0; border-top:1px solid var(--line); align-items:start; transition:padding .45s; }
+    .liste .sat:last-child { border-bottom:1px solid var(--line); }
+    .liste .sat:hover { padding-left:16px; }
+    .sat .no { font-family:'Cormorant Garamond',serif; font-size:3.8rem; color:transparent; -webkit-text-stroke:1px var(--gold); line-height:1; }
+    .sat h3 { font-size:clamp(1.6rem,4vw,2.1rem); margin-bottom:8px; }
+    .sat p { color:var(--muted); max-width:560px; }
 
     .flipler { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; }
     .flip { perspective:1000px; cursor:pointer; -webkit-tap-highlight-color:transparent; }
-    .flip-ic { display:grid; transition:transform .7s; transform-style:preserve-3d; -webkit-transform-style:preserve-3d; }
+    .flip-ic { display:grid; transition:transform .8s; transform-style:preserve-3d; -webkit-transform-style:preserve-3d; }
     .flip.cevrildi .flip-ic { transform:rotateY(180deg); }
-    .yuz { grid-area:1/1; -webkit-backface-visibility:hidden; backface-visibility:hidden; border-radius:22px; padding:30px 24px; display:flex; flex-direction:column; justify-content:center; text-align:center; min-height:200px; }
-    .yuz small { font-size:0.66rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; font-weight:500; }
-    .on { background:var(--card); border:1px solid var(--line); border-top:3px solid var(--accent); box-shadow:0 12px 36px var(--shadow); }
-    .on h3 { font-size:1.5rem; }
-    .on .ipucu { margin-top:14px; font-size:0.68rem; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
-    .arka { background:linear-gradient(145deg,#7a2a3f,#4a1424); color:#fbeee9; transform:rotateY(180deg); }
-    .arka p { font-size:0.95rem; }
-    .arka small { color:#e3c9a0; }
+    .yuz { grid-area:1/1; -webkit-backface-visibility:hidden; backface-visibility:hidden; border-radius:26px; padding:32px 26px; display:flex; flex-direction:column; justify-content:center; text-align:center; min-height:210px; }
+    .yuz small { font-size:0.64rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:500; }
+    .on { background:var(--glass); border:1px solid var(--line); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
+    .on h3 { font-size:1.55rem; }
+    .on .ipucu { margin-top:16px; font-size:0.64rem; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+    .arka { background:linear-gradient(145deg,#8a2f55,#3b1560); color:#fbeee9; transform:rotateY(180deg); border:1px solid rgba(255,255,255,0.15); }
+    .arka p { font-size:0.94rem; }
+    .arka small { color:#f0d9a8; }
 
-    .biliyor { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; }
-    .bil { background:var(--rose); border-radius:20px; padding:30px 26px; }
-    .bil small { display:block; font-size:0.66rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:10px; }
-    .bil p { font-size:0.98rem; }
+    .baloncuklar { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:26px; }
+    .bal { padding:48px 40px; background:var(--glass); border:1px solid var(--line); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-radius:38% 62% 55% 45% / 50% 40% 60% 50%; animation:salin 10s ease-in-out infinite; }
+    .bal:nth-child(2) { border-radius:60% 40% 42% 58% / 45% 58% 42% 55%; animation-delay:-3s; }
+    .bal:nth-child(3) { border-radius:45% 55% 60% 40% / 55% 45% 55% 45%; animation-delay:-6s; }
+    .bal:nth-child(4) { border-radius:55% 45% 40% 60% / 42% 55% 45% 58%; animation-delay:-9s; }
+    @keyframes salin { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
+    .bal small { display:block; font-size:0.64rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:10px; }
+    .bal p { font-size:0.97rem; }
 
-    .yazilar { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:24px; }
-    .yazi { background:var(--card); border-radius:24px; padding:36px 30px; border:1px solid var(--line); box-shadow:0 14px 40px var(--shadow); cursor:pointer; transition:transform .4s, border-color .4s; display:flex; flex-direction:column; }
-    .yazi:hover { transform:translateY(-9px); border-color:var(--gold); }
-    .yazi .etiket { font-size:0.66rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:500; }
-    .yazi h3 { font-size:1.65rem; margin:14px 0 12px; }
-    .yazi p { color:var(--muted); font-size:0.95rem; flex:1; }
-    .yazi .alt { margin-top:22px; font-size:0.74rem; letter-spacing:2px; text-transform:uppercase; color:var(--accent); font-weight:500; }
+    .yazilar .yazi { display:grid; grid-template-columns:170px 1fr 50px; gap:26px; align-items:center; padding:38px 0; border-top:1px solid var(--line); cursor:pointer; transition:padding .45s; }
+    .yazilar .yazi:last-child { border-bottom:1px solid var(--line); }
+    .yazi:hover { padding-left:16px; }
+    .yazi .etiket { font-size:0.66rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:500; line-height:1.9; }
+    .yazi h3 { font-size:clamp(1.6rem,4vw,2.2rem); margin-bottom:8px; transition:color .3s; }
+    .yazi:hover h3 { color:var(--rose); }
+    .yazi p { color:var(--muted); font-size:0.97rem; }
+    .yazi .ok { font-size:1.6rem; color:var(--gold); transition:transform .4s; }
+    .yazi:hover .ok { transform:translateX(8px); }
 
-    .alinti { margin-top:130px; text-align:center; padding:110px 28px; background:linear-gradient(135deg,#7a2a3f,#4a1424); color:#fbeee9; }
-    .alinti p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.8rem,5vw,2.9rem); max-width:760px; margin:0 auto; line-height:1.4; }
-    .alinti span { display:block; margin-top:22px; font-size:0.72rem; letter-spacing:5px; text-transform:uppercase; color:#e3c9a0; }
+    .alinti { margin-top:140px; text-align:center; padding:130px 28px; position:relative; overflow:hidden; }
+    .alinti::before { content:''; position:absolute; left:50%; top:50%; width:620px; height:620px; transform:translate(-50%,-50%); background:radial-gradient(circle,var(--glow1),transparent 65%); filter:blur(30px); }
+    .alinti p { position:relative; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:clamp(2rem,6vw,3.6rem); max-width:780px; margin:0 auto; line-height:1.35; color:var(--head); }
+    .alinti span { position:relative; display:block; margin-top:26px; font-size:0.7rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold); }
 
-    .sss { max-width:760px; margin:0 auto; }
-    details { background:var(--card); border:1px solid var(--line); border-radius:18px; margin-bottom:14px; padding:6px 26px; box-shadow:0 8px 24px var(--shadow); }
-    summary { cursor:pointer; list-style:none; padding:18px 0; font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:500; color:var(--head); display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .sss { max-width:760px; }
+    details { border-top:1px solid var(--line); padding:4px 0; }
+    details:last-child { border-bottom:1px solid var(--line); }
+    summary { cursor:pointer; list-style:none; padding:22px 0; font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--head); display:flex; justify-content:space-between; align-items:center; gap:16px; }
     summary::-webkit-details-marker { display:none; }
-    summary::after { content:'+'; font-size:1.6rem; color:var(--gold); transition:transform .3s; }
+    summary::after { content:'+'; font-size:1.8rem; color:var(--gold); transition:transform .3s; }
     details[open] summary::after { transform:rotate(45deg); }
-    details p { padding:0 0 20px; color:var(--muted); font-size:0.98rem; }
+    details p { padding:0 0 24px; color:var(--muted); }
 
-    .iletisim { text-align:center; background:var(--card); border:1px solid var(--line); border-radius:32px; padding:80px 28px; box-shadow:0 20px 60px var(--shadow); }
-    .iletisim p { max-width:470px; margin:20px auto 34px; color:var(--muted); }
-    .iletisim .buton { margin:6px; }
+    .iletisim { text-align:center; position:relative; padding:40px 0 0; }
+    .iletisim::before { content:''; position:absolute; left:50%; top:40%; width:480px; height:480px; transform:translate(-50%,-50%); background:radial-gradient(circle,var(--glow3),transparent 65%); filter:blur(30px); pointer-events:none; }
+    .iletisim h2 { position:relative; font-size:clamp(2.6rem,8vw,5rem); font-weight:300; }
+    .iletisim h2 em { font-style:italic; color:var(--rose); }
+    .iletisim p { position:relative; max-width:470px; margin:26px auto 38px; color:var(--muted); }
 
-    footer { text-align:center; max-width:620px; margin:0 auto; padding:90px 28px 50px; position:relative; z-index:1; }
-    footer strong { display:block; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.5rem; letter-spacing:1px; color:var(--accent); margin-bottom:18px; }
+    footer { position:relative; z-index:1; text-align:center; max-width:620px; margin:0 auto; padding:110px 28px 54px; }
+    footer strong { display:block; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.6rem; letter-spacing:2px; color:var(--gold2); margin-bottom:20px; }
     .eposta-ikon { display:inline-flex; width:46px; height:46px; border-radius:50%; border:1px solid var(--gold); align-items:center; justify-content:center; color:var(--gold); transition:all .3s; }
     .eposta-ikon:hover { background:var(--gold); color:var(--bg); transform:translateY(-3px); }
     .eposta-ikon svg { width:20px; height:20px; }
 
-    .modal { position:fixed; inset:0; z-index:50; background:rgba(20,11,18,0.62); display:none; }
+    .modal { position:fixed; inset:0; z-index:50; background:rgba(5,2,9,0.72); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); display:none; }
     .modal.acik { display:block; }
-    .ilerleme { position:fixed; top:0; left:0; height:4px; width:0; z-index:60; background:linear-gradient(90deg,var(--gold),var(--accent)); transition:width .1s linear; }
-    .modal-kutu { max-width:780px; height:100%; margin:0 auto; overflow-y:auto; -webkit-overflow-scrolling:touch; background:var(--bg); color:var(--text); padding:30px 28px 90px; }
-    .kapat { position:sticky; top:0; float:right; z-index:5; background:var(--card); color:var(--accent); border:1px solid var(--line); border-radius:999px; padding:10px 20px; font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; box-shadow:0 8px 20px var(--shadow); }
-    .modal-kutu h2 { font-size:clamp(2.1rem,6vw,3rem); margin:50px 0 12px; clear:both; }
-    .meta { font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:30px; }
-    .modal-kutu p { margin-bottom:20px; font-size:1.06rem; }
-    .modal-kutu ul { padding-left:22px; margin-bottom:20px; }
-    .modal-kutu li { margin-bottom:8px; font-size:1.02rem; }
-    .kisaca { background:var(--rose); border-left:3px solid var(--gold); border-radius:14px; padding:22px 26px 10px; margin:0 0 32px; }
-    .kisaca strong, .sor strong { display:block; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
-    .sor { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 26px 8px; margin-top:40px; }
-    .sor p { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-style:italic; color:var(--head); line-height:1.4; }
+    .ilerleme { position:fixed; top:0; left:0; height:3px; width:0; z-index:60; background:linear-gradient(90deg,var(--gold),var(--rose)); box-shadow:0 0 14px var(--gold); transition:width .1s linear; }
+    .modal-kutu { max-width:760px; height:100%; margin:0 auto; overflow-y:auto; -webkit-overflow-scrolling:touch; background:var(--modalbg); color:var(--text); padding:26px 32px 100px; border-left:1px solid var(--line); border-right:1px solid var(--line); }
+    .kapat { position:sticky; top:0; float:right; z-index:5; background:var(--glass2); color:var(--gold2); border:1px solid var(--line); border-radius:999px; padding:10px 20px; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+    .modal-kutu h2 { font-size:clamp(2.3rem,7vw,3.6rem); font-weight:300; margin:56px 0 14px; clear:both; }
+    .meta { font-size:0.68rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:34px; }
+    .modal-kutu p { margin-bottom:22px; font-size:1.08rem; line-height:1.95; }
+    .modal-kutu p.ilk::first-letter { float:left; font-family:'Cormorant Garamond',serif; font-size:4.4rem; line-height:.8; padding:8px 14px 0 0; color:var(--gold); }
+    .modal-kutu ul { padding-left:22px; margin-bottom:22px; }
+    .modal-kutu li { margin-bottom:10px; font-size:1.04rem; }
+    .kisaca { margin:0 0 38px; padding:4px 0 4px 24px; border-left:1px solid var(--gold); }
+    .kisaca strong, .sor strong { display:block; font-size:0.66rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+    .kisaca ul { margin:0; color:var(--muted); }
+    .sor { margin-top:56px; padding-top:34px; border-top:1px solid var(--line); text-align:center; }
+    .sor p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.7rem; color:var(--head); line-height:1.4; margin:0; }
 
-    .js .reveal { opacity:0; transform:translateY(30px); transition:opacity 1s ease, transform 1s ease; }
+    .js .reveal { opacity:0; transform:translateY(34px); transition:opacity 1.1s ease, transform 1.1s ease; }
     .js .reveal.goster { opacity:1; transform:none; }
 
-    @media (max-width:980px) { .kartlar { grid-template-columns:repeat(2,1fr); } }
     @media (max-width:760px) {
       nav { padding:12px 16px; }
       nav .links a.gizle { display:none; }
-      nav .links a { margin-left:14px; letter-spacing:2px; font-size:0.66rem; }
-      .ay { margin-left:14px; }
-      .hero { grid-template-columns:1fr; text-align:center; padding-top:120px; gap:50px; }
-      .hero p { margin-left:auto; margin-right:auto; }
-      .buton { margin:6px; }
-      .kemer { max-width:260px; }
-      .kemer span { font-size:4.6rem; }
-      .hakkimda { grid-template-columns:1fr; text-align:center; justify-items:center; padding:48px 26px; gap:30px; }
-      .daire { width:150px; height:150px; font-size:3rem; }
-      .kartlar { grid-template-columns:1fr; }
-      section { padding-top:90px; }
-      .alinti { margin-top:90px; padding:80px 24px; }
-      .modal-kutu { padding:22px 20px 80px; }
+      nav .links a { margin-left:14px; letter-spacing:2px; font-size:0.64rem; }
+      .tema { margin-left:14px; }
+      .hilal { width:92px; height:92px; box-shadow:inset -24px -6px 0 0 var(--gold2); }
+      section { padding-top:100px; }
+      .liste .sat { grid-template-columns:56px 1fr; }
+      .sat .no { font-size:2.5rem; }
+      .yazilar .yazi { grid-template-columns:1fr; gap:10px; }
+      .yazi .ok { display:none; }
+      .bal { padding:44px 34px; }
+      .alinti { margin-top:100px; padding:100px 24px; }
+      .modal-kutu { padding:20px 22px 90px; }
     }
     @media (prefers-reduced-motion:reduce) { * { animation:none !important; transition:none !important; } .js .reveal { opacity:1; transform:none; } }
   </style>
 </head>
 <body>
 
-  <div class="yildizlar" id="yildizlar"></div>
+  <div class="fon">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+    <div class="yildizlar" id="yildizlar"></div>
+  </div>
 
   <nav>
     <a class="logo" href="#">Sibel Demirel</a>
@@ -180,45 +205,43 @@
         <a href="#yazilar">Yazılar</a>
         <a href="#iletisim">İletişim</a>
       </div>
-      <button class="ay" id="gece" aria-label="Gece modu">☾</button>
+      <button class="tema" id="tema" aria-label="Gündüz ve gece modu">☀</button>
     </div>
   </nav>
 
   <main>
 
   <div class="hero">
-    <div class="metin">
-      <div class="ust">Psikoloji &nbsp;·&nbsp; Rüya &nbsp;·&nbsp; Zihin</div>
-      <h1>İç dünyana <em>hoş geldin</em></h1>
-      <p>Kendini dinlemeye ve psikolojiyi keşfetmeye davetlisin.</p>
-      <div class="butonlar">
-        <a class="buton dolu" href="#yazilar">Yazıları Oku</a>
-        <a class="buton bos" href="#iletisim" data-mail>İletişime Geç</a>
-      </div>
+    <div class="hilal"></div>
+    <div class="ust">Psikoloji &nbsp;·&nbsp; Rüya &nbsp;·&nbsp; Zihin</div>
+    <h1>İç dünyana <em>hoş geldin</em></h1>
+    <p>Kendini dinlemeye ve psikolojiyi keşfetmeye davetlisin.</p>
+    <div class="butonlar">
+      <a class="buton dolu" href="#yazilar">Yazıları Oku</a>
+      <a class="buton bos" href="#iletisim" data-mail>İletişime Geç</a>
     </div>
-    <div class="gorsel"><div class="kemer"><span>SD</span></div></div>
+    <div class="kaydir">Kaydır</div>
   </div>
 
   <section id="hakkimda" class="reveal">
-    <div class="baslik"><small>Tanışalım</small><h2>Hakkımda</h2></div>
     <div class="hakkimda">
-      <div class="daire">SD</div>
-      <p>Merhaba, ben Sibel. İnsanı, rüyaları ve zihnin görünmeyen katmanlarını merak ediyorum. Bu sayfa, psikolojiye dair öğrendiklerimi ve düşündüklerimi sade bir dille paylaştığım küçük bir köşe.</p>
+      <div class="monogram">SD</div>
+      <p>Merhaba, ben Sibel. İnsanı, rüyaları ve zihnin <em>görünmeyen</em> katmanlarını merak ediyorum. Bu sayfa, psikolojiye dair öğrendiklerimi ve düşündüklerimi sade bir dille paylaştığım küçük bir köşe.</p>
     </div>
   </section>
 
   <section id="icerikler" class="reveal">
-    <div class="baslik"><small>Neler Var?</small><h2>Paylaştığım İçerikler</h2></div>
-    <div class="kartlar">
-      <div class="kart"><div class="no">I</div><h3>Psikoloji Kavramları</h3><p>Karmaşık görünen kavramları, günlük hayattan örneklerle sade ve akılda kalır biçimde anlatıyorum.</p></div>
-      <div class="kart"><div class="no">II</div><h3>Günlük Hayat</h3><p>Alışkanlıklar, ilişkiler, yorgunluk ve sakinlik: hayatın içinden, herkesin kendinden bir şey bulabileceği yazılar.</p></div>
-      <div class="kart"><div class="no">III</div><h3>Kitap ve Film Önerileri</h3><p>Zihni, duyguları ve insan olmayı anlatan kitaplar ve filmler üzerine seçkiler ve kısa notlar.</p></div>
-      <div class="kart"><div class="no">IV</div><h3>Rüyalar, Bilinçaltı ve Zihin</h3><p>Rüyaların ve zihnin gizli işleyişine dair merak uyandıran, bilgilendirici yazılar.</p></div>
+    <div class="baslik"><small>Neler Var?</small><h2>Paylaştığım <em>içerikler</em></h2></div>
+    <div class="liste">
+      <div class="sat"><div class="no">I</div><div><h3>Psikoloji Kavramları</h3><p>Karmaşık görünen kavramları, günlük hayattan örneklerle sade ve akılda kalır biçimde anlatıyorum.</p></div></div>
+      <div class="sat"><div class="no">II</div><div><h3>Günlük Hayat</h3><p>Alışkanlıklar, ilişkiler, yorgunluk ve sakinlik: hayatın içinden, herkesin kendinden bir şey bulabileceği yazılar.</p></div></div>
+      <div class="sat"><div class="no">III</div><div><h3>Kitap ve Film Önerileri</h3><p>Zihni, duyguları ve insan olmayı anlatan kitaplar ve filmler üzerine seçkiler ve kısa notlar.</p></div></div>
+      <div class="sat"><div class="no">IV</div><div><h3>Rüyalar, Bilinçaltı ve Zihin</h3><p>Rüyaların ve zihnin gizli işleyişine dair merak uyandıran, bilgilendirici yazılar.</p></div></div>
     </div>
   </section>
 
   <section id="kavramlar" class="reveal">
-    <div class="baslik"><small>Kartı Çevir</small><h2>Psikoloji Kavramları</h2></div>
+    <div class="baslik"><small>Kartı Çevir</small><h2>Psikoloji <em>kavramları</em></h2></div>
     <p class="altnot">Bir karta dokun, açıklaması arkasında.</p>
     <div class="flipler">
       <div class="flip"><div class="flip-ic"><div class="yuz on"><small>Kavram</small><h3>Bilinçdışı</h3><div class="ipucu">Dokun</div></div><div class="yuz arka"><small>Anlamı</small><p>Farkında olmadığımız ama davranışlarımızı etkileyen zihinsel süreçler.</p></div></div></div>
@@ -231,7 +254,7 @@
   </section>
 
   <section id="mitler" class="reveal">
-    <div class="baslik"><small>Doğru Bildiğimiz Yanlışlar</small><h2>Zihin Mitleri ve Gerçekler</h2></div>
+    <div class="baslik"><small>Doğru Bildiğimiz Yanlışlar</small><h2>Zihin mitleri ve <em>gerçekler</em></h2></div>
     <p class="altnot">Bir karta dokun, gerçeği arkasında.</p>
     <div class="flipler">
       <div class="flip"><div class="flip-ic"><div class="yuz on"><small>Mit</small><h3>Beynimizin yalnızca %10'unu kullanırız.</h3><div class="ipucu">Dokun</div></div><div class="yuz arka"><small>Gerçek</small><p>Yanlış. Beynin hemen her bölgesini kullanırız ve büyük kısmı neredeyse her zaman aktiftir. Uykuda bile tüm bölgelerde bir miktar aktivite görülür.</p></div></div></div>
@@ -242,12 +265,12 @@
   </section>
 
   <section id="ruya" class="reveal">
-    <div class="baslik"><small>Rüya Köşesi</small><h2>Biliyor muydun?</h2></div>
-    <div class="biliyor">
-      <div class="bil"><small>Uyku evreleri</small><p>REM'den uyandırılanların yaklaşık %82'si, REM dışı uykudan uyandırılanların yaklaşık %43'ü bir rüya anlatabiliyor.</p></div>
-      <div class="bil"><small>Hatırlama sıklığı</small><p>Araştırmalara göre öğrenciler evde ortalama haftada bir ila iki rüya hatırlıyor.</p></div>
-      <div class="bil"><small>İlgi önemli</small><p>Rüyalara ilgi duymak ve onları önemsemek, hatırlama sıklığını artırabiliyor.</p></div>
-      <div class="bil"><small>Rüyanın anlamı</small><p>Rüyaların anlamı konusunda tek bir görüş yok. Psikanaliz ve nörobilim rüyalara farklı açılardan bakıyor.</p></div>
+    <div class="baslik"><small>Rüya Köşesi</small><h2>Biliyor <em>muydun?</em></h2></div>
+    <div class="baloncuklar">
+      <div class="bal"><small>Uyku evreleri</small><p>REM'den uyandırılanların yaklaşık %82'si, REM dışı uykudan uyandırılanların yaklaşık %43'ü bir rüya anlatabiliyor.</p></div>
+      <div class="bal"><small>Hatırlama sıklığı</small><p>Araştırmalara göre öğrenciler evde ortalama haftada bir ila iki rüya hatırlıyor.</p></div>
+      <div class="bal"><small>İlgi önemli</small><p>Rüyalara ilgi duymak ve onları önemsemek, hatırlama sıklığını artırabiliyor.</p></div>
+      <div class="bal"><small>Rüyanın anlamı</small><p>Rüyaların anlamı konusunda tek bir görüş yok. Psikanaliz ve nörobilim rüyalara farklı açılardan bakıyor.</p></div>
     </div>
   </section>
 
@@ -255,9 +278,9 @@
     <div class="baslik"><small>Blog</small><h2>Yazılar</h2></div>
     <p class="altnot">Bir yazıya dokun, sayfa içinde açılır.</p>
     <div class="yazilar">
-      <article class="yazi" data-yazi="y1" tabindex="0"><span class="etiket">Rüya · 2 dk okuma</span><h3>Rüyalarımızı Neden Unuturuz?</h3><p>Sabah çok canlı bir rüyadan uyanıp birkaç dakika sonra hiçbir şey hatırlamamanın arkasında ne var?</p><div class="alt">Oku →</div></article>
-      <article class="yazi" data-yazi="y2" tabindex="0"><span class="etiket">Zihin · 2 dk okuma</span><h3>Zihnimiz Neden Başka Yerlerde Dolaşır?</h3><p>İnsanlar uyanık oldukları sürenin neredeyse yarısında yaptıkları işten başka bir şey düşünüyor.</p><div class="alt">Oku →</div></article>
-      <article class="yazi" data-yazi="y3" tabindex="0"><span class="etiket">Günlük Hayat · 2 dk okuma</span><h3>Alışkanlıklar Nasıl Oluşur?</h3><p>"21 günde alışkanlık" sözü doğru mu? Araştırmanın gerçek sayısı ne diyor?</p><div class="alt">Oku →</div></article>
+      <article class="yazi" data-yazi="y1" tabindex="0"><div class="etiket">Rüya<br>2 dk okuma</div><div><h3>Rüyalarımızı Neden Unuturuz?</h3><p>Sabah çok canlı bir rüyadan uyanıp birkaç dakika sonra hiçbir şey hatırlamamanın arkasında ne var?</p></div><div class="ok">→</div></article>
+      <article class="yazi" data-yazi="y2" tabindex="0"><div class="etiket">Zihin<br>2 dk okuma</div><div><h3>Zihnimiz Neden Başka Yerlerde Dolaşır?</h3><p>İnsanlar uyanık oldukları sürenin neredeyse yarısında yaptıkları işten başka bir şey düşünüyor.</p></div><div class="ok">→</div></article>
+      <article class="yazi" data-yazi="y3" tabindex="0"><div class="etiket">Günlük Hayat<br>2 dk okuma</div><div><h3>Alışkanlıklar Nasıl Oluşur?</h3><p>"21 günde alışkanlık" sözü doğru mu? Araştırmanın gerçek sayısı ne diyor?</p></div><div class="ok">→</div></article>
     </div>
   </section>
 
@@ -267,7 +290,7 @@
   </div>
 
   <section id="sss" class="reveal">
-    <div class="baslik"><small>Merak Edilenler</small><h2>Sık Sorulan Sorular</h2></div>
+    <div class="baslik"><small>Merak Edilenler</small><h2>Sık sorulan <em>sorular</em></h2></div>
     <div class="sss">
       <details><summary>Psikolog ile psikiyatrist arasındaki fark nedir?</summary><p>Psikiyatrist bir tıp doktorudur ve ilaç yazabilir. Psikolog ise psikoloji eğitimi almış bir uzmandır ve ilaç yazamaz.</p></details>
       <details><summary>Psikolojik destek ne zaman alınmalı?</summary><p>Zor duygular günlük hayatını, uykunu, ilişkilerini ya da işini etkilemeye başladığında veya uzun süre geçmediğinde bir ruh sağlığı uzmanından destek almak iyi bir fikirdir.</p></details>
@@ -276,9 +299,9 @@
     </div>
   </section>
 
-  <section id="iletisim" class="reveal" style="padding-top:110px">
+  <section id="iletisim" class="reveal" style="padding-top:140px">
     <div class="iletisim">
-      <div class="baslik" style="margin-bottom:0"><small>İletişim</small><h2>Birlikte Konuşalım</h2></div>
+      <h2>Birlikte <em>konuşalım</em></h2>
       <p>Bir yazıya dair düşüncelerini paylaşmak, soru sormak ya da yeni içeriklerden haberdar olmak istersen bana yazabilirsin.</p>
       <a class="buton dolu" href="#iletisim" data-mail>E-posta Gönder</a>
     </div>
@@ -302,15 +325,10 @@
         <li>Unutmanın tek bir açıklaması yok, noradrenalinin düşük kalması bunlardan biri.</li>
         <li>Uyanınca kıpırdamadan rüyayı zihinde tekrar etmek ve not almak yardımcı olabilir.</li>
       </ul></div>
-      <p>Sabah uyandığında az önce çok canlı bir rüyanın içindeydin, ama bir kahve sonra geriye hiçbir şey kalmadı. Bu hepimizin başına gelir.</p>
+      <p class="ilk">Sabah uyandığında az önce çok canlı bir rüyanın içindeydin, ama bir kahve sonra geriye hiçbir şey kalmadı. Bu hepimizin başına gelir.</p>
       <p>Rüyaların çoğu, uykunun REM denen evresinde görülür. Rüya REM dışındaki evrelerde de görülür ama daha silik ve düşünceye benzer olur. Uyandırma deneylerinde, REM'den uyandırılanların yaklaşık yüzde 82'si bir rüya anlatabilirken, REM dışı uykudan uyandırılanlarda bu oran yüzde 43 civarında kalıyor.</p>
       <p>Unutmanın tek bir cevabı yok. Bellekle ilişkili noradrenalin kimyasalının REM sırasında düşük kalması bir açıklama, ama bu tek başına yetmiyor. Bir başka fikre göre de beynin uyandıktan sonra yeni anıları kaydetme yeteneğini yeniden devreye alması en az iki dakika sürebiliyor. Yani rüya, o ilk dakikalarda kayıp gidiyor olabilir.</p>
-      <p><b>Daha çok hatırlamak için üç küçük adım:</b></p>
-      <ul>
-        <li>Uyanınca hemen kalkma. Gözlerin kapalıyken, kıpırdamadan rüyayı bir kez baştan sona zihninde tekrar et.</li>
-        <li>Yatağının yanına bir defter koy ve birkaç kelime not al.</li>
-        <li>Rüyalarına ilgi göster. İlgi duyan insanlar daha çok hatırlıyor.</li>
-      </ul>
+      <p>Daha çok hatırlamak için küçük adımlar var. Uyanınca hemen kalkma, gözlerin kapalıyken ve kıpırdamadan rüyayı bir kez baştan sona zihninde tekrar et. Yatağının yanına bir defter koyup birkaç kelime not al. Rüyalarına da ilgi göster, çünkü ilgi duyan insanlar daha çok hatırlıyor.</p>
       <div class="sor"><strong>Kendine sor</strong><p>Son hatırladığın rüya neydi, uyandığında ilk ne hissettin?</p></div>
     </div>
     <div id="y2">
@@ -321,7 +339,7 @@
         <li>Mutluluk, zihnin nerede olduğuyla yapılan etkinlikten daha güçlü ilişkili çıktı, ama neden-sonuç ilişkisi tartışmalı.</li>
         <li>Zihin gezinmesi planlama ve hatırlamayı da mümkün kılıyor.</li>
       </ul></div>
-      <p>Bir kitap okurken bir sayfayı bitirip hiçbir şey hatırlamadığın oldu mu? Zihnin o sırada başka bir yerdeydi. Bu seni tembel yapmaz, insan zihni böyle çalışır.</p>
+      <p class="ilk">Bir kitap okurken bir sayfayı bitirip hiçbir şey hatırlamadığın oldu mu? Zihnin o sırada başka bir yerdeydi. Bu seni tembel yapmaz, insan zihni böyle çalışır.</p>
       <p>Harvard'dan iki araştırmacı bunu ölçmeye karar verdi. 2010'da Science dergisinde yayımlanan çalışmada, 18 ile 88 yaş arasındaki yaklaşık 2.250 kişi gün içinde bir telefon uygulamasıyla ne yaptığını, ne düşündüğünü ve nasıl hissettiğini bildirdi. Sonuç şaşırtıcıydı: insanlar uyanık oldukları sürenin ortalama yüzde 46,9'unda, yaptıkları işten başka bir şey düşünüyordu.</p>
       <p>Daha ilginç olan kısım mutlulukla ilgili. Mutluluktaki değişimin yaklaşık yüzde 10,8'i zihnin nerede olduğuyla, yüzde 4,6'sı ise yapılan etkinlikle açıklandı. Yani önemli olan, ne yaptığından çok o sırada zihninin orada olup olmaması çıktı. Araştırmacılar, zihin gezinmesinin çoğunlukla mutsuzluğun nedeni olduğunu düşündürdü. Sonraki bazı çalışmalar ise tam tersini savundu, yani tartışma sürüyor.</p>
       <p>Zihin gezinmesinin kötü bir yanı yok, aslında planlamayı, geçmişi hatırlamayı ve geleceği düşünmeyi mümkün kılan da bu yetenek. Sadece duygusal bir bedeli olabiliyor.</p>
@@ -335,7 +353,7 @@
         <li>Araştırmada ortalama 66 gün sürdü, kişiye göre 18 ile 254 gün arasında değişti.</li>
         <li>Tek bir günü atlamak uzun vadede belirgin zarar vermedi.</li>
       </ul></div>
-      <p>"Alışkanlık 21 günde oluşur" sözünü duymuşsundur. Bilimsel bir bulgu değil. Bu fikir, plastik cerrah Maxwell Maltz'ın hastalarına dair gözlemlerinden yayıldı.</p>
+      <p class="ilk">"Alışkanlık 21 günde oluşur" sözünü duymuşsundur. Bilimsel bir bulgu değil. Bu fikir, plastik cerrah Maxwell Maltz'ın hastalarına dair gözlemlerinden yayıldı.</p>
       <p>Gerçek rakamı Londra'daki UCL'den Phillippa Lally ve ekibi 2009'da ölçtü. 96 kişi, öğle yemeğinde meyve yemek ya da günlük 15 dakika koşmak gibi yeni bir davranış seçti ve her gün onun ne kadar otomatik hissettirdiğini bildirdi. Otomatik hâle gelme ortalama 66 günde bir plato noktasına ulaştı. Ama kişiden kişiye çok fark vardı: kimi için 18 gün, kimi için 254 gün sürdü. Çalışma 12 hafta sürdü, en uzun süreler verilerden tahmin edildi.</p>
       <p>İki rahatlatıcı bilgi daha var. Tek bir günü atlamak uzun vadede belirgin zarar vermedi. Ayrıca yeni alışkanlık eskisini silmiyor. Eski alışkanlık hâlâ orada duruyor, yeni davranışın ondan daha güçlü bir etki hâline gelmesi gerekiyor.</p>
       <div class="sor"><strong>Kendine sor</strong><p>Bu ay hangi küçük alışkanlığı denemek isterdin?</p></div>
@@ -358,37 +376,35 @@
 
     document.querySelectorAll('a[data-mail]').forEach(function(a){ a.href = 'mailto:' + EPOSTA; });
 
-    // Kart çevirme
     document.querySelectorAll('.flip').forEach(function(f){
       f.addEventListener('click', function(){ f.classList.toggle('cevrildi'); });
     });
 
-    // Gece modu ve yıldızlar
     var yil = document.getElementById('yildizlar');
-    for (var i = 0; i < 70; i++) {
+    for (var i = 0; i < 90; i++) {
       var s = document.createElement('span');
       var b = Math.random() * 2 + 1;
       s.style.width = b + 'px'; s.style.height = b + 'px';
       s.style.left = (Math.random() * 100) + '%';
       s.style.top = (Math.random() * 100) + '%';
-      s.style.animationDelay = (Math.random() * 4) + 's, ' + (Math.random() * 18) + 's';
+      s.style.animationDelay = (Math.random() * 5) + 's, ' + (Math.random() * 26) + 's';
       yil.appendChild(s);
     }
-    var gece = document.getElementById('gece');
-    function geceAyarla(ac) {
-      document.documentElement.classList.toggle('gece', ac);
-      gece.textContent = ac ? '☀' : '☾';
+
+    var tema = document.getElementById('tema');
+    function temaAyarla(gunduz) {
+      document.documentElement.classList.toggle('gunduz', gunduz);
+      tema.textContent = gunduz ? '☾' : '☀';
       var m = document.querySelector('meta[name="theme-color"]');
-      if (m) m.setAttribute('content', ac ? '#140b12' : '#faf5ef');
+      if (m) m.setAttribute('content', gunduz ? '#fbf4ee' : '#0d0713');
     }
-    try { if (localStorage.getItem('gece') === '1') geceAyarla(true); } catch (e) {}
-    gece.addEventListener('click', function(){
-      var ac = !document.documentElement.classList.contains('gece');
-      geceAyarla(ac);
-      try { localStorage.setItem('gece', ac ? '1' : '0'); } catch (e) {}
+    try { if (localStorage.getItem('tema') === 'gunduz') temaAyarla(true); } catch (e) {}
+    tema.addEventListener('click', function(){
+      var g = !document.documentElement.classList.contains('gunduz');
+      temaAyarla(g);
+      try { localStorage.setItem('tema', g ? 'gunduz' : 'gece'); } catch (e) {}
     });
 
-    // Blog penceresi ve ilerleme çizgisi
     var modal = document.getElementById('modal');
     var kutu = document.getElementById('kutu');
     var icerik = document.getElementById('icerik');
@@ -422,7 +438,6 @@
       ilerleme.style.width = oran + '%';
     });
 
-    // Belirme animasyonu
     var ogeler = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
       var g = new IntersectionObserver(function(k){
