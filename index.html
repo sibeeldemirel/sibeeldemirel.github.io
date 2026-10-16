@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sibel Demirel | Psikoloji</title>
-  <meta name="description" content="Psikolojiyi sanatla ve günlük hayatla buluşturan bilgilendirici içerikler.">
+  <meta name="description" content="Psikolojiyi rüyalar, zihin ve günlük hayatla buluşturan bilgilendirici içerikler.">
   <meta name="theme-color" content="#faf5ef">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +45,7 @@
     .buton.bos { color:var(--wine); }
     .buton.bos:hover { background:rgba(122,42,63,0.07); transform:translateY(-3px); }
 
-    section { max-width:1000px; margin:0 auto; padding:120px 28px 0; }
+    section { max-width:1040px; margin:0 auto; padding:120px 28px 0; }
     .baslik { text-align:center; margin-bottom:56px; }
     .baslik small { display:block; font-size:0.72rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:14px; }
     .baslik h2 { font-size:clamp(2.2rem,6vw,3.3rem); }
@@ -55,12 +55,12 @@
     .daire { width:200px; height:200px; border-radius:50%; background:var(--white); border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:4rem; color:var(--wine); box-shadow:0 0 0 10px rgba(255,255,255,0.45); }
     .hakkimda p { font-size:1.1rem; color:#5d4a4d; }
 
-    .kartlar { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px; }
-    .kart { background:var(--white); border-radius:24px; padding:42px 30px; border-top:3px solid var(--wine); box-shadow:0 14px 40px rgba(122,42,63,0.08); transition:transform .4s, box-shadow .4s; }
+    .kartlar { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+    .kart { background:var(--white); border-radius:24px; padding:38px 24px; border-top:3px solid var(--wine); box-shadow:0 14px 40px rgba(122,42,63,0.08); transition:transform .4s, box-shadow .4s; }
     .kart:hover { transform:translateY(-9px); box-shadow:0 26px 60px rgba(122,42,63,0.16); }
     .kart .no { font-family:'Cormorant Garamond',serif; font-size:1rem; letter-spacing:4px; color:var(--gold); }
-    .kart h3 { font-size:1.75rem; margin:14px 0 12px; }
-    .kart p { color:var(--muted); font-size:0.96rem; }
+    .kart h3 { font-size:1.55rem; margin:14px 0 12px; }
+    .kart p { color:var(--muted); font-size:0.93rem; }
 
     .alinti { margin-top:130px; text-align:center; padding:110px 28px; background:linear-gradient(135deg,var(--wine),var(--wine2)); color:#fbeee9; }
     .alinti p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.8rem,5vw,2.9rem); max-width:760px; margin:0 auto; line-height:1.4; }
@@ -70,12 +70,15 @@
     .iletisim p { max-width:470px; margin:20px auto 34px; color:var(--muted); }
     .iletisim .buton { margin:6px; }
 
-    footer { text-align:center; max-width:620px; margin:0 auto; padding:90px 28px 50px; font-size:0.8rem; color:var(--muted); }
-    footer strong { display:block; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.5rem; letter-spacing:1px; color:var(--wine); margin-bottom:12px; }
+    footer { text-align:center; max-width:620px; margin:0 auto; padding:90px 28px 50px; }
+    footer strong { display:block; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.5rem; letter-spacing:1px; color:var(--wine); }
 
     .js .reveal { opacity:0; transform:translateY(30px); transition:opacity 1s ease, transform 1s ease; }
     .js .reveal.goster { opacity:1; transform:none; }
 
+    @media (max-width:980px) {
+      .kartlar { grid-template-columns:repeat(2,1fr); }
+    }
     @media (max-width:760px) {
       nav { padding:14px 18px; }
       nav .links a { margin-left:14px; letter-spacing:2px; font-size:0.66rem; }
@@ -86,6 +89,7 @@
       .kemer span { font-size:4.6rem; }
       .hakkimda { grid-template-columns:1fr; text-align:center; justify-items:center; padding:48px 26px; gap:30px; }
       .daire { width:150px; height:150px; font-size:3rem; }
+      .kartlar { grid-template-columns:1fr; }
       section { padding-top:90px; }
       .alinti { margin-top:90px; padding:80px 24px; }
     }
@@ -105,12 +109,12 @@
 
   <div class="hero">
     <div class="metin">
-      <div class="ust">Psikoloji &nbsp;·&nbsp; Sanat</div>
-      <h1>Zihnin <em>sessiz</em> dilini keşfetmek</h1>
-      <p>Psikolojiyi sanatla ve günlük hayatla buluşturan, sade ve sıcak bir dille hazırlanmış içerikler.</p>
+      <div class="ust">Psikoloji &nbsp;·&nbsp; Rüya &nbsp;·&nbsp; Zihin</div>
+      <h1>İç dünyana <em>hoş geldin</em></h1>
+      <p>Kendini dinlemeye ve psikolojiyi keşfetmeye davetlisin.</p>
       <div class="butonlar">
         <a class="buton dolu" href="#icerikler">İçerikleri Keşfet</a>
-        <a class="buton bos" href="mailto:psk.sibeldemirel@gmail.com">İletişime Geç</a>
+        <a class="buton bos" href="mailto:mailadresin@gmail.com">İletişime Geç</a>
       </div>
     </div>
     <div class="gorsel"><div class="kemer"><span>SD</span></div></div>
@@ -120,35 +124,35 @@
     <div class="baslik"><small>Tanışalım</small><h2>Hakkımda</h2></div>
     <div class="hakkimda">
       <div class="daire">SD</div>
-      <p>Merhaba! Psikoloji bölümü 4. sınıf öğrencisiyim. Psikoloji ve sanat en çok ilgimi çeken alanlar. Bu sitede psikolojiyi herkesin anlayabileceği sade bir dille anlatmaya, öğrendiklerimi sizinle paylaşmaya çalışıyorum.</p>
+      <p>Merhaba, ben Sibel. İnsanı, rüyaları ve zihnin görünmeyen katmanlarını merak ediyorum. Bu sayfa, psikolojiye dair öğrendiklerimi ve düşündüklerimi sade bir dille paylaştığım küçük bir köşe.</p>
     </div>
   </section>
 
   <section id="icerikler" class="reveal">
     <div class="baslik"><small>Neler Var?</small><h2>Paylaştığım İçerikler</h2></div>
     <div class="kartlar">
-      <div class="kart"><div class="no">I</div><h3>Psikoloji</h3><p>Karmaşık görünen kavramları sade ve anlaşılır şekilde anlatan yazılar.</p></div>
-      <div class="kart"><div class="no">II</div><h3>Sanat ve Psikoloji</h3><p>Sanatın insan zihniyle ve duygularıyla olan bağını keşfeden içerikler.</p></div>
-      <div class="kart"><div class="no">III</div><h3>Günlük Hayat</h3><p>Hayatın içinden, herkesin kendinden bir şey bulabileceği konular.</p></div>
+      <div class="kart"><div class="no">I</div><h3>Psikoloji Kavramları</h3><p>Karmaşık görünen kavramları, günlük hayattan örneklerle sade ve akılda kalır biçimde anlatıyorum.</p></div>
+      <div class="kart"><div class="no">II</div><h3>Günlük Hayat</h3><p>Alışkanlıklar, ilişkiler, yorgunluk ve sakinlik: hayatın içinden, herkesin kendinden bir şey bulabileceği yazılar.</p></div>
+      <div class="kart"><div class="no">III</div><h3>Kitap ve Film Önerileri</h3><p>Zihni, duyguları ve insan olmayı anlatan kitaplar ve filmler üzerine seçkiler ve kısa notlar.</p></div>
+      <div class="kart"><div class="no">IV</div><h3>Rüyalar, Bilinçaltı ve Zihin</h3><p>Rüyaların ve zihnin gizli işleyişine dair merak uyandıran, bilgilendirici yazılar.</p></div>
     </div>
   </section>
 
   <div class="alinti reveal">
-    <p>Her insan, anlatılmayı bekleyen bir hikâyedir.</p>
+    <p>Zihin, kendini en çok sessizlikte anlatır.</p>
     <span>Sibel Demirel</span>
   </div>
 
   <section id="iletisim" class="reveal" style="padding-top:110px">
     <div class="iletisim">
       <div class="baslik" style="margin-bottom:0"><small>İletişim</small><h2>Birlikte Konuşalım</h2></div>
-      <p>Benimle iletişime geçmek ya da yeni içeriklerden haberdar olmak için bana yazabilirsiniz.</p>
-      <a class="buton dolu" href="mailto:mailadresin@gmail.com">E-posta Gönder</a>
+      <p>Bir yazıya dair düşüncelerini paylaşmak, soru sormak ya da yeni içeriklerden haberdar olmak istersen bana yazabilirsin.</p>
+      <a class="buton dolu" href="mailto:psksibeldemirel@gmail.com">E-posta Gönder</a>
     </div>
   </section>
 
   <footer>
     <strong>Sibel Demirel</strong>
-    Bu sitedeki içerikler bilgilendirme amaçlıdır, terapi veya tedavi yerine geçmez.
   </footer>
 
   <script>
