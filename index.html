@@ -5,83 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sibel Demirel | Psikoloji</title>
   <meta name="description" content="Psikolojiyi sanatla ve günlük hayatla buluşturan bilgilendirici içerikler.">
-  <meta name="theme-color" content="#120a0c">
+  <meta name="theme-color" content="#faf5ef">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:#120a0c; --surface:#1a0f12; --bordo:#5c1226; --bordo2:#7d1a35;
-      --gold:#c9a35b; --gold2:#e6cc8f; --text:#efe6dc; --muted:#b0a193;
-      --line:rgba(201,163,91,0.28);
+      --bg:#faf5ef; --white:#ffffff; --rose:#f2e2dd; --rose2:#e8cdc7;
+      --wine:#7a2a3f; --wine2:#5a1c2d; --gold:#b8935a;
+      --text:#3a2b2e; --muted:#7d6c6e; --line:rgba(122,42,63,0.15);
     }
     * { box-sizing:border-box; margin:0; padding:0; }
     html { scroll-behavior:smooth; }
     body { font-family:'Inter',Arial,sans-serif; font-weight:300; background:var(--bg); color:var(--text); line-height:1.85; -webkit-font-smoothing:antialiased; }
-    h1,h2,h3 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:500; line-height:1.15; }
+    h1,h2,h3 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:500; line-height:1.12; color:var(--wine2); }
     a { color:inherit; text-decoration:none; }
 
-    nav { position:fixed; top:0; left:0; right:0; z-index:20; display:flex; justify-content:space-between; align-items:center; padding:18px 36px; background:rgba(18,10,12,0.78); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
-    nav .logo { font-family:'Cormorant Garamond',serif; font-size:1.45rem; letter-spacing:2px; color:var(--gold2); }
+    nav { position:fixed; top:0; left:0; right:0; z-index:20; display:flex; justify-content:space-between; align-items:center; padding:18px 40px; background:rgba(250,245,239,0.85); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
+    nav .logo { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; letter-spacing:1px; color:var(--wine); }
     nav .links a { margin-left:30px; font-size:0.72rem; letter-spacing:3px; text-transform:uppercase; color:var(--muted); font-weight:400; transition:color .3s; }
-    nav .links a:hover { color:var(--gold2); }
+    nav .links a:hover { color:var(--wine); }
 
-    .hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:130px 28px 100px; background:radial-gradient(ellipse at 50% 35%, #4a0f20 0%, #230b13 45%, var(--bg) 78%); position:relative; }
-    .hero::before { content:''; position:absolute; inset:26px; border:1px solid var(--line); pointer-events:none; }
-    .hero > * { animation:fadeUp 1.2s ease both; }
-    .ust { font-size:0.74rem; letter-spacing:6px; text-transform:uppercase; color:var(--gold); font-weight:400; }
-    .cizgi { width:1px; height:60px; background:linear-gradient(var(--gold),transparent); margin:30px auto; animation-delay:.15s; }
-    .hero h1 { font-size:clamp(3.2rem,11vw,6.6rem); font-weight:400; letter-spacing:2px; animation-delay:.25s; }
-    .hero h1 em { font-style:italic; color:var(--gold2); }
-    .hero p { max-width:520px; margin:28px auto 46px; color:var(--muted); font-size:1.02rem; animation-delay:.4s; }
-    .butonlar { animation-delay:.55s; }
+    .hero { max-width:1080px; margin:0 auto; min-height:100vh; display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:center; padding:130px 28px 80px; }
+    .hero .metin > * { animation:fadeUp 1.1s ease both; }
+    .ust { font-size:0.72rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:22px; }
+    .hero h1 { font-size:clamp(3rem,8vw,5.4rem); font-weight:400; animation-delay:.12s; }
+    .hero h1 em { font-style:italic; color:var(--wine); }
+    .hero p { margin:26px 0 38px; max-width:440px; color:var(--muted); font-size:1.04rem; animation-delay:.25s; }
+    .butonlar { animation-delay:.38s; }
+    .gorsel { display:flex; justify-content:center; animation:fadeUp 1.3s ease .3s both; }
+    .kemer { position:relative; width:100%; max-width:340px; aspect-ratio:3/4; border-radius:999px 999px 24px 24px; background:linear-gradient(165deg,#f0d3cd 0%,#c98a95 55%,var(--wine) 100%); display:flex; align-items:center; justify-content:center; box-shadow:0 40px 80px rgba(122,42,63,0.22); }
+    .kemer::before { content:''; position:absolute; inset:-14px; border:1px solid var(--gold); border-radius:999px 999px 34px 34px; opacity:0.6; }
+    .kemer span { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:6rem; color:#fff; text-shadow:0 6px 30px rgba(90,28,45,0.35); }
     @keyframes fadeUp { from{opacity:0; transform:translateY(26px);} to{opacity:1; transform:none;} }
 
-    .buton { display:inline-block; padding:15px 38px; margin:6px; font-size:0.72rem; letter-spacing:3px; text-transform:uppercase; font-weight:500; border:1px solid var(--gold); transition:all .35s; }
-    .buton.dolu { background:var(--gold); color:#1a0f12; }
-    .buton.dolu:hover { background:var(--gold2); border-color:var(--gold2); transform:translateY(-3px); box-shadow:0 12px 30px rgba(201,163,91,0.22); }
-    .buton.bos { color:var(--gold2); }
-    .buton.bos:hover { background:rgba(201,163,91,0.12); transform:translateY(-3px); }
+    .buton { display:inline-block; padding:15px 36px; margin:6px 10px 6px 0; font-size:0.72rem; letter-spacing:3px; text-transform:uppercase; font-weight:500; border-radius:999px; border:1px solid var(--wine); transition:all .35s; }
+    .buton.dolu { background:var(--wine); color:#fff; box-shadow:0 12px 28px rgba(122,42,63,0.25); }
+    .buton.dolu:hover { background:var(--wine2); transform:translateY(-3px); }
+    .buton.bos { color:var(--wine); }
+    .buton.bos:hover { background:rgba(122,42,63,0.07); transform:translateY(-3px); }
 
-    section { max-width:1000px; margin:0 auto; padding:130px 28px 0; }
-    .baslik { text-align:center; margin-bottom:60px; }
-    .baslik small { display:block; font-size:0.72rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold); font-weight:400; margin-bottom:16px; }
-    .baslik h2 { font-size:clamp(2.2rem,6vw,3.4rem); }
-    .baslik::after { content:''; display:block; width:56px; height:1px; background:var(--gold); margin:26px auto 0; }
+    section { max-width:1000px; margin:0 auto; padding:120px 28px 0; }
+    .baslik { text-align:center; margin-bottom:56px; }
+    .baslik small { display:block; font-size:0.72rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:14px; }
+    .baslik h2 { font-size:clamp(2.2rem,6vw,3.3rem); }
+    .baslik::after { content:''; display:block; width:50px; height:1px; background:var(--gold); margin:24px auto 0; }
 
-    .hakkimda { display:grid; grid-template-columns:230px 1fr; gap:60px; align-items:center; }
-    .monogram { width:230px; height:230px; border-radius:50%; border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:4.6rem; font-style:italic; color:var(--gold2); background:radial-gradient(circle,#3a0e1b,var(--surface)); box-shadow:0 0 0 10px rgba(201,163,91,0.06), 0 30px 70px rgba(0,0,0,0.5); }
-    .hakkimda p { font-size:1.12rem; color:var(--muted); }
+    .hakkimda { background:var(--rose); border-radius:32px; padding:64px 52px; display:grid; grid-template-columns:200px 1fr; gap:52px; align-items:center; }
+    .daire { width:200px; height:200px; border-radius:50%; background:var(--white); border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:4rem; color:var(--wine); box-shadow:0 0 0 10px rgba(255,255,255,0.45); }
+    .hakkimda p { font-size:1.1rem; color:#5d4a4d; }
 
-    .kartlar { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:26px; }
-    .kart { background:linear-gradient(160deg,#241016,var(--surface)); border:1px solid var(--line); padding:44px 32px; transition:transform .4s, border-color .4s, box-shadow .4s; }
-    .kart:hover { transform:translateY(-10px); border-color:var(--gold); box-shadow:0 26px 60px rgba(0,0,0,0.55); }
+    .kartlar { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px; }
+    .kart { background:var(--white); border-radius:24px; padding:42px 30px; border-top:3px solid var(--wine); box-shadow:0 14px 40px rgba(122,42,63,0.08); transition:transform .4s, box-shadow .4s; }
+    .kart:hover { transform:translateY(-9px); box-shadow:0 26px 60px rgba(122,42,63,0.16); }
     .kart .no { font-family:'Cormorant Garamond',serif; font-size:1rem; letter-spacing:4px; color:var(--gold); }
-    .kart h3 { font-size:1.75rem; margin:16px 0 14px; color:var(--gold2); }
+    .kart h3 { font-size:1.75rem; margin:14px 0 12px; }
     .kart p { color:var(--muted); font-size:0.96rem; }
 
-    .alinti { margin-top:140px; text-align:center; padding:110px 28px; background:linear-gradient(135deg,var(--bordo),#2a0b15); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-    .alinti p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.8rem,5vw,3rem); max-width:780px; margin:0 auto; line-height:1.4; color:var(--text); }
-    .alinti span { display:block; margin-top:22px; font-size:0.72rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold); }
+    .alinti { margin-top:130px; text-align:center; padding:110px 28px; background:linear-gradient(135deg,var(--wine),var(--wine2)); color:#fbeee9; }
+    .alinti p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.8rem,5vw,2.9rem); max-width:760px; margin:0 auto; line-height:1.4; }
+    .alinti span { display:block; margin-top:22px; font-size:0.72rem; letter-spacing:5px; text-transform:uppercase; color:#e3c9a0; }
 
-    .iletisim { text-align:center; padding:90px 28px; border:1px solid var(--line); background:radial-gradient(ellipse at top,#2c0d17,var(--surface)); }
-    .iletisim h2 { font-size:clamp(2.2rem,6vw,3.4rem); }
-    .iletisim p { max-width:480px; margin:20px auto 38px; color:var(--muted); }
+    .iletisim { text-align:center; background:var(--white); border:1px solid var(--line); border-radius:32px; padding:80px 28px; box-shadow:0 20px 60px rgba(122,42,63,0.08); }
+    .iletisim p { max-width:470px; margin:20px auto 34px; color:var(--muted); }
+    .iletisim .buton { margin:6px; }
 
     footer { text-align:center; max-width:620px; margin:0 auto; padding:90px 28px 50px; font-size:0.8rem; color:var(--muted); }
-    footer strong { display:block; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.5rem; letter-spacing:2px; color:var(--gold2); margin-bottom:14px; }
+    footer strong { display:block; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.5rem; letter-spacing:1px; color:var(--wine); margin-bottom:12px; }
 
     .js .reveal { opacity:0; transform:translateY(30px); transition:opacity 1s ease, transform 1s ease; }
     .js .reveal.goster { opacity:1; transform:none; }
 
-    @media (max-width:720px) {
+    @media (max-width:760px) {
       nav { padding:14px 18px; }
       nav .links a { margin-left:14px; letter-spacing:2px; font-size:0.66rem; }
-      .hero::before { inset:14px; }
-      .hakkimda { grid-template-columns:1fr; text-align:center; justify-items:center; gap:36px; }
-      .monogram { width:180px; height:180px; font-size:3.5rem; }
-      section { padding-top:100px; }
-      .alinti { margin-top:100px; padding:80px 24px; }
+      .hero { grid-template-columns:1fr; text-align:center; padding-top:120px; gap:50px; }
+      .hero p { margin-left:auto; margin-right:auto; }
+      .buton { margin:6px; }
+      .kemer { max-width:260px; }
+      .kemer span { font-size:4.6rem; }
+      .hakkimda { grid-template-columns:1fr; text-align:center; justify-items:center; padding:48px 26px; gap:30px; }
+      .daire { width:150px; height:150px; font-size:3rem; }
+      section { padding-top:90px; }
+      .alinti { margin-top:90px; padding:80px 24px; }
     }
     @media (prefers-reduced-motion:reduce) { * { animation:none !important; transition:none !important; } .js .reveal { opacity:1; transform:none; } }
   </style>
@@ -89,7 +95,7 @@
 <body>
 
   <nav>
-    <a class="logo" href="#">S. DEMİREL</a>
+    <a class="logo" href="#">Sibel Demirel</a>
     <div class="links">
       <a href="#hakkimda">Hakkımda</a>
       <a href="#icerikler">İçerikler</a>
@@ -98,20 +104,22 @@
   </nav>
 
   <div class="hero">
-    <div class="ust">Psikoloji &nbsp;·&nbsp; Sanat</div>
-    <div class="cizgi"></div>
-    <h1>Sibel <em>Demirel</em></h1>
-    <p>Psikolojiyi sanatla ve günlük hayatla buluşturan, sade ve zarif bir dille hazırlanmış içerikler.</p>
-    <div class="butonlar">
-      <a class="buton dolu" href="#icerikler">İçerikleri Keşfet</a>
-      <a class="buton bos" href="mailto:psk.sibeldemirel@gmail.com">İletişime Geç</a>
+    <div class="metin">
+      <div class="ust">Psikoloji &nbsp;·&nbsp; Sanat</div>
+      <h1>Zihnin <em>sessiz</em> dilini keşfetmek</h1>
+      <p>Psikolojiyi sanatla ve günlük hayatla buluşturan, sade ve sıcak bir dille hazırlanmış içerikler.</p>
+      <div class="butonlar">
+        <a class="buton dolu" href="#icerikler">İçerikleri Keşfet</a>
+        <a class="buton bos" href="mailto:psk.sibeldemirel@gmail.com">İletişime Geç</a>
+      </div>
     </div>
+    <div class="gorsel"><div class="kemer"><span>SD</span></div></div>
   </div>
 
   <section id="hakkimda" class="reveal">
     <div class="baslik"><small>Tanışalım</small><h2>Hakkımda</h2></div>
     <div class="hakkimda">
-      <div class="monogram">SD</div>
+      <div class="daire">SD</div>
       <p>Merhaba! Psikoloji bölümü 4. sınıf öğrencisiyim. Psikoloji ve sanat en çok ilgimi çeken alanlar. Bu sitede psikolojiyi herkesin anlayabileceği sade bir dille anlatmaya, öğrendiklerimi sizinle paylaşmaya çalışıyorum.</p>
     </div>
   </section>
@@ -121,4 +129,39 @@
     <div class="kartlar">
       <div class="kart"><div class="no">I</div><h3>Psikoloji</h3><p>Karmaşık görünen kavramları sade ve anlaşılır şekilde anlatan yazılar.</p></div>
       <div class="kart"><div class="no">II</div><h3>Sanat ve Psikoloji</h3><p>Sanatın insan zihniyle ve duygularıyla olan bağını keşfeden içerikler.</p></div>
-      <div class="kart"><div class="no">III</div><h3>Günlük Hayat</h3><p>Hayatın içinden, herkesin kendinden bir şey bulabileceği konular.</p>
+      <div class="kart"><div class="no">III</div><h3>Günlük Hayat</h3><p>Hayatın içinden, herkesin kendinden bir şey bulabileceği konular.</p></div>
+    </div>
+  </section>
+
+  <div class="alinti reveal">
+    <p>Her insan, anlatılmayı bekleyen bir hikâyedir.</p>
+    <span>Sibel Demirel</span>
+  </div>
+
+  <section id="iletisim" class="reveal" style="padding-top:110px">
+    <div class="iletisim">
+      <div class="baslik" style="margin-bottom:0"><small>İletişim</small><h2>Birlikte Konuşalım</h2></div>
+      <p>Benimle iletişime geçmek ya da yeni içeriklerden haberdar olmak için bana yazabilirsiniz.</p>
+      <a class="buton dolu" href="mailto:mailadresin@gmail.com">E-posta Gönder</a>
+    </div>
+  </section>
+
+  <footer>
+    <strong>Sibel Demirel</strong>
+    Bu sitedeki içerikler bilgilendirme amaçlıdır, terapi veya tedavi yerine geçmez.
+  </footer>
+
+  <script>
+    document.documentElement.classList.add('js');
+    var ogeler = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var g = new IntersectionObserver(function(k){
+        k.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('goster'); g.unobserve(e.target); } });
+      }, {threshold:0.12});
+      ogeler.forEach(function(o){ g.observe(o); });
+    } else {
+      ogeler.forEach(function(o){ o.classList.add('goster'); });
+    }
+  </script>
+</body>
+</html>
