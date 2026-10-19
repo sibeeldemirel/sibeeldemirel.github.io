@@ -4,50 +4,80 @@
 <title>Sibel Demirel | Psikoloji üzerine yazılar</title>
 <meta name="description" content="Psikoloji kavramları, klasik deneyler, rüyalar ve yaygın mitler üzerine sade dille yazılmış yazılar.">
 <style>
-:root{--bg:#f7f1ea;--card:#fffdf9;--tx:#2a2326;--mu:#7a6e70;--ln:#e6dcd0;--ac:#7a2e3a;--soft:#f0e3dc}
-@media (prefers-color-scheme:dark){:root{--bg:#1a1517;--card:#231c1f;--tx:#efe7e2;--mu:#b3a5a6;--ln:#372d30;--ac:#e0a3ac;--soft:#2b2125}}
+:root{--bg:#f7f1ea;--card:#fffdf9;--tx:#2a2326;--mu:#7a6e70;--ln:#e6dcd0;--ac:#6e2a5e;--soft:#f0e3ec}
+@media (prefers-color-scheme:dark){:root{--bg:#181318;--card:#221b21;--tx:#efe7ec;--mu:#b5a6b2;--ln:#382d37;--ac:#d2a3c9;--soft:#2b2129}}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--tx);font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.8}
-.w{max-width:700px;margin:0 auto;padding:0 22px}
-header{padding:20px 0;border-bottom:1px solid var(--ln)}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.8;position:relative;overflow-x:hidden}
+.w{max-width:700px;margin:0 auto;padding:0 22px;position:relative;z-index:1}
+.sut{position:fixed;left:3vw;bottom:0;width:74px;height:62vh;color:var(--ac);opacity:.09;z-index:0;pointer-events:none}
+@media(max-width:1000px){.sut{display:none}}
+header{padding:18px 0;border-bottom:1px solid var(--ln);position:relative;z-index:1}
+header .w{display:flex;justify-content:space-between;align-items:baseline}
 header b{font-size:21px;letter-spacing:.02em}
-.hero{padding:64px 0 36px;text-align:center}
+header a{font-size:15px;color:var(--ac);text-decoration:none}
+.hero{padding:60px 0 34px;text-align:center;position:relative}
+.bust{position:absolute;right:-6px;top:6px;width:170px;color:var(--ac);opacity:.17;pointer-events:none}
+.hero>*:not(.bust){position:relative}
 .hero small{display:block;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:18px}
 .hero h1{font-size:46px;line-height:1.15;margin:0 0 18px;font-weight:normal}
 .hero h1 em{color:var(--ac)}
-.hero p{max-width:520px;margin:0 auto;color:var(--mu);font-size:20px}
-.hakkimda{background:var(--soft);border-radius:14px;padding:22px 26px;margin:6px 0 10px;font-size:18px}
+.hero p{max-width:520px;margin:0 auto 22px;color:var(--mu);font-size:20px}
+.rozet{display:inline-block;border:1px solid var(--ac);color:var(--ac);border-radius:30px;padding:5px 18px;font-size:14px;letter-spacing:.08em}
+.hakkimda{background:var(--soft);border-left:3px solid var(--ac);border-radius:4px 14px 14px 4px;padding:22px 26px;margin:6px 0 10px;font-size:18px}
 .hakkimda p{margin:0}
-.kats{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 6px}
+.orn{display:flex;align-items:center;gap:14px;margin:38px 0 6px;color:var(--ac)}
+.orn:before,.orn:after{content:"";flex:1;height:1px;background:var(--ln)}
+.orn i{width:8px;height:8px;border:1.5px solid var(--ac);transform:rotate(45deg)}
+.kats{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 6px}
 .kats a{border:1px solid var(--ln);background:var(--card);color:var(--tx);text-decoration:none;font-size:15px;padding:7px 16px;border-radius:30px}
 .kats a:hover{border-color:var(--ac);color:var(--ac)}
-h2.k{font-size:13px;text-transform:uppercase;letter-spacing:.18em;color:var(--ac);margin:44px 0 14px;font-weight:normal}
-.kart{display:block;background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:18px 22px;margin-bottom:12px;text-decoration:none;color:var(--tx)}
+h2.k{font-size:13px;text-transform:uppercase;letter-spacing:.18em;color:var(--ac);margin:42px 0 14px;font-weight:normal}
+.kart{display:block;background:var(--card);border:1px solid var(--ln);border-left:3px solid var(--ac);border-radius:4px 12px 12px 4px;padding:18px 22px;margin-bottom:12px;text-decoration:none;color:var(--tx)}
 .kart:hover{border-color:var(--ac)}
 .kart b{display:block;font-size:21px;line-height:1.35;font-weight:normal}
 .kart span{display:block;color:var(--mu);font-size:16px;line-height:1.5;margin-top:6px}
-article{margin-top:64px;padding-top:34px;border-top:1px solid var(--ln)}
+article{margin-top:40px;padding-top:10px}
 article .et{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--ac)}
-article h2{font-size:32px;line-height:1.25;margin:8px 0 26px;font-weight:normal}
+article h2{font-size:32px;line-height:1.25;margin:8px 0 14px;font-weight:normal}
+article .cizgi{width:54px;height:3px;background:var(--ac);margin-bottom:26px;border-radius:2px}
 article p{margin:0 0 1.25em}
 article p:first-of-type{font-size:21px}
 a{color:var(--ac)}
-.top{font-size:15px;color:var(--mu)}
-footer{margin-top:60px;padding:28px 0 50px;text-align:center;color:var(--mu);font-size:15px;border-top:1px solid var(--ln)}
-@media(max-width:520px){.hero h1{font-size:36px}.hero{padding:44px 0 26px}article h2{font-size:27px}}
+.top{display:inline-block;margin-top:20px;font-size:16px}
+.mail{text-align:center;margin:46px 0 0}
+footer{margin-top:56px;padding:28px 0 50px;text-align:center;color:var(--mu);font-size:15px;border-top:1px solid var(--ln);position:relative;z-index:1}
+@media(max-width:560px){.hero h1{font-size:36px}.hero{padding:40px 0 26px}.bust{width:120px;right:-14px;opacity:.12}article h2{font-size:27px}}
 </style>
 </head><body>
-<header><div class="w"><b>Sibel Demirel</b></div></header>
+
+<svg class="sut" viewBox="0 0 60 300" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 10H56M8 10V22H52V10M12 22H48V30H12Z"/>
+<path d="M15 30V266M45 30V266M24 32V266M30 32V266M36 32V266"/>
+<path d="M12 266H48V276H8V288H52V276H48"/>
+</svg>
+
+<header><div class="w"><b>Sibel Demirel</b><a href="#yazilar" id="geri" hidden>← Tüm yazılar</a></div></header>
+
+<div id="home">
 <div class="w">
 
 <section class="hero">
+<svg class="bust" viewBox="0 0 200 260" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M72 34C58 44 56 64 58 78C58 86 56 90 54 96C50 104 44 110 44 114C46 118 52 118 54 122C52 126 52 130 56 132C52 136 54 140 58 142C56 150 60 156 68 160C78 164 86 166 90 170L92 206"/>
+<path d="M72 34C100 18 140 28 150 66C156 96 148 128 128 150C122 158 118 164 116 172L116 206"/>
+<path d="M92 206C70 212 40 218 18 240L18 256M116 206C140 212 166 220 186 240L186 256M18 256H186"/>
+<path d="M100 40C120 40 134 56 134 78M104 92C98 92 96 104 102 114C106 118 112 114 112 104M66 90Q70 87 74 90"/>
+</svg>
 <small>Psikoloji · Rüya · Zihin</small>
 <h1>İç dünyana <em>hoş geldin</em></h1>
 <p>Kendini dinlemeye ve psikolojiyi keşfetmeye davetlisin.</p>
+<span class="rozet">Psikoloji · Son sınıf öğrencisi</span>
 </section>
 
-<div class="hakkimda"><p>Merhaba, ben Sibel. İnsanı, rüyaları ve zihnin görünmeyen katmanlarını merak ediyorum. Bu sayfa, psikolojiye dair öğrendiklerimi ve düşündüklerimi sade bir dille paylaştığım küçük bir köşe.</p></div>
+<div class="hakkimda"><p>Merhaba, ben Sibel, psikoloji bölümü son sınıf öğrencisiyim. İnsanı, rüyaları ve zihnin görünmeyen katmanlarını merak ediyorum. Bu sayfa, psikolojiye dair öğrendiklerimi ve düşündüklerimi sade bir dille paylaştığım küçük bir köşe.</p></div>
+
+<div class="orn"><i></i></div>
 
 <nav class="kats" id="yazilar">
 <a href="#kat-deney">Klasik deneyler</a>
@@ -59,23 +89,35 @@ footer{margin-top:60px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 <h2 class="k" id="kat-deney">Klasik deneyler</h2>
 <a class="kart" href="#milgram"><b>Milgram itaat deneyi: Gerçekte ne oldu, ne düşünülüyor?</b><span>Psikolojinin en ünlü deneyi sık sık yarım anlatılır. Düzeneği, sonuçları ve eleştirileri.</span></a>
 
+<div class="orn"><i></i></div>
 <h2 class="k" id="kat-kavram">Psikoloji kavramları</h2>
 <a class="kart" href="#icedonuk"><b>İçe dönüklük ile utangaçlık aynı şey mi?</b><span>Gündelik dilde karışıyorlar, ama psikolojide farklı şeyleri anlatıyorlar.</span></a>
 <a class="kart" href="#zihin"><b>Zihnin dalıp gitmesi: Neden sürekli başka yerdeyiz?</b><span>Günün neredeyse yarısında aklımız yaptığımız işte değil.</span></a>
 <a class="kart" href="#onay"><b>Onay yanlılığı: Neden hep haklı çıkmak isteriz?</b><span>İki klasik deney ve gündelik hayattaki karşılığı.</span></a>
 
+<div class="orn"><i></i></div>
 <h2 class="k" id="kat-ruya">Rüyalar ve zihin</h2>
 <a class="kart" href="#ruya"><b>Rüyalar nasıl oluşur? Uyku evreleri ve REM</b><span>Neden çoğunu unutuyoruz? Bilimin bildiği ve hâlâ tartıştığı noktalar.</span></a>
 <a class="kart" href="#bilincli"><b>Bilinçli rüya nedir? Rüya gördüğünü fark etmek</b><span>Ne kadar yaygın, nasıl çalışılıyor ve neleri bilmiyoruz?</span></a>
 
+<div class="orn"><i></i></div>
 <h2 class="k" id="kat-mit">Mitler ve gerçekler</h2>
 <a class="kart" href="#beyin"><b>Beyin hakkında üç yaygın mit</b><span>Yüzde 10, sol-sağ beyin ve öğrenme stilleri bilimsel olarak ne kadar sağlam?</span></a>
 <a class="kart" href="#aliskanlik"><b>Alışkanlık kaç günde oluşur?</b><span>21 gün cümlesi nereden çıktı ve gerçek bir çalışma ne söylüyor?</span></a>
 <a class="kart" href="#yalan"><b>Yalan söyleyen göz mü kaçırır?</b><span>"Gözlerime bak da söyle" cümlesinin bilimsel karşılığı yok denecek kadar az.</span></a>
 
+<div class="orn"><i></i></div>
+<p class="mail"><a href="mailto:BURAYA@ADRESIN.com">Bana e-posta gönder</a></p>
+
+</div>
+</div>
+
+<div class="w" id="yazilar-alani">
+
 <article id="milgram">
 <div class="et">Klasik deneyler</div>
 <h2>Milgram itaat deneyi: Gerçekte ne oldu, ne düşünülüyor?</h2>
+<div class="cizgi"></div>
 <p>1961 yazında Yale Üniversitesi'nde Stanley Milgram, ilan yoluyla topladığı kişileri "öğrenme ve bellek üzerine bir çalışma" için laboratuvara çağırdı. İlk çalışmada 40 erkek katılımcı vardı. Her katılımcıya kura çekiliyormuş gibi yapılıyor ve "öğretmen" rolü veriliyordu. "Öğrenci" rolünü ise önceden anlaşılmış bir oyuncu üstleniyordu. Öğrenci yan odada bir sandalyeye bağlanıyor, öğretmen ise karşısındaki cihazda 15 volttan 450 volta kadar uzanan şalterleri kullanarak her yanlış cevapta öğrenciye elektrik şoku vereceğini sanıyordu. Gerçekte hiçbir şok verilmiyordu, ama katılımcılar bunu bilmiyordu.</p>
 <p>Deney boyunca laboratuvar önlüklü bir araştırmacı öğretmenin yanında duruyor, katılımcı tereddüt ettiğinde "Lütfen devam edin", "Deney devam etmenizi gerektiriyor" gibi önceden belirlenmiş cümleler söylüyordu. Voltaj yükseldikçe yan odadan gelen itirazlar ve çığlıklar da artıyordu. Milgram'ın 1963'te yayımladığı makaleye göre 40 katılımcının 26'sı, yani yüzde 65'i en yüksek seviye olan 450 volta kadar çıktı. Hiçbir katılımcı 300 voltun altında durmadı. Bu rakamlar psikoloji ders kitaplarına girdi ve "sıradan insanlar otoriteyle karşılaşınca kötülük yapabilir" fikrinin en güçlü kanıtı sayıldı.</p>
 <p>Ancak bu hikâyenin sık atlanan bir tarafı var: Milgram tek bir deney yapmadı, birçok varyasyon denedi. Düzenek değiştiğinde sonuçlar da değişti. Öğrenci aynı odadayken, araştırmacı telefonla konuşurken ya da katılımcıyla birlikte itiraz eden başka "öğretmenler" varken itaat oranı belirgin biçimde düştü. Yani itaat sabit bir insan özelliği gibi davranmıyordu, duruma çok bağlıydı. Bu varyasyonlara bakıldığında "insanlar otoriteye körü körüne uyar" cümlesi gereğinden fazla basit kalıyor.</p>
@@ -83,12 +125,13 @@ footer{margin-top:60px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 <p>Daha sonraki eleştiriler başka bir yöne gitti. Gina Perry 2012'de yayımladığı kitapta Milgram'ın arşivlerini inceledi ve deneyin yazıldığı kadar standart yürümediğini, araştırmacının bazen senaryodan saptığını ve katılımcıların bir kısmının düzeneğin gerçek olmadığından kuşkulandığını öne sürdü. Bu iddialar tartışmalı ve Milgram'ın temel bulgusunun geçersiz olduğu anlamına gelmiyor, ama sonuçları "tam kesin" bir kanıt gibi sunmanın da doğru olmadığını gösteriyor.</p>
 <p>Bir başka yorum ise Alex Haslam ve Stephen Reicher'den geliyor. Onlara göre katılımcılar çoğu zaman yalnızca emir aldıkları için değil, bilimin ortak amacına inandıkları ve araştırmacıyla özdeşleştikleri için devam ediyordu. Bu yaklaşımda itaat edenler pasif kuklalar değil, bir amaca hizmet ettiğini düşünen aktif katılımcılar. Milgram'ın kendisi ise bu davranışı, bireyin kendini otoritenin aracı olarak görmesi şeklinde açıklıyordu.</p>
 <p>Sonuç olarak Milgram deneyi, insanın otoriteye uyma eğiliminin ne kadar güçlü olabileceğini gösteren önemli bir çalışma olarak kalıyor. Fakat onu "insanların yüzde 65'i bir kötülük yapar" diye özetlemek, hem deneyin varyasyonlarını hem de sonraki tartışmaları gözden kaçırmak demek. Bir sonraki sefer bu deneyden bahsedildiğinde şunu sorabilirsin: Hangi düzenekten söz ediyoruz ve sonuç o koşula mı ait?</p>
-<a class="top" href="#yazilar">↑ Yazılara dön</a>
+<a class="top" href="#yazilar">← Tüm yazılar</a>
 </article>
 
 <article id="icedonuk">
 <div class="et">Psikoloji kavramları</div>
 <h2>İçe dönüklük ile utangaçlık aynı şey mi?</h2>
+<div class="cizgi"></div>
 <p>Birine "içe dönük" dediğimizde çoğu zaman "çekingen" ya da "utangaç" demek istiyoruz. Oysa psikoloji bu iki kavramı ayrı tutar. Aralarındaki fark, ikisini de yaşayan insanların günlük hayatında oldukça belirgin.</p>
 <p>İçe dönüklük bir kişilik özelliğidir. Beş Faktör modelinde dışadönüklük ayrı bir boyuttur ve içe dönüklük bu boyutun düşük ucuna denk gelir. Dışadönüklüğü yüksek insanlar genellikle daha girişken, konuşkan ve uyarıcı ortamlardan keyif alan kişiler olarak tarif edilir. İçe dönük insanlar ise sakin, daha az uyarıcı ortamları tercih eden kişilerdir. Sık duyduğumuz "içe dönükler yalnız kalarak enerji toplar" cümlesi popüler bir tanım. Bu tanım içe dönüklüğü anlatmak için yaygın biçimde kullanılıyor ve birçok kişi için tanıdık geliyor, ama bilimsel ölçeklerde içe dönüklük tek bu cümleye indirgenmiyor.</p>
 <p>Utangaçlık ise farklı bir şey. Utangaçlık, sosyal ortamlarda rahatsızlık, gerginlik ve çekingenlik hissetme durumudur ve çoğu zaman başkalarının kendini nasıl değerlendireceği endişesiyle ilişkilidir. Yani temelinde bir tür korku ya da kaygı vardır. İçe dönük biri insanlarla vakit geçirmeyi o kadar istemeyebilir ama bunu rahatsız olmadan yapabilir. Utangaç biri ise insanlarla olmak isteyebilir ama bunu yapmaktan çekinir.</p>
@@ -96,24 +139,26 @@ footer{margin-top:60px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 <p>Bu fark, gündelik hayatta kendimizi anlamak için işimize yarıyor. Kendini içe dönük olarak tanımlayan biri bir parti yerine evde kitap okumayı seçiyorsa bunda bir sorun yoktur, bu bir tercihtir. Fakat aynı kişi partiye gitmek isteyip gidemiyorsa, orada konuşamayacağından ya da yargılanacağından korkuyorsa, o zaman söz konusu olan içe dönüklükten çok utangaçlık ya da sosyal kaygı olabilir. Bu iki durumun çözümü de aynı değil. İçe dönüklüğün "düzeltilmesi" gereken bir şey olduğunu söyleyen yaklaşımlar çoğunlukla yanlış bir noktadan başlıyor. Utangaçlık ise, rahatsızlık veriyorsa, üzerinde çalışılabilecek bir şey.</p>
 <p>Utangaçlık ile sosyal anksiyete bozukluğu da aynı değil. Utangaçlık yaygın ve normal bir deneyim. Sosyal kaygı bozukluğunda ise korku daha yoğun, daha kalıcı ve işi, okulu ya da ilişkileri belirgin biçimde etkileyen bir hâle gelir. Sosyal ortamlardan kaçınma günlük yaşamını kısıtlıyorsa bir ruh sağlığı uzmanıyla konuşmak mantıklı bir adım olur.</p>
 <p>Son olarak şunu da eklemek gerek: Bu kavramların hiçbiri sabit bir etiket değil. İnsanlar yaşla ve deneyimle değişir, farklı ortamlarda farklı davranır. "Ben içe dönüğüm" ya da "ben utangacım" demek bir başlangıç noktası olabilir, ama kendimizi tanımlamanın tek yolu bu değil. Önemli olan bu etiketlerin altında ne yaşadığımıza bakmak: Tercih mi, korku mu?</p>
-<a class="top" href="#yazilar">↑ Yazılara dön</a>
+<a class="top" href="#yazilar">← Tüm yazılar</a>
 </article>
 
 <article id="zihin">
 <div class="et">Psikoloji kavramları</div>
 <h2>Zihnin dalıp gitmesi: Neden sürekli başka yerdeyiz?</h2>
+<div class="cizgi"></div>
 <p>Bir şeyi okurken sayfanın sonuna gelip ne okuduğunu hatırlamadığın oldu mu? Duş alırken aklın başka bir konuşmaya gittiği? Psikolojide buna zihin dolaşması (mind-wandering) deniyor: Dikkatin yapılan işten ayrılıp ilgisiz düşüncelere kayması. Bu o kadar yaygın ki araştırmacılar bunu ölçmek için telefon uygulamalarından yararlanmış.</p>
 <p>2010'da Matthew Killingsworth ve Daniel Gilbert, Science dergisinde yayımladıkları çalışmada bir iPhone uygulaması kullandı. Uygulama, gün içinde rastgele zamanlarda katılımcılara o anda ne yaptıklarını, ne düşündüklerini ve ne kadar mutlu olduklarını soruyordu. Çalışmaya 2.250 yetişkin katıldı. Sonuçlara göre insanların zamanın yaklaşık yüzde 46,9'unda yaptıkları işten farklı bir şey düşündüğü görüldü. Bu oran, yemek yemek ya da çalışmak gibi etkinliklere göre değişse de neredeyse her etkinlikte dikkate değer bir seviyedeydi. Yani zihin dolaşması bir istisna değil, günlük zihin hayatının büyük bir parçası.</p>
 <p>Araştırmanın ikinci bulgusu daha çarpıcıydı: İnsanlar zihinleri dolaşırken genel olarak daha az mutlu bildirdi. Dahası, düşünceler hoş bir konu hakkında olsa bile insanlar, işlerine odaklandıkları zamanlara kıyasla daha mutlu değildi. Mutluluktaki değişimin yüzde 10,8'i zihin dolaşmasıyla, yüzde 4,6'sı ise o anda yapılan etkinliğin ne olduğuyla açıklanabiliyordu. Yani insanın ne yaptığından çok, aklının nerede olduğu mutluluğu daha çok belirliyor gibiydi.</p>
 <p>Bu bulguları yorumlarken dikkatli olmak gerekiyor. Çalışma, zihin dolaşması ile mutsuzluk arasında bir ilişki buluyor, ama nedenselliği kesin biçimde kanıtlamıyor. Yazarlar zaman içindeki analizlerde, zihin dolaşmasının mutsuzluğu önceleyen bir şey olduğunu düşündürecek veriler bulduklarını söylese de, bu konu tartışmalı. Mutsuz olan insanlar zaten daha fazla dalıp gidiyor olabilir. Ayrıca veriler kendi bildirime dayanıyor ve belirli bir uygulamayı kullanan bir örneklemden geliyor.</p>
 <p>Zihin dolaşmasının yalnızca kötü olduğunu söylemek de yanlış olur. Aynı zihinsel süreç, gelecekle ilgili plan yapmayı, geçmişi düşünmeyi ve yaratıcı fikirlere ulaşmayı da sağlıyor olabilir. Bazı araştırmalar, rutin işler yaparken zihnin dolaşmasının yaratıcı problem çözmeye katkı sağlayabileceğini öne sürüyor. Bu yüzden sorun zihnin dolaşması değil, dolaştığı yerin sıkıntılı düşüncelere dönüşmesi olabilir. Sürekli tekrar eden endişeli düşünceler başka bir konu ve ruminasyon olarak ayrıca ele alınıyor.</p>
 <p>Gündelik hayatta bununla başa çıkmak için sık önerilen yöntemlerden biri, farkındalık (mindfulness) alıştırmaları. Dikkatini bilinçli olarak nefese ya da yaptığın işe getirmek, zihnin ne zaman dolaştığını fark etmeyi kolaylaştırabilir. Ama bu alıştırmaların herkes için aynı etkiyi yarattığını söylemek abartı olur. Asıl önemli nokta, zihnin kayması normal olduğu için kendini bu yüzden suçlamamak. Fark edip dikkatini geri getirdiğin her an, zaten bu becerinin bir parçası.</p>
-<a class="top" href="#yazilar">↑ Yazılara dön</a>
+<a class="top" href="#yazilar">← Tüm yazılar</a>
 </article>
 
 <article id="onay">
 <div class="et">Psikoloji kavramları</div>
 <h2>Onay yanlılığı: Neden hep haklı çıkmak isteriz?</h2>
+<div class="cizgi"></div>
 <p>Onay yanlılığı (confirmation bias), insanların mevcut inançlarını destekleyen bilgiyi aramaya, onu daha kolay fark etmeye ve daha ağırlıklı değerlendirmeye yönelmesi demek. Psikolojide en çok incelenen yanlılıklardan biri ve nedeni çoğu zaman kötü niyet değil. Zihin, bir fikre sahip olduktan sonra o fikre uyan şeyleri doğal olarak daha çok görüyor.</p>
 <p>Bu eğilimin en bilinen deneysel gösterimlerinden biri Peter Wason'a ait. 1960'ta yaptığı çalışmada katılımcılara "2-4-6" üçlüsünü verdi ve bu üçlünün gizli bir kurala uyduğunu söyledi. Katılımcılar kendi üçlülerini önerecek, deneyci de önerilen üçlünün kurala uyup uymadığını söyleyecekti. Çoğu kişi "ikişer ikişer artan sayılar" gibi bir kural düşündü ve bunu doğrulayacak örnekler denedi, örneğin 8-10-12 gibi. Cevap hep "evet" geldi ve katılımcılar kuralı bulduklarından emin oldular. Gerçek kural ise çok daha genel: "Artan herhangi üç sayı." Kendi kuralını çürütecek bir örnek, örneğin 1-2-3 değil de 5-3-1 gibi bir deneme yapan çok azdı. İnsanlar hipotezlerini çürütmeye değil, doğrulamaya çalışıyordu.</p>
 <p>İkinci klasik örnek, 1979'da Charles Lord, Lee Ross ve Mark Lepper'in yaptığı idam cezası çalışması. Katılımcıların bir kısmı idam cezasını destekliyor, bir kısmı karşı çıkıyordu. Herkese idam cezasının caydırıcılığı üzerine iki kurgusal araştırma gösterildi: Biri caydırıcı olduğunu, diğeri olmadığını söylüyordu. Sonuç şaşırtıcıydı. Her grup, kendi görüşüne uyan çalışmayı daha ikna edici ve daha iyi yapılmış buldu. Aynı kanıtı okuyan iki grup, kendi görüşlerinde daha da güçlendi. Yani aynı bilgi, insanları birbirine yaklaştırmak yerine uzaklaştırabiliyordu.</p>
@@ -121,24 +166,26 @@ footer{margin-top:60px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 <p>Neden böyle çalışıyoruz? Birkaç açıklama var ve hangisinin ağır bastığı tartışmalı. Bir görüşe göre zihin, sınırlı bilişsel kaynaklarıyla işi kolaylaştırmak için en uyumlu bilgiye öncelik veriyor. Başka bir görüşe göre kendi inançlarımızın doğru olması duygusal olarak önemli olduğundan, çelişen bilgiyi kolayca kabul etmiyoruz. Muhtemelen birden fazla etken birlikte rol oynuyor.</p>
 <p>Peki bununla ne yapabiliriz? Eğilimi tamamen yok etmek mümkün görünmüyor, ama azaltmaya yardım eden bazı alışkanlıklar var. Kendi görüşüne karşı en güçlü argümanı bilerek aramak, "bu yanlış çıkarsa nasıl anlarım?" diye sormak ve karşıt bir fikrin neden doğru olabileceğini bilinçli olarak düşünmek bunlardan bazıları. Bu yöntemlerin ne kadar etkili olduğu konusunda çalışmalar farklı sonuçlar veriyor, o yüzden bunları kesin çözüm olarak değil, deneyebileceğin yöntemler olarak düşünmek daha doğru.</p>
 <p>Son bir uyarı: Onay yanlılığını sadece başkalarında görmek kolay. Zor olan, kendi inançlarımızı sorgularken aynı eğilimin bizde de çalıştığını kabul etmek.</p>
-<a class="top" href="#yazilar">↑ Yazılara dön</a>
+<a class="top" href="#yazilar">← Tüm yazılar</a>
 </article>
 
 <article id="ruya">
 <div class="et">Rüyalar ve zihin</div>
 <h2>Rüyalar nasıl oluşur? Uyku evreleri ve REM</h2>
+<div class="cizgi"></div>
 <p>Gece uyuduğumuzda beyin kapanmıyor. Uyku, yaklaşık 90 dakika süren döngüler hâlinde ilerliyor ve her döngüde hafif uykudan derin uykuya, oradan da REM uykusuna geçiliyor. REM, "hızlı göz hareketi" anlamına gelen İngilizce ifadenin kısaltması. Bu evrede gözler kapalı göz kapaklarının altında hızlı hızlı hareket ediyor, beyin aktivitesi uyanıklığa yaklaşıyor, ama kaslarımız büyük ölçüde gevşek kalıyor. Bu kas gevşemesi sayesinde rüyada koşarken yatakta koşmuyoruz. Gece ilerledikçe REM evreleri uzuyor, bu yüzden sabaha yakın rüyalar çoğunlukla daha uzun ve canlı oluyor.</p>
 <p>Uzun yıllar "rüya sadece REM'de görülür" denildi. 1950'lerde REM'in keşfi bu fikri güçlendirdi, çünkü REM'de uyandırılanların çoğu rüya gördüğünü söylüyordu. Sonraki araştırmalar ise REM dışı uykuda da zihinsel deneyim yaşandığını gösterdi. Tom Nielsen'in uyandırma çalışmalarını derlediği makaleye göre REM'den uyandırılanların yaklaşık yüzde 82'si rüya gördüğünü bildirirken, REM dışı uykudan uyandırılanlarda bu oran yaklaşık yüzde 43'tü. Yani REM'de rüya görme ihtimali çok daha yüksek, ama REM dışında da rüya görmek mümkün. REM dışı rüyalar genellikle daha sönük, daha düşünce benzeri ve daha az kurgusal oluyor.</p>
 <p>Peki neden çoğunu unutuyoruz? Bunun tek bir açıklaması yok. REM sırasında beyindeki bazı kimyasalların, örneğin noradrenalinin düzeyi düşüyor ve bu, hatırlamayı zorlaştıran etkenlerden biri olarak öne sürülüyor. Fakat bu tek açıklama değil. Bir başka görüş, uyandıktan sonra beynin yeni anıyı kaydetme sistemini yeniden çalıştırması için belli bir süreye ihtiyaç duyabileceğini söylüyor. Bu yüzden rüyadan uyanıp hemen hareket edenler rüyayı çabuk kaybediyor. Öğrenci örneklemlerinde insanların haftada ortalama bir iki rüya hatırladığı bildirilmiş, ama bu rakam kişiden kişiye çok değişiyor.</p>
 <p>Rüyaların neden görüldüğü ise daha da tartışmalı. Freud 1899'da yayımladığı Rüyaların Yorumu kitabında rüyayı bastırılmış isteklerin örtülü bir ifadesi olarak yorumladı. Bu görüş psikoloji tarihinde çok etkili oldu, ama bilimsel olarak sınanması zor olduğu için günümüzde ana akım nörobilimde pek kabul görmüyor. 1977'de Hobson ve McCarley'in öne sürdüğü aktivasyon-sentez modeli ise rüyayı, beyin sapında oluşan rastgele sinyallerin beyin tarafından bir hikâyeye dönüştürülmesi olarak açıkladı. Bu model de zaman içinde değiştirildi, çünkü rüyalar sadece rastgele görüntüler gibi görünmüyor.</p>
 <p>Bugün öne sürülen fikirlerden bazıları rüyaların belleğin pekiştirilmesine katkıda bulunabileceğini, bazıları tehditlere karşı bir tür prova işlevi gördüğünü, bazıları ise rüya içeriğinin gündelik yaşamla süreklilik gösterdiğini söylüyor. Gerçekten de insanlar sıklıkla gün içinde düşündükleri ya da yaşadıkları şeyleri rüyada görüyor. Fakat bu görüşlerin hiçbiri tek başına rüyanın nedenini kesin biçimde açıklamıyor. Bilim insanları arasında rüyanın bir işlevi olup olmadığı ya da uykunun yan ürünü mü olduğu konusunda hâlâ görüş ayrılığı var.</p>
 <p>Bu yüzden "rüyamda şunu gördüm, demek ki şu olacak" ya da "bu rüyanın tek bir anlamı var" gibi iddialara temkinli yaklaşmak gerekiyor. Rüyaların kişiye özgü anlamlar taşıyabileceği düşünülüyor, çünkü içerik büyük ölçüde kişinin kendi yaşantısından besleniyor. Fakat sembol sözlüklerinde olduğu gibi evrensel ve sabit anlamlar için sağlam bilimsel kanıt yok. Rüyalarını merak edenler için en makul başlangıç, onları yazıp tekrar eden temalara ve duygulara bakmak olabilir.</p>
-<a class="top" href="#yazilar">↑ Yazılara dön</a>
+<a class="top" href="#yazilar">← Tüm yazılar</a>
 </article>
 
 <article id="bilincli">
 <div class="et">Rüyalar ve zihin</div>
 <h2>Bilinçli rüya nedir? Rüya gördüğünü fark etmek</h2>
+<div class="cizgi"></div>
 <p>Bilinçli rüya (İngilizce lucid dream), kişinin rüya gördüğünün farkında olduğu rüyadır. Rüyadayken "bu bir rüya" diye düşünebiliyorsun ve bazı durumlarda rüyanın akışını da bir ölçüde etkileyebiliyorsun. Bu ilk duyulduğunda bilimkurgu gibi gelebilir, ama bu deneyim araştırma laboratuvarlarında da incelenen bir konu.</p>
 <p>Ne kadar yaygın olduğuna dair en kapsamlı çalışmalardan biri 2016'da yayımlanan bir meta-analiz. Saunders ve arkadaşları yarım yüzyıllık araştırmayı bir araya getirdi ve insanların yaklaşık yüzde 55'inin hayatında en az bir kez bilinçli rüya gördüğünü, yaklaşık yüzde 23'ünün ise ayda en az bir kez gördüğünü buldu. Bunlar bir ortalama, yani her çalışmada oran farklı çıkıyor. Ayrıca bu rakamlar kişilerin kendi bildirimine dayanıyor, bu yüzden "bilinçli rüya gördüm" diyen herkesin aynı derecede net bir farkındalık yaşadığı anlamına gelmiyor.</p>
 <p>Bilinçli rüyaların bilimsel olarak incelenmesindeki en büyük zorluk, rüyanın dışarıdan gözlenememesi. Bir kişinin gerçekten rüya içinde farkında olup olmadığını anlamak için araştırmacılar önceden anlaşılmış bir işaret kullanıyor. Örneğin kişiden, rüyada farkına vardığında gözlerini belirli bir düzende hareket ettirmesi isteniyor. REM uykusunda göz hareketleri ölçülebildiği için bu işaret kayıtlarda görülebiliyor. Böylece kişi uyurken bile bilinçli olduğunu bildirebiliyor. Bu yöntem, bilinçli rüyanın gerçekten REM sırasında yaşanabildiğini göstermek için kullanılıyor.</p>
@@ -146,36 +193,39 @@ footer{margin-top:60px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 <p>Bilinçli rüya, bazı insanlar için ilginç ve hoş bir deneyim, bazıları için ise rahatsız edici olabilir. Örneğin uyku felcine benzeyen hisler ya da rüya ile gerçeklik arasındaki sınırın bulanıklaşması bazı kişilerde tedirginlik yaratabiliyor. Uyku düzenini bozacak şekilde sık sık uyanıp teknik denemek de uykunun kalitesini düşürebilir. Uyku sorunları, kâbuslar ya da rüyalarla ilgili yoğun sıkıntı yaşayan biri için merakla yapılan denemeler yerine bir uzmanla görüşmek daha doğru olur.</p>
 <p>Bilinçli rüyanın nasıl çalıştığına dair elimizde bazı görüntüleme çalışmaları da var. Bunlar bilinçli rüya sırasında bazı beyin bölgelerinin aktivitesinin, sıradan REM uykusuna göre farklı olabileceğini gösteriyor. Fakat bu çalışmalar genellikle küçük örneklemlerle yapılıyor ve sonuçların kesin bir açıklama sunduğunu söylemek için erken.</p>
 <p>Özetle bilinçli rüya gerçek, ölçülebilen ve oldukça yaygın bir deneyim. Ama nasıl daha sık gerçekleşeceği, ne işe yaradığı ve beyinde tam olarak ne olduğu konularında bilmediğimiz çok şey var. Konuya ilgi duyuyorsan en güvenilir başlangıç, rüyalarını yazmak ve internette dolaşan abartılı vaatlere şüpheyle bakmak.</p>
-<a class="top" href="#yazilar">↑ Yazılara dön</a>
+<a class="top" href="#yazilar">← Tüm yazılar</a>
 </article>
 
 <article id="beyin">
 <div class="et">Mitler ve gerçekler</div>
 <h2>Beyin hakkında üç yaygın mit: yüzde 10, sol-sağ beyin ve öğrenme stilleri</h2>
+<div class="cizgi"></div>
 <p>Beyinle ilgili bazı fikirler o kadar sık tekrarlanır ki doğruymuş gibi gelir. Bunların üçü özellikle yaygın: beynin yalnızca yüzde 10'unu kullandığımız, insanların sol beyinli ya da sağ beyinli olduğu ve herkesin bir öğrenme stili olduğu. Her birine ayrı ayrı bakmak mümkün.</p>
 <p>İlk mit, beynin yüzde 10'unu kullandığımız fikri. Beyin görüntüleme çalışmaları, gün içinde beynin neredeyse tüm bölgelerinin kullanıldığını gösteriyor. Uyurken bile birçok bölge aktif. Ayrıca beyin vücut ağırlığının yaklaşık yüzde 2'sini oluşturmasına rağmen enerji tüketiminin yaklaşık yüzde 20'sini kullanıyor. Bu kadar pahalı bir organın büyük kısmının boşta durması evrimsel açıdan mantıklı olmazdı. Beyindeki küçük bir hasarın bile ciddi sonuçlar doğurabilmesi de "geri kalan yüzde 90'ın boş olduğu" fikrine uymuyor. Bu mitin tam kaynağı belli değil. Bazen Einstein'a, bazen William James'e atfediliyor, ama net bir kanıt yok.</p>
 <p>İkinci mit, insanların sol beyinli (mantıklı, analitik) ya da sağ beyinli (yaratıcı, sezgisel) olduğu. Beynin iki yarımküresi gerçekten bazı işlevlerde farklılaşıyor. Örneğin dil işlemeyle ilgili bölgeler çoğu insanda sol yarımkürede daha belirgin. Fakat bu, bir kişinin kişiliğinin ya da düşünme biçiminin tek bir yarımküreye dayandığı anlamına gelmiyor. 2013'te Nielsen ve arkadaşları 7 ile 29 yaş arasındaki 1.011 kişinin beyin görüntülerini inceledi ve yaklaşık 7.000 beyin bölgesindeki bağlantıları analiz etti. Kişilerin sol ya da sağ yarımküreye bağlı bir baskınlık örüntüsü göstermediğini buldular. İki yarımküre sürekli birbiriyle iletişim hâlinde çalışıyor.</p>
 <p>Üçüncü mit, öğrenme stilleri. Fikir şu: Kimi insanlar görsel, kimi işitsel, kimi dokunsal öğreniyor ve öğretim bu stile uydurulursa daha iyi öğreniliyor. İnsanların tercihleri olduğu doğru, "ben görsel öğreniyorum" diyebilirsin. Ama 2008'de Pashler ve arkadaşlarının yaptığı kapsamlı bir inceleme, öğretimi kişinin bildirdiği stile uydurmanın öğrenmeyi iyileştirdiğine dair yeterli kanıt olmadığı sonucuna vardı. Çalışmaların çoğu bu fikri doğru biçimde sınamıyordu, doğru sınayanlar ise destekleyici sonuç bulmuyordu. Bu, hiçbir şekilde "farklı yöntemler denemeyin" anlamına gelmiyor. İçerik bir şemayı anlatıyorsa görsel, bir sesi anlatıyorsa işitsel sunum doğal olarak daha uygun. Yani yöntemi kişiye göre değil, içeriğe göre seçmek daha iyi işliyor gibi görünüyor.</p>
 <p>Bu mitler neden bu kadar tutuyor? Çünkü hem basit hem de çekici. İnsanlara kendilerini bir kategoriye yerleştirme imkânı veriyor ve bu bir tür açıklama hissi yaratıyor. Üstelik "potansiyelinin sadece yüzde 10'unu kullanıyorsun" gibi bir fikir motive edici de gelebiliyor.</p>
 <p>Bir bilgiye rastladığında kendine sorabileceğin faydalı bir soru şu: Bunu kim, hangi veriyle söylüyor? Beyin konusunda iddialar çoğu zaman gerçekte ölçülenden büyük oluyor. Beynin ne kadar karmaşık olduğunu kabul etmek, basit etiketlere güvenmekten daha dürüst bir başlangıç.</p>
-<a class="top" href="#yazilar">↑ Yazılara dön</a>
+<a class="top" href="#yazilar">← Tüm yazılar</a>
 </article>
 
 <article id="aliskanlik">
 <div class="et">Mitler ve gerçekler</div>
 <h2>Alışkanlık kaç günde oluşur? 21 gün miti ve gerçek araştırma</h2>
+<div class="cizgi"></div>
 <p>Alışkanlık edinmekten bahsedilen yerlerde sık duyulan bir cümle var: "Bir davranışı 21 gün boyunca tekrar edersen alışkanlık olur." Bu cümle öylesine yaygın ki doğru olup olmadığı genellikle sorgulanmıyor. Oysa bu sürenin kaynağı bir bilimsel çalışma değil.</p>
 <p>Fikrin kökeni, plastik cerrah Maxwell Maltz'ın 1960'ta yayımlanan Psycho-Cybernetics adlı kitabına dayanıyor. Maltz, ameliyat sonrası hastaların yeni görünüşlerine alışmasının kabaca 21 gün sürdüğünü gözlemlemişti. Bu bir alışkanlık çalışması değildi ve kontrollü bir deney de değildi. Sonradan bu gözlem, "21 gün" şeklinde kısalıp yayıldı ve alışkanlık edinme sürecinin kuralı gibi anlatılmaya başlandı.</p>
 <p>Alışkanlık oluşumunu doğrudan inceleyen en bilinen çalışmalardan biri, Phillippa Lally ve arkadaşlarının 2009'da yayımladığı araştırma. 96 gönüllü, 12 hafta boyunca her gün tekrar edecekleri bir davranış seçti. Bu davranışlar arasında su içmek, kahvaltıda meyve yemek ya da yürüyüşe çıkmak gibi basit şeyler vardı. Katılımcılar, davranışın ne kadar otomatik hâle geldiğini düzenli olarak bildirdi. Sonuçlara göre davranışın otomatikleşmesi ortalama 66 gün sürdü. Ama bu sürenin kişiden kişiye ve davranıştan davranışa büyük farkları vardı: En kısa 18 gün, en uzun ise 254 gün olarak hesaplandı. Yani hem 21 gün doğru bir ortalama değildi hem de herkes için geçerli tek bir süre yoktu.</p>
 <p>Çalışmanın bir diğer önemli bulgusu, arada bir günü kaçırmanın süreci belirgin biçimde bozmamasıydı. Bir gün atlamak, alışkanlık oluşumunu sıfırlamıyordu. Bu, "zinciri kırma" baskısıyla kendini suçlayan insanlar için rahatlatıcı bir bilgi olabilir. Elbette bu sonuç belirli bir örneklemden ve belirli davranışlardan geliyor. Yoğun ve karmaşık davranışlar, örneğin düzenli spor yapmak ya da sigarayı bırakmak, farklı süreler isteyebilir. Ayrıca çalışma gönüllülerin kendi bildirimlerine dayanıyordu, bu da bazı sınırlılıklar getiriyor.</p>
 <p>Bütün bunlar bize şunu söylüyor: Alışkanlık için sihirli bir gün sayısı yok. Daha önemli olan, davranışı kolaylaştırmak ve tutarlı kılmak. Davranışı her gün aynı bağlamda, örneğin kahvaltıdan hemen sonra yapmak otomatikleşmeyi kolaylaştırabilir. Küçük başlamak da yardımcı oluyor, çünkü çok büyük hedefler vazgeçmeyi kolaylaştırıyor.</p>
 <p>21 günlük kuralın zararı, beklentiyi yanlış ayarlaması. Üç haftanın sonunda davranış hâlâ zor geliyorsa kişi "bende bir sorun var" diye düşünebilir. Oysa bu tamamen beklenen bir durum. Alışkanlıklar çoğu zaman haftalar, hatta aylar alıyor. Bu yüzden asıl hedef 21. günü beklemek değil, o günlerde devam etmeyi mümkün kılacak koşulları yaratmak.</p>
-<a class="top" href="#yazilar">↑ Yazılara dön</a>
+<a class="top" href="#yazilar">← Tüm yazılar</a>
 </article>
 
 <article id="yalan">
 <div class="et">Mitler ve gerçekler</div>
 <h2>Yalan söyleyen göz mü kaçırır?</h2>
+<div class="cizgi"></div>
 <p>"Gözlerimin içine bakarak söyle." Bu cümle çoğumuz için tanıdık. Altında yatan fikir, yalan söyleyen birinin bakışlarını kaçıracağı. Bu inanç o kadar yaygın ki bir araştırma onu dünya çapında en sık dile getirilen yalan işareti olarak buldu. Peki araştırmalar bu fikri destekliyor mu?</p>
 <p>Kısa cevap: Genel olarak hayır. 2003'te Bella DePaulo ve arkadaşları yalan söylemeyle ilgili davranış işaretlerini inceleyen çalışmaları bir araya getirdi ve onlarca işareti değerlendirdi. Sonuç, yalan söyleyen insanlarla doğru söyleyenleri ayırt etmeye yarayan güvenilir işaretlerin çok az, bulunanların da zayıf olduğuydu. Göz teması ve bakış kaçırma bu işaretlerden biri değildi. Yani genel olarak yalan söyleyenlerin gözlerini kaçırdığına dair güçlü bir kanıt yok.</p>
 <p>Üstelik bu inanç kültürler arasında şaşırtıcı biçimde ortak. Global Deception Research Team'in 2006'da yayımladığı çalışma, onlarca ülkede insanlara yalancıların nasıl davrandığını sordu. Bakışı kaçırmak en sık verilen cevaptı. Yani dünyanın birçok yerinde insanlar aynı yanlış fikre inanıyor. Bu da bu inancın kişisel deneyimlerden çok, kültürel olarak aktarılan bir varsayım olduğunu düşündürüyor.</p>
@@ -183,10 +233,36 @@ footer{margin-top:60px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 <p>Neden böyle? Birkaç sebep var. Birincisi yalan söylemek her zaman gerginlik yaratmaz, bazı insanlar rahatça yalan söyler. İkincisi dürüst insanlar da gergin olabilir, özellikle sorgulandıklarını hissettiklerinde. Utangaç ya da kaygılı biri doğru söylerken bile bakışlarını kaçırabilir. Üçüncüsü yalan söyleyenler bu inancı bildiğinden bakışlarını bilerek sabit tutabilir. Yani göz davranışı, doğruluğun değil kişiliğin ve durumun bir göstergesi olabiliyor.</p>
 <p>Bu alanda daha umut verici bulunan yaklaşımlar var. Aldert Vrij ve çalışma arkadaşları, yalan söylemenin bilişsel olarak daha yorucu olduğu fikrinden yola çıkarak, görüşme sırasında konuşan kişiye bilişsel yük bindiren tekniklerin yalan tespitini bir miktar artırabileceğini öne sürüyor. Örneğin olayı tersten anlatmak istemek gibi. Bu yöntemler üzerinde araştırmalar sürüyor, ama burada bile kesin bir "yalan makinesi" yok.</p>
 <p>Gündelik hayat için çıkarım şu: Birinin gözünü kaçırması sana onun yalan söylediğini göstermez. Bu, çoğu zaman sadece utangaç, heyecanlı ya da düşünüyor olmasının işareti olabilir. Birinin sözlerinin doğruluğunu merak ediyorsan bakışlara değil, anlatının tutarlılığına, doğrulanabilir ayrıntılara ve başka kaynaklara bakmak çok daha sağlam bir yol.</p>
-<a class="top" href="#yazilar">↑ Yazılara dön</a>
+<a class="top" href="#yazilar">← Tüm yazılar</a>
 </article>
-  <p style="margin-top:50px;text-align:center"><a href="mailto:psk.sibeldemirel@gmail.com">Bana e-posta gönder</a></p>
 
 </div>
+
 <footer>Sibel Demirel</footer>
+
+<script>
+(function(){
+var home=document.getElementById('home');
+var geri=document.getElementById('geri');
+var arts=document.getElementsByTagName('article');
+function show(){
+  var id=decodeURIComponent(location.hash.slice(1));
+  var f=null;
+  for(var i=0;i<arts.length;i++){
+    var on=arts[i].id===id;
+    arts[i].hidden=!on;
+    if(on){f=arts[i];}
+  }
+  home.hidden=!!f;
+  geri.hidden=!f;
+  if(f){window.scrollTo(0,0);}
+  else{
+    var t=id?document.getElementById(id):null;
+    if(t){t.scrollIntoView();}else{window.scrollTo(0,0);}
+  }
+}
+window.addEventListener('hashchange',show);
+show();
+})();
+</script>
 </body></html>
