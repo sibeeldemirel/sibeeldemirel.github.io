@@ -2,39 +2,49 @@
 <html lang="tr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sibel Demirel | Psikoloji üzerine yazılar</title>
-<meta name="description" content="Psikoloji kavramları, klasik deneyler, rüyalar ve yaygın mitler üzerine sade dille yazılmış yazılar.">
+<meta name="description" content="Psikoloji kavramları, klasik deneyler, rüyalar, yaygın mitler, psikolojik filmler ve kitaplar üzerine sade dille yazılmış yazılar.">
 <style>
-:root{--bg:#f7f1ea;--card:#fffdf9;--tx:#2a2326;--mu:#7a6e70;--ln:#e6dcd0;--ac:#6e2a5e;--soft:#f0e3ec}
-@media (prefers-color-scheme:dark){:root{--bg:#181318;--card:#221b21;--tx:#efe7ec;--mu:#b5a6b2;--ln:#382d37;--ac:#d2a3c9;--soft:#2b2129}}
+:root{--bg:#f4eef8;--card:#fcf9fe;--tx:#2b2132;--mu:#7b6d84;--ln:#e2d5ea;--ac:#8e2c55;--soft:#ece1f3;--hk:rgba(160,42,82,.86)}
+@media (prefers-color-scheme:dark){:root{--bg:#17121d;--card:#211a29;--tx:#f0e8f3;--mu:#b9a9c2;--ln:#382d44;--ac:#e0a0c0;--soft:#2a2133;--hk:rgba(150,45,85,.72)}}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 body{margin:0;background:var(--bg);color:var(--tx);font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.8;position:relative;overflow-x:hidden}
 .w{max-width:700px;margin:0 auto;padding:0 22px;position:relative;z-index:1}
-.sut{position:fixed;left:3vw;bottom:0;width:74px;height:62vh;color:var(--ac);opacity:.09;z-index:0;pointer-events:none}
+.sut{position:fixed;left:3vw;bottom:0;width:74px;height:62vh;color:var(--ac);opacity:.1;z-index:0;pointer-events:none}
 @media(max-width:1000px){.sut{display:none}}
 header{padding:18px 0;border-bottom:1px solid var(--ln);position:relative;z-index:1}
 header .w{display:flex;justify-content:space-between;align-items:baseline}
 header b{font-size:21px;letter-spacing:.02em}
 header a{font-size:15px;color:var(--ac);text-decoration:none}
 .hero{padding:60px 0 34px;text-align:center;position:relative}
-.bust{position:absolute;right:-6px;top:6px;width:170px;color:var(--ac);opacity:.17;pointer-events:none}
+.bust{position:absolute;right:-6px;top:6px;width:170px;color:var(--ac);opacity:.18;pointer-events:none}
 .hero>*:not(.bust){position:relative}
 .hero small{display:block;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:18px}
 .hero h1{font-size:46px;line-height:1.15;margin:0 0 18px;font-weight:normal}
 .hero h1 em{color:var(--ac)}
 .hero p{max-width:520px;margin:0 auto 6px;color:var(--mu);font-size:20px}
-.hakkimda{background:#c8392b;color:#fff;border-radius:14px;padding:22px 26px;margin:20px 0 10px;font-size:18px}
+.hakkimda{background:var(--hk);color:#fff;border-radius:14px;padding:22px 26px;margin:20px 0 10px;font-size:18px}
 .hakkimda p{margin:0}
 .orn{display:flex;align-items:center;gap:14px;margin:38px 0 6px;color:var(--ac)}
 .orn:before,.orn:after{content:"";flex:1;height:1px;background:var(--ln)}
 .orn i{width:8px;height:8px;border:1.5px solid var(--ac);transform:rotate(45deg)}
 .sec{position:relative}
-.dek{position:absolute;right:4px;top:-16px;width:86px;height:100px;color:var(--ac);opacity:.18;pointer-events:none}
+.dek{position:absolute;right:4px;top:-16px;width:86px;height:100px;color:var(--ac);opacity:.2;pointer-events:none}
 h2.k{font-size:13px;text-transform:uppercase;letter-spacing:.18em;color:var(--ac);margin:42px 0 14px;font-weight:normal;position:relative}
 .kart{display:block;position:relative;background:var(--card);border:1px solid var(--ln);border-left:3px solid var(--ac);border-radius:4px 12px 12px 4px;padding:18px 22px;margin-bottom:12px;text-decoration:none;color:var(--tx)}
 .kart:hover{border-color:var(--ac)}
 .kart b{display:block;font-size:21px;line-height:1.35;font-weight:normal}
 .kart span{display:block;color:var(--mu);font-size:16px;line-height:1.5;margin-top:6px}
+.oge{display:grid;grid-template-columns:104px 1fr;gap:18px;background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:16px;margin-bottom:14px;color:var(--tx);text-decoration:none;position:relative}
+.oge.link{border-left:3px solid var(--ac)}
+.oge.link:hover{border-color:var(--ac)}
+.kapak{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:8px;min-height:150px;padding:12px 8px;border-radius:6px;color:#fff;font-size:11px;letter-spacing:.14em;background:linear-gradient(160deg,var(--g1),var(--g2))}
+.g1{--g1:#5b2050;--g2:#a3335a}.g2{--g1:#46285f;--g2:#8a4a8f}.g3{--g1:#7a2547;--g2:#c0486a}.g4{--g1:#3b2a55;--g2:#7a4a86}
+.ik{width:44px;height:44px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.oge h3{font-size:20px;line-height:1.3;margin:0 0 2px;font-weight:normal}
+.oge .alt{font-size:14px;color:var(--ac);margin-bottom:8px}
+.oge p{margin:0 0 .7em;font-size:16px;line-height:1.6}
+.acik{font-size:14px;color:var(--ac)}
 article{margin-top:40px;padding-top:10px}
 article .et{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--ac)}
 article h2{font-size:32px;line-height:1.25;margin:8px 0 14px;font-weight:normal}
@@ -55,7 +65,7 @@ footer{margin-top:56px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 .k4{top:12%;left:48%;animation-delay:9s;animation-duration:13s}
 .k5{top:55%;left:85%;animation-delay:13s;animation-duration:12s}
 @media(prefers-reduced-motion:reduce){.ky{display:none}}
-@media(max-width:560px){.hero h1{font-size:36px}.hero{padding:40px 0 26px}.bust{width:120px;right:-14px;opacity:.12}article h2{font-size:27px}.dek{width:66px;height:78px}}
+@media(max-width:560px){.hero h1{font-size:36px}.hero{padding:40px 0 26px}.bust{width:120px;right:-14px;opacity:.12}article h2{font-size:27px}.dek{width:66px;height:78px}.oge{grid-template-columns:80px 1fr;gap:12px}.kapak{min-height:120px;font-size:10px}.ik{width:34px;height:34px}}
 </style>
 </head><body>
 
@@ -70,6 +80,29 @@ footer{margin-top:56px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 <div class="ky k3"></div>
 <div class="ky k4"></div>
 <div class="ky k5"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-sun" viewBox="0 0 48 48"><circle cx="24" cy="24" r="8"/><path d="M24 4V12M24 36V44M4 24H12M36 24H44M10 10L16 16M32 32L38 38M38 10L32 16M16 32L10 38"/></symbol>
+<symbol id="i-scales" viewBox="0 0 48 48"><path d="M24 8V40M12 40H36M10 14H38M10 14L4 28H16ZM38 14L32 28H44Z"/></symbol>
+<symbol id="i-moon" viewBox="0 0 48 48"><path d="M30 6C16 8 8 20 10 30C12 40 24 44 34 40C22 38 18 26 22 16C24 12 27 8 30 6Z"/></symbol>
+<symbol id="i-hat" viewBox="0 0 48 48"><path d="M6 34H42M13 34C13 20 17 12 24 12C31 12 35 20 35 34"/></symbol>
+<symbol id="i-wave" viewBox="0 0 48 48"><path d="M4 28C10 16 16 16 22 28C28 40 34 40 44 20"/></symbol>
+<symbol id="i-single" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" stroke-dasharray="3 4"/><circle cx="24" cy="24" r="5"/></symbol>
+<symbol id="i-arrows" viewBox="0 0 48 48"><path d="M6 24H38M30 16L38 24L30 32M6 12H26M6 36H26"/></symbol>
+<symbol id="i-figure" viewBox="0 0 48 48"><circle cx="24" cy="12" r="5"/><path d="M24 17V32M14 22H34M24 32L16 44M24 32L32 44"/></symbol>
+<symbol id="i-chairs" viewBox="0 0 48 48"><path d="M10 40V22H20V40M10 30H20M28 40V22H38V40M28 30H38"/></symbol>
+<symbol id="i-sprout" viewBox="0 0 48 48"><path d="M24 42V22M24 28C16 28 12 22 12 14C20 14 24 20 24 28M24 24C24 16 30 12 36 12C36 20 32 24 24 24"/></symbol>
+<symbol id="i-spiral" viewBox="0 0 48 48"><path d="M24 24C24 20 28 20 28 24C28 30 20 30 20 22C20 14 32 14 32 24C32 36 16 36 16 22C16 8 36 8 36 24"/></symbol>
+<symbol id="i-flower" viewBox="0 0 48 48"><circle cx="24" cy="12" r="7"/><circle cx="24" cy="36" r="7"/><circle cx="12" cy="24" r="7"/><circle cx="36" cy="24" r="7"/><circle cx="24" cy="24" r="3"/></symbol>
+<symbol id="i-nodes" viewBox="0 0 48 48"><path d="M12 12L36 14L24 34Z"/><circle cx="12" cy="12" r="3"/><circle cx="36" cy="14" r="3"/><circle cx="24" cy="34" r="3"/></symbol>
+<symbol id="i-board" viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="26" rx="2"/><path d="M12 16H30M12 22H36M12 28H24M16 40H32"/></symbol>
+<symbol id="i-emo" viewBox="0 0 48 48"><circle cx="12" cy="14" r="5"/><circle cx="36" cy="14" r="5"/><circle cx="24" cy="26" r="5"/><circle cx="12" cy="38" r="5"/><circle cx="36" cy="38" r="5"/></symbol>
+<symbol id="i-feather" viewBox="0 0 48 48"><path d="M10 40C14 24 26 10 40 8C38 22 30 34 14 38M10 40L30 20"/></symbol>
+<symbol id="i-lighthouse" viewBox="0 0 48 48"><path d="M20 40L22 16H26L28 40ZM18 16H30M20 8H28V14H20ZM10 10L18 12M38 10L30 12M14 40H34"/></symbol>
+<symbol id="i-bird" viewBox="0 0 48 48"><path d="M6 28C14 22 20 24 24 30C28 24 34 22 42 28M24 30V40"/></symbol>
+<symbol id="i-ring" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" stroke-dasharray="40 8"/></symbol>
+<symbol id="i-eye" viewBox="0 0 48 48"><path d="M4 24C12 12 36 12 44 24C36 36 12 36 4 24Z"/><circle cx="24" cy="24" r="6"/></symbol>
+</svg>
 
 <header><div class="w"><b>Sibel Demirel</b><a href="#yazilar" id="geri" hidden>← Tüm yazılar</a></div></header>
 
@@ -125,12 +158,55 @@ footer{margin-top:56px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 </div>
 
 <div class="orn"><i></i></div>
+<div class="sec">
+<h2 class="k" id="kat-film">Psikolojik filmler</h2>
+<div class="oge"><div class="kapak g1"><span>FİLM</span><svg class="ik"><use href="#i-spiral"/></svg><span>2010</span></div><div><h3>Inception (Başlangıç)</h3><div class="alt">Christopher Nolan · 2010</div><p>Başkalarının rüyalarına girerek zihinlerine fikir yerleştirebilen bir ekibin, imkânsız görünen son görevi.</p><p><b>Psikolojiyle bağlantısı:</b> Rüya içinde rüya, rüyada gerçeği sorgulama ve rüyada olduğunu fark etme (bilinçli rüya) gibi konulara dokunuyor. Rüyalara girmek bilimkurgu, ama rüyaların gerçek gibi yaşanması gerçek bir araştırma konusu.</p></div></div>
+<div class="oge"><div class="kapak g2"><span>FİLM</span><svg class="ik"><use href="#i-flower"/></svg><span>2004</span></div><div><h3>Eternal Sunshine of the Spotless Mind (Sil Baştan)</h3><div class="alt">Michel Gondry · 2004</div><p>Ayrılık sonrası acıyı dindirmek için birbirlerine ait anıları sildirmeye karar veren bir çift.</p><p><b>Psikolojiyle bağlantısı:</b> Bellek bir video kaydı gibi çalışmıyor, her hatırlayışta yeniden kuruluyor. Film, acı veren anıları silmenin kim olduğumuzu da silip silmediğini soruyor.</p></div></div>
+<div class="oge"><div class="kapak g3"><span>FİLM</span><svg class="ik"><use href="#i-nodes"/></svg><span>2001</span></div><div><h3>A Beautiful Mind (Akıl Oyunları)</h3><div class="alt">Ron Howard · 2001</div><p>Matematikçi John Nash'in hayatından esinlenen, şizofreniyle mücadele öyküsü.</p><p><b>Psikolojiyle bağlantısı:</b> Sanrı ve varsanı kavramlarını gösteriyor. Ama film gerçek hayatı sadeleştiriyor; özellikle görsel varsanıların gerçeği tam yansıtmadığı belirtilir. Tanı ya da tedavi kaynağı olarak okunmamalı.</p></div></div>
+<div class="oge"><div class="kapak g4"><span>FİLM</span><svg class="ik"><use href="#i-board"/></svg><span>1997</span></div><div><h3>Good Will Hunting (Can Dostum)</h3><div class="alt">Gus Van Sant · 1997</div><p>Dahi ama öfkeli bir genç ile onunla çalışmaya başlayan bir terapistin hikâyesi.</p><p><b>Psikolojiyle bağlantısı:</b> Terapide güvenin ve ilişkinin önemini, geçmiş yaralanmaların insanı nasıl korumacı yaptığını anlatıyor. Psikoterapi araştırmaları da terapist ile danışan arasındaki ilişkinin sonuçla bağlantılı olduğunu söylüyor.</p></div></div>
+<div class="oge"><div class="kapak g1"><span>FİLM</span><svg class="ik"><use href="#i-emo"/></svg><span>2015</span></div><div><h3>Inside Out (Ters Yüz)</h3><div class="alt">Pete Docter · 2015</div><p>Bir kızın zihninde yaşayan duyguların, taşınma sonrası yaşadığı zorlukta onunla birlikte verdiği mücadele.</p><p><b>Psikolojiyle bağlantısı:</b> Duyguların işlevini ve üzüntünün de gerekli olabildiğini anlatıyor; anılar ile duygular arasındaki bağı gösteriyor. Temel duygular fikrinden esinlendiği söyleniyor, ama duygular beş taneyle sınırlı değil.</p></div></div>
+<div class="oge"><div class="kapak g2"><span>FİLM</span><svg class="ik"><use href="#i-feather"/></svg><span>2010</span></div><div><h3>Black Swan (Siyah Kuğu)</h3><div class="alt">Darren Aronofsky · 2010</div><p>Bir bale dansçısının başrol baskısı altında kendini kaybetmeye başlaması.</p><p><b>Psikolojiyle bağlantısı:</b> Mükemmeliyetçilik, performans baskısı, kimlik ve gerçeklik algısındaki bozulma işleniyor. Bir psikolojik gerilim olduğu için belirli bir tanıyı doğru biçimde anlatmaya çalışmıyor.</p></div></div>
+<div class="oge"><div class="kapak g3"><span>FİLM</span><svg class="ik"><use href="#i-lighthouse"/></svg><span>2010</span></div><div><h3>Shutter Island (Zindan Adası)</h3><div class="alt">Martin Scorsese · 2010</div><p>1954'te bir hastane adasında kaybolan bir hastayı arayan federal polis memurunun öyküsü.</p><p><b>Psikolojiyle bağlantısı:</b> Spoiler vermeden: Travma, inkâr ve zihnin acıdan kendini koruma biçimleri üzerine. Dönemin psikiyatri tedavilerine dair tartışmalara da değiniyor.</p></div></div>
+<div class="oge"><div class="kapak g4"><span>FİLM</span><svg class="ik"><use href="#i-bird"/></svg><span>1975</span></div><div><h3>One Flew Over the Cuckoo's Nest (Guguk Kuşu)</h3><div class="alt">Miloš Forman · 1975</div><p>Hapisten kurtulmak için akıl hastası numarası yapan bir adamın, bir psikiyatri servisindeki düzene başkaldırması.</p><p><b>Psikolojiyle bağlantısı:</b> Kurum düzeni, damgalama ve hasta hakları tartışmalarını etkilemiş bir film. 1975 yapımı olduğu için bugünkü uygulamaları yansıtmıyor; bazı tedavilerin gösterimi eleştirilmiştir.</p></div></div>
+<div class="oge"><div class="kapak g1"><span>FİLM</span><svg class="ik"><use href="#i-ring"/></svg><span>1999</span></div><div><h3>Girl, Interrupted (Genç Kızlar)</h3><div class="alt">James Mangold · 1999</div><p>Susanna Kaysen'in anı kitabından uyarlanan film; 1960'larda bir psikiyatri kliniğine yatırılan genç bir kadının hikâyesi.</p><p><b>Psikolojiyle bağlantısı:</b> Tanı koymanın kişiyi nasıl etiketleyebildiğini, gençlikte kimlik arayışını ve normal sayılan ile hasta sayılan arasındaki sınırı tartışıyor. Kaysen'e sınırda kişilik bozukluğu tanısı konulduğu kitapta anlatılır.</p></div></div>
+<div class="oge"><div class="kapak g2"><span>FİLM</span><svg class="ik"><use href="#i-eye"/></svg><span>1998</span></div><div><h3>The Truman Show</h3><div class="alt">Peter Weir · 1998</div><p>Hayatının tamamı farkında olmadan canlı yayınlanan bir adamın gerçeği keşfi.</p><p><b>Psikolojiyle bağlantısı:</b> Gerçeklik algısı ve kontrol temalarını işliyor. Joel ve Ian Gold, kendini bir televizyon şovunun parçası sanan hastaları tanımlamak için "Truman Show sanrısı" terimini ortaya attı.</p></div></div>
+</div>
+
+<div class="orn"><i></i></div>
+<div class="sec">
+<h2 class="k" id="kat-kitap">Psikoloji kitapları</h2>
+<a class="oge link" href="#frankl"><div class="kapak g3"><span>KİTAP</span><svg class="ik"><use href="#i-sun"/></svg><span>1946</span></div><div><h3>İnsanın Anlam Arayışı</h3><div class="alt">Viktor E. Frankl · 1946</div><p>Frankl'ın toplama kamplarındaki deneyimlerini ve bu deneyimden doğan logoterapi görüşünü anlattığı kitap.</p><p><b>Psikolojiyle bağlantısı:</b> İnsanın temel güdüsünün anlam arayışı olduğunu savunur; acı kaçınılmaz olduğunda bile ona karşı tutumun seçilebileceğini söyler.</p><span class="acik">Sayfayı aç →</span></div></a>
+<div class="oge"><div class="kapak g4"><span>KİTAP</span><svg class="ik"><use href="#i-scales"/></svg><span>2011</span></div><div><h3>Hızlı ve Yavaş Düşünme</h3><div class="alt">Daniel Kahneman · 2011</div><p>Zihnin hızlı, sezgisel düşünme ile yavaş, çabalı düşünme arasında nasıl bölündüğünü anlatır.</p><p><b>Psikolojiyle bağlantısı:</b> Bilişsel yanlılıklar ve karar verme psikolojisinin popüler özeti. Kahneman 2002'de Nobel Ekonomi Ödülü aldı. Kitaptaki bazı bulguların, özellikle hazırlama (priming) çalışmalarının sonradan yeniden üretilemediği tartışıldı.</p></div></div>
+<div class="oge"><div class="kapak g1"><span>KİTAP</span><svg class="ik"><use href="#i-moon"/></svg><span>1899</span></div><div><h3>Rüyaların Yorumu</h3><div class="alt">Sigmund Freud · 1899</div><p>Rüyaların bastırılmış isteklerin örtülü bir ifadesi olduğunu savunur.</p><p><b>Psikolojiyle bağlantısı:</b> Psikanalizin kurucu metinlerinden. Bilimsel olarak sınanması zor bulunduğu için bugün ana akım nörobilimde pek kabul görmüyor, ama rüyaya psikolojik anlam arama geleneğini başlattı.</p></div></div>
+<div class="oge"><div class="kapak g2"><span>KİTAP</span><svg class="ik"><use href="#i-hat"/></svg><span>1985</span></div><div><h3>Karısını Şapka Sanan Adam</h3><div class="alt">Oliver Sacks · 1985</div><p>Nörolog Sacks'in beyin hasarı yaşayan hastalarını anlattığı vaka öyküleri.</p><p><b>Psikolojiyle bağlantısı:</b> Algı, bellek ve benliğin beyne ne kadar bağlı olduğunu gösterir; hastaları birer vaka değil, insan olarak anlatır. Edebî bir anlatımı var, bilimsel makale değil.</p></div></div>
+<div class="oge"><div class="kapak g3"><span>KİTAP</span><svg class="ik"><use href="#i-wave"/></svg><span>1990</span></div><div><h3>Akış</h3><div class="alt">Mihaly Csikszentmihalyi · 1990</div><p>İnsanların bir işe tamamen daldığı, zamanın akıp gittiği hâli inceler.</p><p><b>Psikolojiyle bağlantısı:</b> Pozitif psikolojinin temel kavramlarından. Akışın, zorluk ile becerinin dengeli olduğu işlerde ortaya çıktığı öne sürülür.</p></div></div>
+<div class="oge"><div class="kapak g4"><span>KİTAP</span><svg class="ik"><use href="#i-single"/></svg><span>2012</span></div><div><h3>Sessiz Güç</h3><div class="alt">Susan Cain · 2012</div><p>İçe dönük insanların toplumda hak ettiği değeri görmediğini savunur.</p><p><b>Psikolojiyle bağlantısı:</b> Kişilik psikolojisi ve içe dönüklük. Popüler bir kitap; içe dönüklük ile utangaçlığın farkını sitedeki yazıyla birlikte okumak faydalı.</p></div></div>
+<div class="oge"><div class="kapak g1"><span>KİTAP</span><svg class="ik"><use href="#i-arrows"/></svg><span>1984</span></div><div><h3>Etki</h3><div class="alt">Robert Cialdini · 1984</div><p>İnsanların neden "evet" dediğini ikna ilkeleri üzerinden açıklar: karşılıklılık, tutarlılık, toplumsal kanıt, beğenilirlik, otorite ve kıtlık.</p><p><b>Psikolojiyle bağlantısı:</b> Sosyal psikoloji. Otorite bölümü, sitedeki Milgram yazısıyla birlikte okunabilir.</p></div></div>
+<div class="oge"><div class="kapak g2"><span>KİTAP</span><svg class="ik"><use href="#i-figure"/></svg><span>2014</span></div><div><h3>Beden Kaydeder</h3><div class="alt">Bessel van der Kolk · 2014</div><p>Travmanın zihinde ve bedende bıraktığı izleri ve iyileşme yollarını anlatır.</p><p><b>Psikolojiyle bağlantısı:</b> Travma psikolojisi. Klinik gözleme dayanan ve bazı iddiaları bilimsel olarak tartışmalı olan bir kitap, tek kaynak olarak okunmamalı.</p></div></div>
+<div class="oge"><div class="kapak g3"><span>KİTAP</span><svg class="ik"><use href="#i-chairs"/></svg><span>1989</span></div><div><h3>Aşkın Celladı</h3><div class="alt">Irvin D. Yalom · 1989</div><p>Bir psikiyatristin terapi odasındaki hastalarından yola çıkarak yazdığı öyküler.</p><p><b>Psikolojiyle bağlantısı:</b> Varoluşçu psikoterapiyi ve terapi ilişkisinin insani yanını gösterir. Öyküler edebî bir anlatımla yazılmıştır.</p></div></div>
+<div class="oge"><div class="kapak g4"><span>KİTAP</span><svg class="ik"><use href="#i-sprout"/></svg><span>2006</span></div><div><h3>Mindset</h3><div class="alt">Carol Dweck · 2006</div><p>Yeteneğin sabit olduğuna inanmak ile geliştirilebileceğine inanmak arasındaki farkı anlatır (büyüme zihniyeti).</p><p><b>Psikolojiyle bağlantısı:</b> Eğitim ve motivasyon psikolojisi. Büyüme zihniyetinin etkisi sonraki büyük çalışmalarda küçük bulundu; iddialarını temkinle okumak gerekir.</p></div></div>
+</div>
+
+<div class="orn"><i></i></div>
 <p class="mail"><a href="mailto:psk.sibeldemirel.com">Bana e-posta gönder</a></p>
 
 </div>
 </div>
 
 <div class="w" id="yazilar-alani">
+
+<article id="frankl">
+<div class="et">Kitaplar · Viktor E. Frankl · 1946</div>
+<h2>İnsanın Anlam Arayışı</h2>
+<div class="cizgi"></div>
+<p>Viktor Frankl, 1905'te Viyana'da doğdu ve nörolog ve psikiyatrist olarak çalışıyordu. İkinci Dünya Savaşı sırasında Yahudi olduğu için eşi ve ailesiyle birlikte Theresienstadt gettosuna götürüldü. Sonraki yıllarda Auschwitz dahil birkaç toplama kampında tutuldu ve 1945'te kurtarıldı. Annesi, babası, kardeşi ve eşi dahil ailesinin büyük bölümünü bu süreçte kaybetti. Bu kitap, o deneyimin hem bir tanıklığı hem de ondan çıkardığı psikolojik görüşün anlatımı.</p>
+<p>Kitap ilk kez 1946'da Almanca yayımlandı. İlk baskının adı kabaca "Bir psikolog toplama kampını yaşıyor" anlamına gelir. Yapısı iki parçalı: İlk bölüm kamptaki günlük yaşamı, insanların ruhsal tepkilerini ve Frankl'ın gözlemlerini anlatır. İkinci bölüm ise onun geliştirdiği terapi yaklaşımı olan logoterapiyi tanıtır. Kitabın gücü, bir kuramın bir insanın en zor koşullarda yaşadıklarıyla birlikte sunulmasından geliyor.</p>
+<p>Logoterapi adı, Yunanca "logos" sözcüğünden gelir ve burada "anlam" demektir. Frankl, Viyana'daki iki büyük akımla, yani Freud'un haz arayışı ve Adler'in güç arayışı vurgusuyla kendi görüşünü karşılaştırır. Ona göre insanın temel itkisi anlam bulmaktır. Anlam üç yolla bulunabilir: Bir iş ya da eser ortaya koymak, bir değeri ya da bir insanı deneyimlemek (örneğin sevmek) ve kaçınılmaz bir acıya karşı bir tutum almak. En çok alıntılanan fikir de sonuncusu: Koşullarımızı değiştiremesek bile, onlara nasıl yaklaşacağımızı seçebiliriz.</p>
+<p>Bu fikir günümüz psikolojisinde de karşılık buluyor. "Yaşamda anlam" bugün ayrı bir araştırma alanı ve anlam duygusu yüksek insanların genel olarak daha iyi bir iyilik hâli bildirdiğini gösteren çalışmalar var. Bu ilişkinin yönünü ve nedenini kesin söylemek ise zor. Anlamlı bir hayatı olanlar mı daha iyi hissediyor, yoksa iyi hissedenler hayatı daha anlamlı mı görüyor? Çalışmalar bunu tam ayıramıyor.</p>
+<p>Kitabı okurken akılda tutulması gereken sınırlar da var. Kitap bir anı ile bir kuramın karışımı, bir deney raporu değil. Hayatta kalmayı yalnızca kişinin tutumuna bağlamak yanlış olur; kampta pek çok şey tesadüfe ve koşullara bağlıydı. Ayrıca logoterapinin bir tedavi yöntemi olarak etkililiğine dair kanıt, kitabın popülerliği kadar güçlü değil. Frankl'ın görüşleri ilham verici bir bakış olarak okunmalı, bir tedavi kılavuzu olarak değil.</p>
+<p>Kitap kısa ama duygusal olarak ağır. İlk bölüm şiddet ve ölüm anlatımları içerir. Ağır bir yas ya da kriz yaşıyorsan, bu kitabı tek başına okumak yerine bir uzmanla ya da güvendiğin biriyle birlikte düşünmek daha iyi olabilir. Kendi hayatındaki anlam sorusuna ise iyi bir başlangıç noktası olabilir: Seni sabahları ayağa kaldıran şey ne ve acı karşısında nasıl bir tutum seçiyorsun?</p>
+<a class="top" href="#yazilar">← Tüm yazılar</a>
+</article>
 
 <article id="milgram">
 <div class="et">Klasik deneyler</div>
