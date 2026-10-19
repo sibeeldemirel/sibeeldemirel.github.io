@@ -1,452 +1,184 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sibel Demirel | Psikoloji</title>
-  <meta name="description" content="Psikolojiyi rüyalar, zihin ve günlük hayatla buluşturan bilgilendirici içerikler.">
-  <meta name="theme-color" content="#0d0713">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg:#0d0713; --bg2:#1c0c22; --text:#e6dce3; --muted:#a898ab; --head:#f6e9e4;
-      --gold:#d9b878; --gold2:#e9cf97; --rose:#e8a6b6; --accent:#c76a86;
-      --glass:rgba(255,255,255,0.05); --glass2:rgba(255,255,255,0.08);
-      --line:rgba(233,207,151,0.22);
-      --glow1:rgba(160,50,100,0.45); --glow2:rgba(70,60,150,0.40); --glow3:rgba(217,184,120,0.16);
-      --btnbg:#d9b878; --btntext:#1a0b1f; --modalbg:#0f0816; --navbg:rgba(13,7,19,0.72);
-    }
-    html.gunduz {
-      --bg:#fbf4ee; --bg2:#f3e3df; --text:#3a2b2e; --muted:#7d6c6e; --head:#4a1424;
-      --gold:#a97f43; --gold2:#b98a47; --rose:#9a3452; --accent:#9a3452;
-      --glass:rgba(255,255,255,0.6); --glass2:rgba(255,255,255,0.85);
-      --line:rgba(122,42,63,0.18);
-      --glow1:rgba(232,166,182,0.55); --glow2:rgba(201,170,200,0.45); --glow3:rgba(217,184,120,0.35);
-      --btnbg:#7a2a3f; --btntext:#ffffff; --modalbg:#fbf4ee; --navbg:rgba(251,244,238,0.8);
-    }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    html { scroll-behavior:smooth; }
-    body { font-family:'Inter',Arial,sans-serif; font-weight:300; background:var(--bg); color:var(--text); line-height:1.85; -webkit-font-smoothing:antialiased; transition:background .6s, color .6s; overflow-x:hidden; }
-    h1,h2,h3 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:400; line-height:1.1; color:var(--head); }
-    a { color:inherit; text-decoration:none; }
-    button { font-family:inherit; }
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sibel Demirel | Psikoloji üzerine yazılar</title>
+<meta name="description" content="Psikoloji kavramları, klasik deneyler, rüyalar ve yaygın mitler üzerine sade dille yazılmış, kaynaklı yazılar.">
+<style>
+:root{--bg:#fbfaf7;--tx:#222;--mu:#6b6b6b;--ln:#e4e1da;--ac:#7a2e3a}
+@media (prefers-color-scheme:dark){:root{--bg:#17171a;--tx:#e8e6e1;--mu:#a09d96;--ln:#2e2e33;--ac:#d9a0a8}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.75}
+.w{max-width:680px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--ln);padding:22px 0;font-weight:bold;font-size:20px}
+header span{color:var(--mu);font-size:15px;display:block;font-weight:normal}
+h1{font-size:34px;line-height:1.25;margin:44px 0 10px}
+h2.k{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--mu);margin:40px 0 6px;font-weight:normal}
+article{padding-top:30px;margin-top:50px;border-top:1px solid var(--ln)}
+article h2{font-size:30px;line-height:1.3;margin:0 0 8px}
+.meta{color:var(--mu);font-size:15px;margin-bottom:26px}
+p{margin:0 0 1.2em}
+a{color:var(--ac)}
+ul.l{list-style:none;padding:0;margin:0}
+ul.l li{padding:12px 0;border-bottom:1px solid var(--ln)}
+ul.l a{font-size:21px;text-decoration:none;color:var(--tx)}
+ul.l a:hover{color:var(--ac)}
+.kay{margin-top:30px;font-size:16px;color:var(--mu)}
+.kay ol{padding-left:20px}.kay li{margin-bottom:8px;line-height:1.55}
+.top{font-size:16px}
+footer{border-top:1px solid var(--ln);margin-top:60px;padding:24px 0 50px;color:var(--mu);font-size:15px}
+</style>
+</head><body>
+<header><div class="w">Sibel Demirel<span>Psikoloji üzerine yazılar</span></div></header>
+<div class="w">
 
-    .fon { position:fixed; inset:0; z-index:0; overflow:hidden; background:radial-gradient(ellipse at 50% 0%, var(--bg2), var(--bg) 70%); pointer-events:none; }
-    .blob { position:absolute; border-radius:50%; filter:blur(90px); animation:suzul 24s ease-in-out infinite; }
-    .b1 { width:520px; height:520px; background:var(--glow1); top:-120px; left:-140px; }
-    .b2 { width:560px; height:560px; background:var(--glow2); bottom:-160px; right:-160px; animation-delay:-8s; }
-    .b3 { width:380px; height:380px; background:var(--glow3); top:45%; left:55%; animation-delay:-15s; }
-    @keyframes suzul { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(40px,-50px) scale(1.12);} }
-    .yildizlar { position:absolute; inset:0; transition:opacity 1s; }
-    html.gunduz .yildizlar { opacity:0; }
-    .yildizlar span { position:absolute; background:#fff; border-radius:50%; animation:parla 5s ease-in-out infinite, kay 26s linear infinite; }
-    @keyframes parla { 0%,100%{opacity:.1;} 50%{opacity:.85;} }
-    @keyframes kay { from{transform:translateY(0);} to{transform:translateY(30px);} }
+<h1>Psikoloji üzerine yazılar</h1>
+<p>Merhaba, ben Sibel. İnsanı, rüyaları ve zihnin görünmeyen katmanlarını merak ediyorum. Bu sayfa, psikolojiye dair öğrendiklerimi ve düşündüklerimi sade bir dille paylaştığım küçük bir köşe. Her yazının sonunda kaynaklarını bulabilirsin.</p>
 
-    nav { position:fixed; top:0; left:0; right:0; z-index:30; display:flex; justify-content:space-between; align-items:center; padding:16px 40px; background:var(--navbg); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
-    nav .logo { font-family:'Cormorant Garamond',serif; font-size:1.5rem; letter-spacing:2px; color:var(--gold2); }
-    nav .sag { display:flex; align-items:center; }
-    nav .links a { margin-left:28px; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; color:var(--muted); font-weight:400; transition:color .3s; }
-    nav .links a:hover { color:var(--gold2); }
-    .tema { margin-left:24px; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:var(--glass); color:var(--gold2); font-size:1rem; cursor:pointer; transition:transform .3s; }
-    .tema:hover { transform:rotate(25deg); }
+<h2 class="k">Klasik deneyler</h2>
+<ul class="l"><li><a href="#milgram">Milgram itaat deneyi: Gerçekte ne oldu, ne düşünülüyor?</a></li></ul>
+<h2 class="k">Psikoloji kavramları</h2>
+<ul class="l">
+<li><a href="#icedonuk">İçe dönüklük ile utangaçlık aynı şey mi?</a></li>
+<li><a href="#zihin">Zihnin dalıp gitmesi: Neden sürekli başka yerdeyiz?</a></li>
+<li><a href="#onay">Onay yanlılığı: Neden hep haklı çıkmak isteriz?</a></li>
+</ul>
+<h2 class="k">Rüyalar ve zihin</h2>
+<ul class="l">
+<li><a href="#ruya">Rüyalar nasıl oluşur? Uyku evreleri ve REM</a></li>
+<li><a href="#bilincli">Bilinçli rüya nedir? Rüya gördüğünü fark etmek</a></li>
+</ul>
+<h2 class="k">Mitler ve gerçekler</h2>
+<ul class="l">
+<li><a href="#beyin">Beyin hakkında üç yaygın mit: yüzde 10, sol-sağ beyin ve öğrenme stilleri</a></li>
+<li><a href="#aliskanlik">Alışkanlık kaç günde oluşur? 21 gün miti ve gerçek araştırma</a></li>
+<li><a href="#yalan">Yalan söyleyen göz mü kaçırır?</a></li>
+</ul>
 
-    main { position:relative; z-index:1; }
+<article id="milgram">
+<h2>Milgram itaat deneyi: Gerçekte ne oldu, ne düşünülüyor?</h2>
+<div class="meta">Klasik deneyler</div>
+<p>1961 yazında Yale Üniversitesi'nde Stanley Milgram, ilan yoluyla topladığı kişileri "öğrenme ve bellek üzerine bir çalışma" için laboratuvara çağırdı. İlk çalışmada 40 erkek katılımcı vardı. Her katılımcıya kura çekiliyormuş gibi yapılıyor ve "öğretmen" rolü veriliyordu. "Öğrenci" rolünü ise önceden anlaşılmış bir oyuncu üstleniyordu. Öğrenci yan odada bir sandalyeye bağlanıyor, öğretmen ise karşısındaki cihazda 15 volttan 450 volta kadar uzanan şalterleri kullanarak her yanlış cevapta öğrenciye elektrik şoku vereceğini sanıyordu. Gerçekte hiçbir şok verilmiyordu, ama katılımcılar bunu bilmiyordu.</p>
+<p>Deney boyunca laboratuvar önlüklü bir araştırmacı öğretmenin yanında duruyor, katılımcı tereddüt ettiğinde "Lütfen devam edin", "Deney devam etmenizi gerektiriyor" gibi önceden belirlenmiş cümleler söylüyordu. Voltaj yükseldikçe yan odadan gelen itirazlar ve çığlıklar da artıyordu. Milgram'ın 1963'te yayımladığı makaleye göre 40 katılımcının 26'sı, yani yüzde 65'i en yüksek seviye olan 450 volta kadar çıktı. Hiçbir katılımcı 300 voltun altında durmadı. Bu rakamlar psikoloji ders kitaplarına girdi ve "sıradan insanlar otoriteyle karşılaşınca kötülük yapabilir" fikrinin en güçlü kanıtı sayıldı.</p>
+<p>Ancak bu hikâyenin sık atlanan bir tarafı var: Milgram tek bir deney yapmadı, birçok varyasyon denedi. Düzenek değiştiğinde sonuçlar da değişti. Öğrenci aynı odadayken, araştırmacı telefonla konuşurken ya da katılımcıyla birlikte itiraz eden başka "öğretmenler" varken itaat oranı belirgin biçimde düştü. Yani itaat sabit bir insan özelliği gibi davranmıyordu, duruma çok bağlıydı. Bu varyasyonlara bakıldığında "insanlar otoriteye körü körüne uyar" cümlesi gereğinden fazla basit kalıyor.</p>
+<p>Deneyin etik yönü de başından beri tartışıldı. Katılımcılar ciddi bir gerginlik yaşadı ve kandırıldı. Bugünkü etik kurullar bu deneyi aynı biçimde onaylamaz. 2009'da Jerry Burger, Milgram'ın deneyini kısmen tekrarlamayı başardı. Burger katılımcıların 150 volttan öteye gitmesine izin vermedi, çünkü Milgram'ın verilerinde 150 volttan sonra devam edenlerin çoğunun sonuna kadar gittiği görülüyordu. Burger'in örneklemi 70 yetişkindi ve 150 volt noktasındaki davranış, Milgram'ın katılımcılarınınkine yakın çıktı. Bu, bulgunun yarım yüzyıl sonra da tamamen ortadan kalkmadığını düşündürüyor, ama kesinlikle birebir bir tekrar değil.</p>
+<p>Daha sonraki eleştiriler başka bir yöne gitti. Gina Perry 2012'de yayımladığı kitapta Milgram'ın arşivlerini inceledi ve deneyin yazıldığı kadar standart yürümediğini, araştırmacının bazen senaryodan saptığını ve katılımcıların bir kısmının düzeneğin gerçek olmadığından kuşkulandığını öne sürdü. Bu iddialar tartışmalı ve Milgram'ın temel bulgusunun geçersiz olduğu anlamına gelmiyor, ama sonuçları "tam kesin" bir kanıt gibi sunmanın da doğru olmadığını gösteriyor.</p>
+<p>Bir başka yorum ise Alex Haslam ve Stephen Reicher'den geliyor. Onlara göre katılımcılar çoğu zaman yalnızca emir aldıkları için değil, bilimin ortak amacına inandıkları ve araştırmacıyla özdeşleştikleri için devam ediyordu. Bu yaklaşımda itaat edenler pasif kuklalar değil, bir amaca hizmet ettiğini düşünen aktif katılımcılar. Milgram'ın kendisi ise bu davranışı, bireyin kendini otoritenin aracı olarak görmesi şeklinde açıklıyordu.</p>
+<p>Sonuç olarak Milgram deneyi, insanın otoriteye uyma eğiliminin ne kadar güçlü olabileceğini gösteren önemli bir çalışma olarak kalıyor. Fakat onu "insanların yüzde 65'i bir kötülük yapar" diye özetlemek, hem deneyin varyasyonlarını hem de sonraki tartışmaları gözden kaçırmak demek. Bir sonraki sefer bu deneyden bahsedildiğinde şunu sorabilirsin: Hangi düzenekten söz ediyoruz ve sonuç o koşula mı ait?</p>
+<div class="kay"><p>Kaynaklar</p><ol><li>Milgram, S. (1963). Behavioral study of obedience. Journal of Abnormal and Social Psychology, 67(4), 371–378.</li><li>Burger, J. M. (2009). Replicating Milgram: Would people still obey today? American Psychologist, 64(1), 1–11.</li><li>Perry, G. (2012). Behind the Shock Machine: The Untold Story of the Notorious Milgram Psychology Experiments. The New Press.</li><li>Haslam, S. A., &amp; Reicher, S. D. (2012). Contesting the 'nature' of conformity: What Milgram and Zimbardo's studies really show. PLoS Biology, 10(11), e1001426.</li></ol></div>
+<a class="top" href="#">↑ Başa dön</a>
+</article>
 
-    .hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:130px 28px 90px; position:relative; }
-    .hilal { width:118px; height:118px; border-radius:50%; margin:0 auto 38px; box-shadow:inset -30px -8px 0 0 var(--gold2); filter:drop-shadow(0 0 30px rgba(233,207,151,0.45)); animation:nefes 8s ease-in-out infinite, belir 1.6s ease both; }
-    @keyframes nefes { 0%,100%{transform:translateY(0) rotate(-8deg);} 50%{transform:translateY(-14px) rotate(-3deg);} }
-    @keyframes belir { from{opacity:0;} to{opacity:1;} }
-    .ust { font-size:0.7rem; letter-spacing:6px; text-transform:uppercase; color:var(--gold); font-weight:400; margin-bottom:26px; animation:fadeUp 1.2s ease .2s both; }
-    .hero h1 { font-size:clamp(3.2rem,11vw,7rem); font-weight:300; letter-spacing:1px; animation:fadeUp 1.3s ease .35s both; }
-    .hero h1 em { display:block; font-style:italic; color:var(--rose); }
-    .hero p { max-width:440px; margin:30px auto 42px; color:var(--muted); font-size:1.05rem; animation:fadeUp 1.3s ease .55s both; }
-    .butonlar { animation:fadeUp 1.3s ease .7s both; }
-    .kaydir { position:absolute; bottom:34px; left:50%; transform:translateX(-50%); font-size:0.62rem; letter-spacing:4px; text-transform:uppercase; color:var(--muted); display:flex; flex-direction:column; align-items:center; gap:12px; animation:belir 2s ease 1.2s both; }
-    .kaydir::after { content:''; width:1px; height:46px; background:linear-gradient(var(--gold),transparent); }
-    @keyframes fadeUp { from{opacity:0; transform:translateY(28px);} to{opacity:1; transform:none;} }
+<article id="icedonuk">
+<h2>İçe dönüklük ile utangaçlık aynı şey mi?</h2>
+<div class="meta">Psikoloji kavramları</div>
+<p>Birine "içe dönük" dediğimizde çoğu zaman "çekingen" ya da "utangaç" demek istiyoruz. Oysa psikoloji bu iki kavramı ayrı tutar. Aralarındaki fark, ikisini de yaşayan insanların günlük hayatında oldukça belirgin.</p>
+<p>İçe dönüklük bir kişilik özelliğidir. Beş Faktör modelinde dışadönüklük ayrı bir boyuttur ve içe dönüklük bu boyutun düşük ucuna denk gelir. Dışadönüklüğü yüksek insanlar genellikle daha girişken, konuşkan ve uyarıcı ortamlardan keyif alan kişiler olarak tarif edilir. İçe dönük insanlar ise sakin, daha az uyarıcı ortamları tercih eden kişilerdir. Sık duyduğumuz "içe dönükler yalnız kalarak enerji toplar" cümlesi popüler bir tanım. Bu tanım içe dönüklüğü anlatmak için yaygın biçimde kullanılıyor ve birçok kişi için tanıdık geliyor, ama bilimsel ölçeklerde içe dönüklük tek bu cümleye indirgenmiyor.</p>
+<p>Utangaçlık ise farklı bir şey. Utangaçlık, sosyal ortamlarda rahatsızlık, gerginlik ve çekingenlik hissetme durumudur ve çoğu zaman başkalarının kendini nasıl değerlendireceği endişesiyle ilişkilidir. Yani temelinde bir tür korku ya da kaygı vardır. İçe dönük biri insanlarla vakit geçirmeyi o kadar istemeyebilir ama bunu rahatsız olmadan yapabilir. Utangaç biri ise insanlarla olmak isteyebilir ama bunu yapmaktan çekinir.</p>
+<p>Bu ayrımı destekleyen klasik bir çalışma Cheek ve Buss'a ait. 1981'de yayımladıkları araştırmada 947 üniversite öğrencisine ölçekler uyguladılar ve utangaçlık ile sosyallik arasındaki ilişkiye baktılar. Utangaçlık ile düşük sosyallik arasındaki ilişki düşük çıktı. Yani utangaç olmak, sosyal olmayı istememekle aynı şey değildi. Bu bulgu, "utangaç ama sosyal" bir insanın mümkün olduğunu gösteriyordu: İnsanlarla vakit geçirmek isteyen ama bunu yaparken gerilen biri. Sonraki çalışmalarda Schmidt ve Buss, içe dönüklerin hem sosyal yaklaşım hem de sosyal kaçınma eğilimlerinin düşük olduğunu, utangaç-sosyal kişilerin ise bu iki eğilim arasında daha çok çatışma yaşadığını bildirdi.</p>
+<p>Bu fark, gündelik hayatta kendimizi anlamak için işimize yarıyor. Kendini içe dönük olarak tanımlayan biri bir parti yerine evde kitap okumayı seçiyorsa bunda bir sorun yoktur, bu bir tercihtir. Fakat aynı kişi partiye gitmek isteyip gidemiyorsa, orada konuşamayacağından ya da yargılanacağından korkuyorsa, o zaman söz konusu olan içe dönüklükten çok utangaçlık ya da sosyal kaygı olabilir. Bu iki durumun çözümü de aynı değil. İçe dönüklüğün "düzeltilmesi" gereken bir şey olduğunu söyleyen yaklaşımlar çoğunlukla yanlış bir noktadan başlıyor. Utangaçlık ise, rahatsızlık veriyorsa, üzerinde çalışılabilecek bir şey.</p>
+<p>Utangaçlık ile sosyal anksiyete bozukluğu da aynı değil. Utangaçlık yaygın ve normal bir deneyim. Sosyal kaygı bozukluğunda ise korku daha yoğun, daha kalıcı ve işi, okulu ya da ilişkileri belirgin biçimde etkileyen bir hâle gelir. Sosyal ortamlardan kaçınma günlük yaşamını kısıtlıyorsa bir ruh sağlığı uzmanıyla konuşmak mantıklı bir adım olur.</p>
+<p>Son olarak şunu da eklemek gerek: Bu kavramların hiçbiri sabit bir etiket değil. İnsanlar yaşla ve deneyimle değişir, farklı ortamlarda farklı davranır. "Ben içe dönüğüm" ya da "ben utangacım" demek bir başlangıç noktası olabilir, ama kendimizi tanımlamanın tek yolu bu değil. Önemli olan bu etiketlerin altında ne yaşadığımıza bakmak: Tercih mi, korku mu?</p>
+<div class="kay"><p>Kaynaklar</p><ol><li>Cheek, J. M., &amp; Buss, A. H. (1981). Shyness and sociability. Journal of Personality and Social Psychology, 41(2), 330–339.</li><li>Schmidt, L. A., &amp; Buss, A. H. (2010). Understanding shyness: Four questions in search of an answer. In K. H. Rubin &amp; R. J. Coplan (Eds.), The Development of Shyness and Social Withdrawal. Guilford Press.</li><li>American Psychological Association. APA Dictionary of Psychology: introversion, shyness, social anxiety disorder. dictionary.apa.org</li></ol></div>
+<a class="top" href="#">↑ Başa dön</a>
+</article>
 
-    .buton { display:inline-block; padding:15px 36px; margin:6px; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; font-weight:500; border-radius:999px; border:1px solid var(--gold); transition:all .35s; cursor:pointer; background:transparent; color:var(--gold2); }
-    .buton.dolu { background:var(--btnbg); color:var(--btntext); border-color:var(--btnbg); box-shadow:0 12px 34px rgba(217,184,120,0.25); }
-    .buton.dolu:hover { transform:translateY(-3px); box-shadow:0 18px 44px rgba(217,184,120,0.35); }
-    .buton.bos:hover { background:var(--glass2); transform:translateY(-3px); }
+<article id="zihin">
+<h2>Zihnin dalıp gitmesi: Neden sürekli başka yerdeyiz?</h2>
+<div class="meta">Psikoloji kavramları</div>
+<p>Bir şeyi okurken sayfanın sonuna gelip ne okuduğunu hatırlamadığın oldu mu? Duş alırken aklın başka bir konuşmaya gittiği? Psikolojide buna zihin dolaşması (mind-wandering) deniyor: Dikkatin yapılan işten ayrılıp ilgisiz düşüncelere kayması. Bu o kadar yaygın ki araştırmacılar bunu ölçmek için telefon uygulamalarından yararlanmış.</p>
+<p>2010'da Matthew Killingsworth ve Daniel Gilbert, Science dergisinde yayımladıkları çalışmada bir iPhone uygulaması kullandı. Uygulama, gün içinde rastgele zamanlarda katılımcılara o anda ne yaptıklarını, ne düşündüklerini ve ne kadar mutlu olduklarını soruyordu. Çalışmaya 2.250 yetişkin katıldı. Sonuçlara göre insanların zamanın yaklaşık yüzde 46,9'unda yaptıkları işten farklı bir şey düşündüğü görüldü. Bu oran, yemek yemek ya da çalışmak gibi etkinliklere göre değişse de neredeyse her etkinlikte dikkate değer bir seviyedeydi. Yani zihin dolaşması bir istisna değil, günlük zihin hayatının büyük bir parçası.</p>
+<p>Araştırmanın ikinci bulgusu daha çarpıcıydı: İnsanlar zihinleri dolaşırken genel olarak daha az mutlu bildirdi. Dahası, düşünceler hoş bir konu hakkında olsa bile insanlar, işlerine odaklandıkları zamanlara kıyasla daha mutlu değildi. Mutluluktaki değişimin yüzde 10,8'i zihin dolaşmasıyla, yüzde 4,6'sı ise o anda yapılan etkinliğin ne olduğuyla açıklanabiliyordu. Yani insanın ne yaptığından çok, aklının nerede olduğu mutluluğu daha çok belirliyor gibiydi.</p>
+<p>Bu bulguları yorumlarken dikkatli olmak gerekiyor. Çalışma, zihin dolaşması ile mutsuzluk arasında bir ilişki buluyor, ama nedenselliği kesin biçimde kanıtlamıyor. Yazarlar zaman içindeki analizlerde, zihin dolaşmasının mutsuzluğu önceleyen bir şey olduğunu düşündürecek veriler bulduklarını söylese de, bu konu tartışmalı. Mutsuz olan insanlar zaten daha fazla dalıp gidiyor olabilir. Ayrıca veriler kendi bildirime dayanıyor ve belirli bir uygulamayı kullanan bir örneklemden geliyor.</p>
+<p>Zihin dolaşmasının yalnızca kötü olduğunu söylemek de yanlış olur. Aynı zihinsel süreç, gelecekle ilgili plan yapmayı, geçmişi düşünmeyi ve yaratıcı fikirlere ulaşmayı da sağlıyor olabilir. Bazı araştırmalar, rutin işler yaparken zihnin dolaşmasının yaratıcı problem çözmeye katkı sağlayabileceğini öne sürüyor. Bu yüzden sorun zihnin dolaşması değil, dolaştığı yerin sıkıntılı düşüncelere dönüşmesi olabilir. Sürekli tekrar eden endişeli düşünceler başka bir konu ve ruminasyon olarak ayrıca ele alınıyor.</p>
+<p>Gündelik hayatta bununla başa çıkmak için sık önerilen yöntemlerden biri, farkındalık (mindfulness) alıştırmaları. Dikkatini bilinçli olarak nefese ya da yaptığın işe getirmek, zihnin ne zaman dolaştığını fark etmeyi kolaylaştırabilir. Ama bu alıştırmaların herkes için aynı etkiyi yarattığını söylemek abartı olur. Asıl önemli nokta, zihnin kayması normal olduğu için kendini bu yüzden suçlamamak. Fark edip dikkatini geri getirdiğin her an, zaten bu becerinin bir parçası.</p>
+<div class="kay"><p>Kaynaklar</p><ol><li>Killingsworth, M. A., &amp; Gilbert, D. T. (2010). A wandering mind is an unhappy mind. Science, 330(6006), 932.</li><li>Smallwood, J., &amp; Schooler, J. W. (2015). The science of mind wandering: Empirically navigating the stream of consciousness. Annual Review of Psychology, 66, 487–518.</li></ol></div>
+<a class="top" href="#">↑ Başa dön</a>
+</article>
 
-    section { max-width:1000px; margin:0 auto; padding:130px 28px 0; }
-    .baslik { margin-bottom:56px; }
-    .baslik small { display:block; font-size:0.7rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold); font-weight:400; margin-bottom:16px; }
-    .baslik h2 { font-size:clamp(2.4rem,7vw,4rem); font-weight:300; }
-    .baslik h2 em { font-style:italic; color:var(--rose); }
-    .baslik::after { content:''; display:block; width:70px; height:1px; background:linear-gradient(90deg,var(--gold),transparent); margin-top:26px; }
-    .altnot { color:var(--muted); font-size:0.9rem; margin:-30px 0 40px; font-style:italic; }
+<article id="onay">
+<h2>Onay yanlılığı: Neden hep haklı çıkmak isteriz?</h2>
+<div class="meta">Psikoloji kavramları</div>
+<p>Onay yanlılığı (confirmation bias), insanların mevcut inançlarını destekleyen bilgiyi aramaya, onu daha kolay fark etmeye ve daha ağırlıklı değerlendirmeye yönelmesi demek. Psikolojide en çok incelenen yanlılıklardan biri ve nedeni çoğu zaman kötü niyet değil. Zihin, bir fikre sahip olduktan sonra o fikre uyan şeyleri doğal olarak daha çok görüyor.</p>
+<p>Bu eğilimin en bilinen deneysel gösterimlerinden biri Peter Wason'a ait. 1960'ta yaptığı çalışmada katılımcılara "2-4-6" üçlüsünü verdi ve bu üçlünün gizli bir kurala uyduğunu söyledi. Katılımcılar kendi üçlülerini önerecek, deneyci de önerilen üçlünün kurala uyup uymadığını söyleyecekti. Çoğu kişi "ikişer ikişer artan sayılar" gibi bir kural düşündü ve bunu doğrulayacak örnekler denedi, örneğin 8-10-12 gibi. Cevap hep "evet" geldi ve katılımcılar kuralı bulduklarından emin oldular. Gerçek kural ise çok daha genel: "Artan herhangi üç sayı." Kendi kuralını çürütecek bir örnek, örneğin 1-2-3 değil de 5-3-1 gibi bir deneme yapan çok azdı. İnsanlar hipotezlerini çürütmeye değil, doğrulamaya çalışıyordu.</p>
+<p>İkinci klasik örnek, 1979'da Charles Lord, Lee Ross ve Mark Lepper'in yaptığı idam cezası çalışması. Katılımcıların bir kısmı idam cezasını destekliyor, bir kısmı karşı çıkıyordu. Herkese idam cezasının caydırıcılığı üzerine iki kurgusal araştırma gösterildi: Biri caydırıcı olduğunu, diğeri olmadığını söylüyordu. Sonuç şaşırtıcıydı. Her grup, kendi görüşüne uyan çalışmayı daha ikna edici ve daha iyi yapılmış buldu. Aynı kanıtı okuyan iki grup, kendi görüşlerinde daha da güçlendi. Yani aynı bilgi, insanları birbirine yaklaştırmak yerine uzaklaştırabiliyordu.</p>
+<p>Raymond Nickerson 1998'de yayımladığı kapsamlı derlemede onay yanlılığının tek bir şey olmadığını, farklı biçimlerde ortaya çıktığını anlattı: Bilgiyi seçici arama, belirsiz kanıtı kendi lehine yorumlama ve olayları seçici hatırlama. Bu yüzden bu eğilim hem gündelik kararlarda hem de bilimsel ve profesyonel yargılarda karşımıza çıkabiliyor.</p>
+<p>Neden böyle çalışıyoruz? Birkaç açıklama var ve hangisinin ağır bastığı tartışmalı. Bir görüşe göre zihin, sınırlı bilişsel kaynaklarıyla işi kolaylaştırmak için en uyumlu bilgiye öncelik veriyor. Başka bir görüşe göre kendi inançlarımızın doğru olması duygusal olarak önemli olduğundan, çelişen bilgiyi kolayca kabul etmiyoruz. Muhtemelen birden fazla etken birlikte rol oynuyor.</p>
+<p>Peki bununla ne yapabiliriz? Eğilimi tamamen yok etmek mümkün görünmüyor, ama azaltmaya yardım eden bazı alışkanlıklar var. Kendi görüşüne karşı en güçlü argümanı bilerek aramak, "bu yanlış çıkarsa nasıl anlarım?" diye sormak ve karşıt bir fikrin neden doğru olabileceğini bilinçli olarak düşünmek bunlardan bazıları. Bu yöntemlerin ne kadar etkili olduğu konusunda çalışmalar farklı sonuçlar veriyor, o yüzden bunları kesin çözüm olarak değil, deneyebileceğin yöntemler olarak düşünmek daha doğru.</p>
+<p>Son bir uyarı: Onay yanlılığını sadece başkalarında görmek kolay. Zor olan, kendi inançlarımızı sorgularken aynı eğilimin bizde de çalıştığını kabul etmek.</p>
+<div class="kay"><p>Kaynaklar</p><ol><li>Wason, P. C. (1960). On the failure to eliminate hypotheses in a conceptual task. Quarterly Journal of Experimental Psychology, 12(3), 129–140.</li><li>Lord, C. G., Ross, L., &amp; Lepper, M. R. (1979). Biased assimilation and attitude polarization: The effects of prior theories on subsequently considered evidence. Journal of Personality and Social Psychology, 37(11), 2098–2109.</li><li>Nickerson, R. S. (1998). Confirmation bias: A ubiquitous phenomenon in many guises. Review of General Psychology, 2(2), 175–220.</li></ol></div>
+<a class="top" href="#">↑ Başa dön</a>
+</article>
 
-    .hakkimda { text-align:center; }
-    .monogram { width:96px; height:96px; margin:0 auto 34px; border-radius:50%; border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:2rem; color:var(--gold2); box-shadow:0 0 0 10px var(--glass), 0 0 60px rgba(217,184,120,0.18); }
-    .hakkimda p { font-family:'Cormorant Garamond',serif; font-size:clamp(1.5rem,4vw,2.2rem); line-height:1.5; font-weight:300; color:var(--head); max-width:760px; margin:0 auto; }
-    .hakkimda p em { color:var(--rose); }
+<article id="ruya">
+<h2>Rüyalar nasıl oluşur? Uyku evreleri ve REM</h2>
+<div class="meta">Rüyalar ve zihin</div>
+<p>Gece uyuduğumuzda beyin kapanmıyor. Uyku, yaklaşık 90 dakika süren döngüler hâlinde ilerliyor ve her döngüde hafif uykudan derin uykuya, oradan da REM uykusuna geçiliyor. REM, "hızlı göz hareketi" anlamına gelen İngilizce ifadenin kısaltması. Bu evrede gözler kapalı göz kapaklarının altında hızlı hızlı hareket ediyor, beyin aktivitesi uyanıklığa yaklaşıyor, ama kaslarımız büyük ölçüde gevşek kalıyor. Bu kas gevşemesi sayesinde rüyada koşarken yatakta koşmuyoruz. Gece ilerledikçe REM evreleri uzuyor, bu yüzden sabaha yakın rüyalar çoğunlukla daha uzun ve canlı oluyor.</p>
+<p>Uzun yıllar "rüya sadece REM'de görülür" denildi. 1950'lerde REM'in keşfi bu fikri güçlendirdi, çünkü REM'de uyandırılanların çoğu rüya gördüğünü söylüyordu. Sonraki araştırmalar ise REM dışı uykuda da zihinsel deneyim yaşandığını gösterdi. Tom Nielsen'in uyandırma çalışmalarını derlediği makaleye göre REM'den uyandırılanların yaklaşık yüzde 82'si rüya gördüğünü bildirirken, REM dışı uykudan uyandırılanlarda bu oran yaklaşık yüzde 43'tü. Yani REM'de rüya görme ihtimali çok daha yüksek, ama REM dışında da rüya görmek mümkün. REM dışı rüyalar genellikle daha sönük, daha düşünce benzeri ve daha az kurgusal oluyor.</p>
+<p>Peki neden çoğunu unutuyoruz? Bunun tek bir açıklaması yok. REM sırasında beyindeki bazı kimyasalların, örneğin noradrenalinin düzeyi düşüyor ve bu, hatırlamayı zorlaştıran etkenlerden biri olarak öne sürülüyor. Fakat bu tek açıklama değil. Bir başka görüş, uyandıktan sonra beynin yeni anıyı kaydetme sistemini yeniden çalıştırması için belli bir süreye ihtiyaç duyabileceğini söylüyor. Bu yüzden rüyadan uyanıp hemen hareket edenler rüyayı çabuk kaybediyor. Öğrenci örneklemlerinde insanların haftada ortalama bir iki rüya hatırladığı bildirilmiş, ama bu rakam kişiden kişiye çok değişiyor.</p>
+<p>Rüyaların neden görüldüğü ise daha da tartışmalı. Freud 1899'da yayımladığı Rüyaların Yorumu kitabında rüyayı bastırılmış isteklerin örtülü bir ifadesi olarak yorumladı. Bu görüş psikoloji tarihinde çok etkili oldu, ama bilimsel olarak sınanması zor olduğu için günümüzde ana akım nörobilimde pek kabul görmüyor. 1977'de Hobson ve McCarley'in öne sürdüğü aktivasyon-sentez modeli ise rüyayı, beyin sapında oluşan rastgele sinyallerin beyin tarafından bir hikâyeye dönüştürülmesi olarak açıkladı. Bu model de zaman içinde değiştirildi, çünkü rüyalar sadece rastgele görüntüler gibi görünmüyor.</p>
+<p>Bugün öne sürülen fikirlerden bazıları rüyaların belleğin pekiştirilmesine katkıda bulunabileceğini, bazıları tehditlere karşı bir tür prova işlevi gördüğünü, bazıları ise rüya içeriğinin gündelik yaşamla süreklilik gösterdiğini söylüyor. Gerçekten de insanlar sıklıkla gün içinde düşündükleri ya da yaşadıkları şeyleri rüyada görüyor. Fakat bu görüşlerin hiçbiri tek başına rüyanın nedenini kesin biçimde açıklamıyor. Bilim insanları arasında rüyanın bir işlevi olup olmadığı ya da uykunun yan ürünü mü olduğu konusunda hâlâ görüş ayrılığı var.</p>
+<p>Bu yüzden "rüyamda şunu gördüm, demek ki şu olacak" ya da "bu rüyanın tek bir anlamı var" gibi iddialara temkinli yaklaşmak gerekiyor. Rüyaların kişiye özgü anlamlar taşıyabileceği düşünülüyor, çünkü içerik büyük ölçüde kişinin kendi yaşantısından besleniyor. Fakat sembol sözlüklerinde olduğu gibi evrensel ve sabit anlamlar için sağlam bilimsel kanıt yok. Rüyalarını merak edenler için en makul başlangıç, onları yazıp tekrar eden temalara ve duygulara bakmak olabilir.</p>
+<div class="kay"><p>Kaynaklar</p><ol><li>Nielsen, T. A. (2000). Behavioral and Brain Sciences, 23(6), 851–866. (Uyku sırasındaki zihinsel etkinliğe dair derleme)</li><li>Hobson, J. A., &amp; McCarley, R. W. (1977). The brain as a dream state generator: An activation-synthesis hypothesis of the dream process. American Journal of Psychiatry, 134(12), 1335–1348.</li><li>Freud, S. (1899/1900). Die Traumdeutung (Rüyaların Yorumu).</li><li>Hobson, J. A., Pace-Schott, E. F., &amp; Stickgold, R. (2000). Dreaming and the brain: Toward a cognitive neuroscience of conscious states. Behavioral and Brain Sciences, 23(6), 793–842.</li></ol></div>
+<a class="top" href="#">↑ Başa dön</a>
+</article>
 
-    .liste .sat { display:grid; grid-template-columns:100px 1fr; gap:20px; padding:36px 0; border-top:1px solid var(--line); align-items:start; transition:padding .45s; }
-    .liste .sat:last-child { border-bottom:1px solid var(--line); }
-    .liste .sat:hover { padding-left:16px; }
-    .sat .no { font-family:'Cormorant Garamond',serif; font-size:3.8rem; color:transparent; -webkit-text-stroke:1px var(--gold); line-height:1; }
-    .sat h3 { font-size:clamp(1.6rem,4vw,2.1rem); margin-bottom:8px; }
-    .sat p { color:var(--muted); max-width:560px; }
+<article id="bilincli">
+<h2>Bilinçli rüya nedir? Rüya gördüğünü fark etmek</h2>
+<div class="meta">Rüyalar ve zihin</div>
+<p>Bilinçli rüya (İngilizce lucid dream), kişinin rüya gördüğünün farkında olduğu rüyadır. Rüyadayken "bu bir rüya" diye düşünebiliyorsun ve bazı durumlarda rüyanın akışını da bir ölçüde etkileyebiliyorsun. Bu ilk duyulduğunda bilimkurgu gibi gelebilir, ama bu deneyim araştırma laboratuvarlarında da incelenen bir konu.</p>
+<p>Ne kadar yaygın olduğuna dair en kapsamlı çalışmalardan biri 2016'da yayımlanan bir meta-analiz. Saunders ve arkadaşları yarım yüzyıllık araştırmayı bir araya getirdi ve insanların yaklaşık yüzde 55'inin hayatında en az bir kez bilinçli rüya gördüğünü, yaklaşık yüzde 23'ünün ise ayda en az bir kez gördüğünü buldu. Bunlar bir ortalama, yani her çalışmada oran farklı çıkıyor. Ayrıca bu rakamlar kişilerin kendi bildirimine dayanıyor, bu yüzden "bilinçli rüya gördüm" diyen herkesin aynı derecede net bir farkındalık yaşadığı anlamına gelmiyor.</p>
+<p>Bilinçli rüyaların bilimsel olarak incelenmesindeki en büyük zorluk, rüyanın dışarıdan gözlenememesi. Bir kişinin gerçekten rüya içinde farkında olup olmadığını anlamak için araştırmacılar önceden anlaşılmış bir işaret kullanıyor. Örneğin kişiden, rüyada farkına vardığında gözlerini belirli bir düzende hareket ettirmesi isteniyor. REM uykusunda göz hareketleri ölçülebildiği için bu işaret kayıtlarda görülebiliyor. Böylece kişi uyurken bile bilinçli olduğunu bildirebiliyor. Bu yöntem, bilinçli rüyanın gerçekten REM sırasında yaşanabildiğini göstermek için kullanılıyor.</p>
+<p>İnsanların bilinçli rüya görmek için denediği çeşitli teknikler var. En bilinenleri rüyaları düzenli olarak yazmak, gün içinde "şu an rüyada mıyım?" diye kendine sormayı alışkanlık hâline getirmek ve uyumadan önce rüyada farkına varmayı niyet etmektir. Bunların bir kısmı araştırmalarda denenmiş olsa da hangisinin ne kadar işe yaradığı konusunda sonuçlar karışık ve etkiler kişiden kişiye değişiyor. Bu yüzden "şu teknikle herkes bilinçli rüya görür" iddiası doğru değil.</p>
+<p>Bilinçli rüya, bazı insanlar için ilginç ve hoş bir deneyim, bazıları için ise rahatsız edici olabilir. Örneğin uyku felcine benzeyen hisler ya da rüya ile gerçeklik arasındaki sınırın bulanıklaşması bazı kişilerde tedirginlik yaratabiliyor. Uyku düzenini bozacak şekilde sık sık uyanıp teknik denemek de uykunun kalitesini düşürebilir. Uyku sorunları, kâbuslar ya da rüyalarla ilgili yoğun sıkıntı yaşayan biri için merakla yapılan denemeler yerine bir uzmanla görüşmek daha doğru olur.</p>
+<p>Bilinçli rüyanın nasıl çalıştığına dair elimizde bazı görüntüleme çalışmaları da var. Bunlar bilinçli rüya sırasında bazı beyin bölgelerinin aktivitesinin, sıradan REM uykusuna göre farklı olabileceğini gösteriyor. Fakat bu çalışmalar genellikle küçük örneklemlerle yapılıyor ve sonuçların kesin bir açıklama sunduğunu söylemek için erken.</p>
+<p>Özetle bilinçli rüya gerçek, ölçülebilen ve oldukça yaygın bir deneyim. Ama nasıl daha sık gerçekleşeceği, ne işe yaradığı ve beyinde tam olarak ne olduğu konularında bilmediğimiz çok şey var. Konuya ilgi duyuyorsan en güvenilir başlangıç, rüyalarını yazmak ve internette dolaşan abartılı vaatlere şüpheyle bakmak.</p>
+<div class="kay"><p>Kaynaklar</p><ol><li>Saunders, D. T., Roe, C. A., Smith, G., &amp; Clegg, H. (2016). Lucid dreaming incidence: A quality effects meta-analysis of 50 years of research. Consciousness and Cognition, 43, 197–215.</li><li>Dresler, M., et al. (2012). Neural correlates of dream lucidity obtained from contrasting lucid versus non-lucid REM sleep. Sleep, 35(7), 1017–1020.</li><li>Baird, B., Mota-Rolim, S. A., &amp; Dresler, M. (2019). The cognitive neuroscience of lucid dreaming. Neuroscience &amp; Biobehavioral Reviews, 100, 305–323.</li></ol></div>
+<a class="top" href="#">↑ Başa dön</a>
+</article>
 
-    .flipler { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; }
-    .flip { perspective:1000px; cursor:pointer; -webkit-tap-highlight-color:transparent; }
-    .flip-ic { display:grid; transition:transform .8s; transform-style:preserve-3d; -webkit-transform-style:preserve-3d; }
-    .flip.cevrildi .flip-ic { transform:rotateY(180deg); }
-    .yuz { grid-area:1/1; -webkit-backface-visibility:hidden; backface-visibility:hidden; border-radius:26px; padding:32px 26px; display:flex; flex-direction:column; justify-content:center; text-align:center; min-height:210px; }
-    .yuz small { font-size:0.64rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:500; }
-    .on { background:var(--glass); border:1px solid var(--line); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
-    .on h3 { font-size:1.55rem; }
-    .on .ipucu { margin-top:16px; font-size:0.64rem; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
-    .arka { background:linear-gradient(145deg,#8a2f55,#3b1560); color:#fbeee9; transform:rotateY(180deg); border:1px solid rgba(255,255,255,0.15); }
-    .arka p { font-size:0.94rem; }
-    .arka small { color:#f0d9a8; }
+<article id="beyin">
+<h2>Beyin hakkında üç yaygın mit: yüzde 10, sol-sağ beyin ve öğrenme stilleri</h2>
+<div class="meta">Mitler ve gerçekler</div>
+<p>Beyinle ilgili bazı fikirler o kadar sık tekrarlanır ki doğruymuş gibi gelir. Bunların üçü özellikle yaygın: beynin yalnızca yüzde 10'unu kullandığımız, insanların sol beyinli ya da sağ beyinli olduğu ve herkesin bir öğrenme stili olduğu. Her birine ayrı ayrı bakmak mümkün.</p>
+<p>İlk mit, beynin yüzde 10'unu kullandığımız fikri. Beyin görüntüleme çalışmaları, gün içinde beynin neredeyse tüm bölgelerinin kullanıldığını gösteriyor. Uyurken bile birçok bölge aktif. Ayrıca beyin vücut ağırlığının yaklaşık yüzde 2'sini oluşturmasına rağmen enerji tüketiminin yaklaşık yüzde 20'sini kullanıyor. Bu kadar pahalı bir organın büyük kısmının boşta durması evrimsel açıdan mantıklı olmazdı. Beyindeki küçük bir hasarın bile ciddi sonuçlar doğurabilmesi de "geri kalan yüzde 90'ın boş olduğu" fikrine uymuyor. Bu mitin tam kaynağı belli değil. Bazen Einstein'a, bazen William James'e atfediliyor, ama net bir kanıt yok.</p>
+<p>İkinci mit, insanların sol beyinli (mantıklı, analitik) ya da sağ beyinli (yaratıcı, sezgisel) olduğu. Beynin iki yarımküresi gerçekten bazı işlevlerde farklılaşıyor. Örneğin dil işlemeyle ilgili bölgeler çoğu insanda sol yarımkürede daha belirgin. Fakat bu, bir kişinin kişiliğinin ya da düşünme biçiminin tek bir yarımküreye dayandığı anlamına gelmiyor. 2013'te Nielsen ve arkadaşları 7 ile 29 yaş arasındaki 1.011 kişinin beyin görüntülerini inceledi ve yaklaşık 7.000 beyin bölgesindeki bağlantıları analiz etti. Kişilerin sol ya da sağ yarımküreye bağlı bir baskınlık örüntüsü göstermediğini buldular. İki yarımküre sürekli birbiriyle iletişim hâlinde çalışıyor.</p>
+<p>Üçüncü mit, öğrenme stilleri. Fikir şu: Kimi insanlar görsel, kimi işitsel, kimi dokunsal öğreniyor ve öğretim bu stile uydurulursa daha iyi öğreniliyor. İnsanların tercihleri olduğu doğru, "ben görsel öğreniyorum" diyebilirsin. Ama 2008'de Pashler ve arkadaşlarının yaptığı kapsamlı bir inceleme, öğretimi kişinin bildirdiği stile uydurmanın öğrenmeyi iyileştirdiğine dair yeterli kanıt olmadığı sonucuna vardı. Çalışmaların çoğu bu fikri doğru biçimde sınamıyordu, doğru sınayanlar ise destekleyici sonuç bulmuyordu. Bu, hiçbir şekilde "farklı yöntemler denemeyin" anlamına gelmiyor. İçerik bir şemayı anlatıyorsa görsel, bir sesi anlatıyorsa işitsel sunum doğal olarak daha uygun. Yani yöntemi kişiye göre değil, içeriğe göre seçmek daha iyi işliyor gibi görünüyor.</p>
+<p>Bu mitler neden bu kadar tutuyor? Çünkü hem basit hem de çekici. İnsanlara kendilerini bir kategoriye yerleştirme imkânı veriyor ve bu bir tür açıklama hissi yaratıyor. Üstelik "potansiyelinin sadece yüzde 10'unu kullanıyorsun" gibi bir fikir motive edici de gelebiliyor.</p>
+<p>Bir bilgiye rastladığında kendine sorabileceğin faydalı bir soru şu: Bunu kim, hangi veriyle söylüyor? Beyin konusunda iddialar çoğu zaman gerçekte ölçülenden büyük oluyor. Beynin ne kadar karmaşık olduğunu kabul etmek, basit etiketlere güvenmekten daha dürüst bir başlangıç.</p>
+<div class="kay"><p>Kaynaklar</p><ol><li>Nielsen, J. A., Zielinski, B. A., Ferguson, M. A., Lainhart, J. E., &amp; Anderson, J. S. (2013). An evaluation of the left-brain vs. right-brain hypothesis with resting state functional connectivity magnetic resonance imaging. PLoS ONE, 8(8), e71275.</li><li>Pashler, H., McDaniel, M., Rohrer, D., &amp; Bjork, R. (2008). Learning styles: Concepts and evidence. Psychological Science in the Public Interest, 9(3), 105–119.</li><li>Raichle, M. E., &amp; Gusnard, D. A. (2002). Appraising the brain's energy budget. PNAS, 99(16), 10237–10239.</li></ol></div>
+<a class="top" href="#">↑ Başa dön</a>
+</article>
 
-    .baloncuklar { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:26px; }
-    .bal { padding:48px 40px; background:var(--glass); border:1px solid var(--line); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-radius:38% 62% 55% 45% / 50% 40% 60% 50%; animation:salin 10s ease-in-out infinite; }
-    .bal:nth-child(2) { border-radius:60% 40% 42% 58% / 45% 58% 42% 55%; animation-delay:-3s; }
-    .bal:nth-child(3) { border-radius:45% 55% 60% 40% / 55% 45% 55% 45%; animation-delay:-6s; }
-    .bal:nth-child(4) { border-radius:55% 45% 40% 60% / 42% 55% 45% 58%; animation-delay:-9s; }
-    @keyframes salin { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
-    .bal small { display:block; font-size:0.64rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:10px; }
-    .bal p { font-size:0.97rem; }
+<article id="aliskanlik">
+<h2>Alışkanlık kaç günde oluşur? 21 gün miti ve gerçek araştırma</h2>
+<div class="meta">Mitler ve gerçekler</div>
+<p>Alışkanlık edinmekten bahsedilen yerlerde sık duyulan bir cümle var: "Bir davranışı 21 gün boyunca tekrar edersen alışkanlık olur." Bu cümle öylesine yaygın ki doğru olup olmadığı genellikle sorgulanmıyor. Oysa bu sürenin kaynağı bir bilimsel çalışma değil.</p>
+<p>Fikrin kökeni, plastik cerrah Maxwell Maltz'ın 1960'ta yayımlanan Psycho-Cybernetics adlı kitabına dayanıyor. Maltz, ameliyat sonrası hastaların yeni görünüşlerine alışmasının kabaca 21 gün sürdüğünü gözlemlemişti. Bu bir alışkanlık çalışması değildi ve kontrollü bir deney de değildi. Sonradan bu gözlem, "21 gün" şeklinde kısalıp yayıldı ve alışkanlık edinme sürecinin kuralı gibi anlatılmaya başlandı.</p>
+<p>Alışkanlık oluşumunu doğrudan inceleyen en bilinen çalışmalardan biri, Phillippa Lally ve arkadaşlarının 2009'da yayımladığı araştırma. 96 gönüllü, 12 hafta boyunca her gün tekrar edecekleri bir davranış seçti. Bu davranışlar arasında su içmek, kahvaltıda meyve yemek ya da yürüyüşe çıkmak gibi basit şeyler vardı. Katılımcılar, davranışın ne kadar otomatik hâle geldiğini düzenli olarak bildirdi. Sonuçlara göre davranışın otomatikleşmesi ortalama 66 gün sürdü. Ama bu sürenin kişiden kişiye ve davranıştan davranışa büyük farkları vardı: En kısa 18 gün, en uzun ise 254 gün olarak hesaplandı. Yani hem 21 gün doğru bir ortalama değildi hem de herkes için geçerli tek bir süre yoktu.</p>
+<p>Çalışmanın bir diğer önemli bulgusu, arada bir günü kaçırmanın süreci belirgin biçimde bozmamasıydı. Bir gün atlamak, alışkanlık oluşumunu sıfırlamıyordu. Bu, "zinciri kırma" baskısıyla kendini suçlayan insanlar için rahatlatıcı bir bilgi olabilir. Elbette bu sonuç belirli bir örneklemden ve belirli davranışlardan geliyor. Yoğun ve karmaşık davranışlar, örneğin düzenli spor yapmak ya da sigarayı bırakmak, farklı süreler isteyebilir. Ayrıca çalışma gönüllülerin kendi bildirimlerine dayanıyordu, bu da bazı sınırlılıklar getiriyor.</p>
+<p>Bütün bunlar bize şunu söylüyor: Alışkanlık için sihirli bir gün sayısı yok. Daha önemli olan, davranışı kolaylaştırmak ve tutarlı kılmak. Davranışı her gün aynı bağlamda, örneğin kahvaltıdan hemen sonra yapmak otomatikleşmeyi kolaylaştırabilir. Küçük başlamak da yardımcı oluyor, çünkü çok büyük hedefler vazgeçmeyi kolaylaştırıyor.</p>
+<p>21 günlük kuralın zararı, beklentiyi yanlış ayarlaması. Üç haftanın sonunda davranış hâlâ zor geliyorsa kişi "bende bir sorun var" diye düşünebilir. Oysa bu tamamen beklenen bir durum. Alışkanlıklar çoğu zaman haftalar, hatta aylar alıyor. Bu yüzden asıl hedef 21. günü beklemek değil, o günlerde devam etmeyi mümkün kılacak koşulları yaratmak.</p>
+<div class="kay"><p>Kaynaklar</p><ol><li>Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., &amp; Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. European Journal of Social Psychology, 40(6), 998–1009. (İlk olarak 2009'da çevrimiçi yayımlandı.)</li><li>Maltz, M. (1960). Psycho-Cybernetics. Prentice-Hall.</li></ol></div>
+<a class="top" href="#">↑ Başa dön</a>
+</article>
 
-    .yazilar .yazi { display:grid; grid-template-columns:170px 1fr 50px; gap:26px; align-items:center; padding:38px 0; border-top:1px solid var(--line); cursor:pointer; transition:padding .45s; }
-    .yazilar .yazi:last-child { border-bottom:1px solid var(--line); }
-    .yazi:hover { padding-left:16px; }
-    .yazi .etiket { font-size:0.66rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:500; line-height:1.9; }
-    .yazi h3 { font-size:clamp(1.6rem,4vw,2.2rem); margin-bottom:8px; transition:color .3s; }
-    .yazi:hover h3 { color:var(--rose); }
-    .yazi p { color:var(--muted); font-size:0.97rem; }
-    .yazi .ok { font-size:1.6rem; color:var(--gold); transition:transform .4s; }
-    .yazi:hover .ok { transform:translateX(8px); }
+<article id="yalan">
+<h2>Yalan söyleyen göz mü kaçırır?</h2>
+<div class="meta">Mitler ve gerçekler</div>
+<p>"Gözlerimin içine bakarak söyle." Bu cümle çoğumuz için tanıdık. Altında yatan fikir, yalan söyleyen birinin bakışlarını kaçıracağı. Bu inanç o kadar yaygın ki bir araştırma onu dünya çapında en sık dile getirilen yalan işareti olarak buldu. Peki araştırmalar bu fikri destekliyor mu?</p>
+<p>Kısa cevap: Genel olarak hayır. 2003'te Bella DePaulo ve arkadaşları yalan söylemeyle ilgili davranış işaretlerini inceleyen çalışmaları bir araya getirdi ve onlarca işareti değerlendirdi. Sonuç, yalan söyleyen insanlarla doğru söyleyenleri ayırt etmeye yarayan güvenilir işaretlerin çok az, bulunanların da zayıf olduğuydu. Göz teması ve bakış kaçırma bu işaretlerden biri değildi. Yani genel olarak yalan söyleyenlerin gözlerini kaçırdığına dair güçlü bir kanıt yok.</p>
+<p>Üstelik bu inanç kültürler arasında şaşırtıcı biçimde ortak. Global Deception Research Team'in 2006'da yayımladığı çalışma, onlarca ülkede insanlara yalancıların nasıl davrandığını sordu. Bakışı kaçırmak en sık verilen cevaptı. Yani dünyanın birçok yerinde insanlar aynı yanlış fikre inanıyor. Bu da bu inancın kişisel deneyimlerden çok, kültürel olarak aktarılan bir varsayım olduğunu düşündürüyor.</p>
+<p>İnsanlar yalan söyleyeni ne kadar iyi tanıyor? Charles Bond ve Bella DePaulo'nun 2006'da yayımladığı meta-analize göre insanlar yalanı doğrudan ayırt ederken yaklaşık yüzde 54 oranında doğru yapıyor. Yazı tura atıldığında beklenecek oran yüzde 50. Yani çoğu insan yalanı yakalama konusunda şansa çok yakın. Bu, kolluk görevlileri ya da profesyoneller için de büyük ölçüde geçerli olarak bildirilmiş, yani eğitim ya da deneyim bu sonucu dramatik biçimde değiştirmiyor.</p>
+<p>Neden böyle? Birkaç sebep var. Birincisi yalan söylemek her zaman gerginlik yaratmaz, bazı insanlar rahatça yalan söyler. İkincisi dürüst insanlar da gergin olabilir, özellikle sorgulandıklarını hissettiklerinde. Utangaç ya da kaygılı biri doğru söylerken bile bakışlarını kaçırabilir. Üçüncüsü yalan söyleyenler bu inancı bildiğinden bakışlarını bilerek sabit tutabilir. Yani göz davranışı, doğruluğun değil kişiliğin ve durumun bir göstergesi olabiliyor.</p>
+<p>Bu alanda daha umut verici bulunan yaklaşımlar var. Aldert Vrij ve çalışma arkadaşları, yalan söylemenin bilişsel olarak daha yorucu olduğu fikrinden yola çıkarak, görüşme sırasında konuşan kişiye bilişsel yük bindiren tekniklerin yalan tespitini bir miktar artırabileceğini öne sürüyor. Örneğin olayı tersten anlatmak istemek gibi. Bu yöntemler üzerinde araştırmalar sürüyor, ama burada bile kesin bir "yalan makinesi" yok.</p>
+<p>Gündelik hayat için çıkarım şu: Birinin gözünü kaçırması sana onun yalan söylediğini göstermez. Bu, çoğu zaman sadece utangaç, heyecanlı ya da düşünüyor olmasının işareti olabilir. Birinin sözlerinin doğruluğunu merak ediyorsan bakışlara değil, anlatının tutarlılığına, doğrulanabilir ayrıntılara ve başka kaynaklara bakmak çok daha sağlam bir yol.</p>
+<div class="kay"><p>Kaynaklar</p><ol><li>DePaulo, B. M., Lindsay, J. J., Malone, B. E., Muhlenbruck, L., Charlton, K., &amp; Cooper, H. (2003). Cues to deception. Psychological Bulletin, 129(1), 74–118.</li><li>Global Deception Research Team (2006). A world of lies. Journal of Cross-Cultural Psychology, 37(1), 60–74.</li><li>Bond, C. F., &amp; DePaulo, B. M. (2006). Accuracy of deception judgments. Personality and Social Psychology Review, 10(3), 214–234.</li><li>Vrij, A., Granhag, P. A., &amp; Porter, S. (2010). Pitfalls and opportunities in nonverbal and verbal lie detection. Psychological Science in the Public Interest, 11(3), 89–121.</li></ol></div>
+<a class="top" href="#">↑ Başa dön</a>
+</article>
 
-    .alinti { margin-top:140px; text-align:center; padding:130px 28px; position:relative; overflow:hidden; }
-    .alinti::before { content:''; position:absolute; left:50%; top:50%; width:620px; height:620px; transform:translate(-50%,-50%); background:radial-gradient(circle,var(--glow1),transparent 65%); filter:blur(30px); }
-    .alinti p { position:relative; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300; font-size:clamp(2rem,6vw,3.6rem); max-width:780px; margin:0 auto; line-height:1.35; color:var(--head); }
-    .alinti span { position:relative; display:block; margin-top:26px; font-size:0.7rem; letter-spacing:5px; text-transform:uppercase; color:var(--gold); }
-
-    .sss { max-width:760px; }
-    details { border-top:1px solid var(--line); padding:4px 0; }
-    details:last-child { border-bottom:1px solid var(--line); }
-    summary { cursor:pointer; list-style:none; padding:22px 0; font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--head); display:flex; justify-content:space-between; align-items:center; gap:16px; }
-    summary::-webkit-details-marker { display:none; }
-    summary::after { content:'+'; font-size:1.8rem; color:var(--gold); transition:transform .3s; }
-    details[open] summary::after { transform:rotate(45deg); }
-    details p { padding:0 0 24px; color:var(--muted); }
-
-    .iletisim { text-align:center; position:relative; padding:40px 0 0; }
-    .iletisim::before { content:''; position:absolute; left:50%; top:40%; width:480px; height:480px; transform:translate(-50%,-50%); background:radial-gradient(circle,var(--glow3),transparent 65%); filter:blur(30px); pointer-events:none; }
-    .iletisim h2 { position:relative; font-size:clamp(2.6rem,8vw,5rem); font-weight:300; }
-    .iletisim h2 em { font-style:italic; color:var(--rose); }
-    .iletisim p { position:relative; max-width:470px; margin:26px auto 38px; color:var(--muted); }
-
-    footer { position:relative; z-index:1; text-align:center; max-width:620px; margin:0 auto; padding:110px 28px 54px; }
-    footer strong { display:block; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.6rem; letter-spacing:2px; color:var(--gold2); margin-bottom:20px; }
-    .eposta-ikon { display:inline-flex; width:46px; height:46px; border-radius:50%; border:1px solid var(--gold); align-items:center; justify-content:center; color:var(--gold); transition:all .3s; }
-    .eposta-ikon:hover { background:var(--gold); color:var(--bg); transform:translateY(-3px); }
-    .eposta-ikon svg { width:20px; height:20px; }
-
-    .modal { position:fixed; inset:0; z-index:50; background:rgba(5,2,9,0.72); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); display:none; }
-    .modal.acik { display:block; }
-    .ilerleme { position:fixed; top:0; left:0; height:3px; width:0; z-index:60; background:linear-gradient(90deg,var(--gold),var(--rose)); box-shadow:0 0 14px var(--gold); transition:width .1s linear; }
-    .modal-kutu { max-width:760px; height:100%; margin:0 auto; overflow-y:auto; -webkit-overflow-scrolling:touch; background:var(--modalbg); color:var(--text); padding:26px 32px 100px; border-left:1px solid var(--line); border-right:1px solid var(--line); }
-    .kapat { position:sticky; top:0; float:right; z-index:5; background:var(--glass2); color:var(--gold2); border:1px solid var(--line); border-radius:999px; padding:10px 20px; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
-    .modal-kutu h2 { font-size:clamp(2.3rem,7vw,3.6rem); font-weight:300; margin:56px 0 14px; clear:both; }
-    .meta { font-size:0.68rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:500; margin-bottom:34px; }
-    .modal-kutu p { margin-bottom:22px; font-size:1.08rem; line-height:1.95; }
-    .modal-kutu p.ilk::first-letter { float:left; font-family:'Cormorant Garamond',serif; font-size:4.4rem; line-height:.8; padding:8px 14px 0 0; color:var(--gold); }
-    .modal-kutu ul { padding-left:22px; margin-bottom:22px; }
-    .modal-kutu li { margin-bottom:10px; font-size:1.04rem; }
-    .kisaca { margin:0 0 38px; padding:4px 0 4px 24px; border-left:1px solid var(--gold); }
-    .kisaca strong, .sor strong { display:block; font-size:0.66rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
-    .kisaca ul { margin:0; color:var(--muted); }
-    .sor { margin-top:56px; padding-top:34px; border-top:1px solid var(--line); text-align:center; }
-    .sor p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.7rem; color:var(--head); line-height:1.4; margin:0; }
-
-    .js .reveal { opacity:0; transform:translateY(34px); transition:opacity 1.1s ease, transform 1.1s ease; }
-    .js .reveal.goster { opacity:1; transform:none; }
-
-    @media (max-width:760px) {
-      nav { padding:12px 16px; }
-      nav .links a.gizle { display:none; }
-      nav .links a { margin-left:14px; letter-spacing:2px; font-size:0.64rem; }
-      .tema { margin-left:14px; }
-      .hilal { width:92px; height:92px; box-shadow:inset -24px -6px 0 0 var(--gold2); }
-      section { padding-top:100px; }
-      .liste .sat { grid-template-columns:56px 1fr; }
-      .sat .no { font-size:2.5rem; }
-      .yazilar .yazi { grid-template-columns:1fr; gap:10px; }
-      .yazi .ok { display:none; }
-      .bal { padding:44px 34px; }
-      .alinti { margin-top:100px; padding:100px 24px; }
-      .modal-kutu { padding:20px 22px 90px; }
-    }
-    @media (prefers-reduced-motion:reduce) { * { animation:none !important; transition:none !important; } .js .reveal { opacity:1; transform:none; } }
-  </style>
-</head>
-<body>
-
-  <div class="fon">
-    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-    <div class="yildizlar" id="yildizlar"></div>
-  </div>
-
-  <nav>
-    <a class="logo" href="#">Sibel Demirel</a>
-    <div class="sag">
-      <div class="links">
-        <a class="gizle" href="#hakkimda">Hakkımda</a>
-        <a class="gizle" href="#kavramlar">Kavramlar</a>
-        <a href="#yazilar">Yazılar</a>
-        <a href="#iletisim">İletişim</a>
-      </div>
-      <button class="tema" id="tema" aria-label="Gündüz ve gece modu">☀</button>
-    </div>
-  </nav>
-
-  <main>
-
-  <div class="hero">
-    <div class="hilal"></div>
-    <div class="ust">Psikoloji &nbsp;·&nbsp; Rüya &nbsp;·&nbsp; Zihin</div>
-    <h1>İç dünyana <em>hoş geldin</em></h1>
-    <p>Kendini dinlemeye ve psikolojiyi keşfetmeye davetlisin.</p>
-    <div class="butonlar">
-      <a class="buton dolu" href="#yazilar">Yazıları Oku</a>
-      <a class="buton bos" href="#iletisim" data-mail>İletişime Geç</a>
-    </div>
-    <div class="kaydir">Kaydır</div>
-  </div>
-
-  <section id="hakkimda" class="reveal">
-    <div class="hakkimda">
-      <div class="monogram">SD</div>
-      <p>Merhaba, ben Sibel. İnsanı, rüyaları ve zihnin <em>görünmeyen</em> katmanlarını merak ediyorum. Bu sayfa, psikolojiye dair öğrendiklerimi ve düşündüklerimi sade bir dille paylaştığım küçük bir köşe.</p>
-    </div>
-  </section>
-
-  <section id="icerikler" class="reveal">
-    <div class="baslik"><small>Neler Var?</small><h2>Paylaştığım <em>içerikler</em></h2></div>
-    <div class="liste">
-      <div class="sat"><div class="no">I</div><div><h3>Psikoloji Kavramları</h3><p>Karmaşık görünen kavramları, günlük hayattan örneklerle sade ve akılda kalır biçimde anlatıyorum.</p></div></div>
-      <div class="sat"><div class="no">II</div><div><h3>Günlük Hayat</h3><p>Alışkanlıklar, ilişkiler, yorgunluk ve sakinlik: hayatın içinden, herkesin kendinden bir şey bulabileceği yazılar.</p></div></div>
-      <div class="sat"><div class="no">III</div><div><h3>Kitap ve Film Önerileri</h3><p>Zihni, duyguları ve insan olmayı anlatan kitaplar ve filmler üzerine seçkiler ve kısa notlar.</p></div></div>
-      <div class="sat"><div class="no">IV</div><div><h3>Rüyalar, Bilinçaltı ve Zihin</h3><p>Rüyaların ve zihnin gizli işleyişine dair merak uyandıran, bilgilendirici yazılar.</p></div></div>
-    </div>
-  </section>
-
-  <section id="kavramlar" class="reveal">
-    <div class="baslik"><small>Kartı Çevir</small><h2>Psikoloji <em>kavramları</em></h2></div>
-    <p class="altnot">Bir karta dokun, açıklaması arkasında.</p>
-    <div class="flipler">
-      <div class="flip"><div class="flip-ic"><div class="yuz on"><small>Kavram</small><h3>Bilinçdışı</h3><div class="ipucu">Dokun</div></div><div class="yuz arka"><small>Anlamı</small><p>Farkında olmadığımız ama davranışlarımızı etkileyen zihinsel süreçler.</p></div></div></div>
-      <div class="flip"><div class="flip-ic"><div class="yuz on"><small>Kavram</small><h3>Savunma Mekanizması</h3><div class="ipucu">Dokun</div></div><div class="yuz arka"><small>Anlamı</small><p>Zor duygulardan kendimizi korumak için, çoğunlukla farkında olmadan kullandığımız yollar.</p></div></div></div>
-      <div class="flip"><div class="flip-ic"><div class="yuz on"><small>Kavram</small><h3>Projeksiyon</h3><div class="ipucu">Dokun</div></div><div class="yuz arka"><small>Anlamı</small><p>Kendi duygu ya da düşüncemizi başkasına ait sanmak.</p></div></div></div>
-      <div class="flip"><div class="flip-ic"><div class="yuz on"><small>Kavram</small><h3>Bilişsel Çelişki</h3><div class="ipucu">Dokun</div></div><div class="yuz arka"><small>Anlamı</small><p>İnançlarımızla davranışlarımız çeliştiğinde duyduğumuz rahatsızlık.</p></div></div></div>
-      <div class="flip"><div class="flip-ic"><div class="yuz on"><small>Kavram</small><h3>Kolektif Bilinçdışı</h3><div class="ipucu">Dokun</div></div><div class="yuz arka"><small>Anlamı</small><p>Jung'a göre insanlığın paylaştığı ortak sembol ve imgeler.</p></div></div></div>
-      <div class="flip"><div class="flip-ic"><div class="yuz on"><small>Kavram</small><h3>Rüya Çalışması</h3><div class="ipucu">Dokun</div></div><div class="yuz arka"><small>Anlamı</small><p>Freud'a göre bilinçdışı isteklerin rüyada simgelerle gizlenerek ortaya çıkması.</p></div></div></div>
-    </div>
-  </section>
-
-  <section id="mitler" class="reveal">
-    <div class="baslik"><small>Doğru Bildiğimiz Yanlışlar</small><h2>Zihin mitleri ve <em>gerçekler</em></h2></div>
-    <p class="altnot">Bir karta dokun, gerçeği arkasında.</p>
-    <div class="flipler">
-      <div class="flip"><div class="flip-ic"><div class="yuz on"><small>Mit</small><h3>Beynimizin yalnızca %10'unu kullanırız.</h3><div class="ipucu">Dokun</div></div><div class="yuz arka"><small>Gerçek</small><p>Yanlış. Beynin hemen her bölgesini kullanırız ve büyük kısmı neredeyse her zaman aktiftir. Uykuda bile tüm bölgelerde bir miktar aktivite görülür.</p></div></div></div>
-      <div class="flip"><div class="flip-ic"><div class="yuz on"><small>Mit</small><h3>Bazı insanlar sol beyinli, bazıları sağ beyinli.</h3><div class="ipucu">Dokun</div></div><div class="yuz arka"><small>Gerçek</small><p>1.011 kişinin beyin taramasına bakan bir çalışmada, kimsenin sol ya da sağ taraftaki ağını daha çok kullandığına dair kanıt çıkmadı. Dil çoğunlukla solda, dikkat daha çok sağdadır, ama bu bir kişilik tipi değildir.</p></div></div></div>
-      <div class="flip"><div class="flip-ic"><div class="yuz on"><small>Mit</small><h3>Herkesin bir öğrenme stili vardır.</h3><div class="ipucu">Dokun</div></div><div class="yuz arka"><small>Gerçek</small><p>Bilgiyi nasıl almayı sevdiğine dair tercihlerin olabilir. Ancak kapsamlı bir değerlendirme, öğretimi bu tercihe göre uyarlamanın öğrenmeyi artırdığına dair neredeyse hiç kanıt bulamadı.</p></div></div></div>
-      <div class="flip"><div class="flip-ic"><div class="yuz on"><small>Mit</small><h3>Alışkanlık 21 günde oluşur.</h3><div class="ipucu">Dokun</div></div><div class="yuz arka"><small>Gerçek</small><p>Bilimsel bir bulgu değil. Bir araştırmada ortalama 66 gün sürdü, kişiye ve davranışa göre 18 ile 254 gün arasında değişti.</p></div></div></div>
-    </div>
-  </section>
-
-  <section id="ruya" class="reveal">
-    <div class="baslik"><small>Rüya Köşesi</small><h2>Biliyor <em>muydun?</em></h2></div>
-    <div class="baloncuklar">
-      <div class="bal"><small>Uyku evreleri</small><p>REM'den uyandırılanların yaklaşık %82'si, REM dışı uykudan uyandırılanların yaklaşık %43'ü bir rüya anlatabiliyor.</p></div>
-      <div class="bal"><small>Hatırlama sıklığı</small><p>Araştırmalara göre öğrenciler evde ortalama haftada bir ila iki rüya hatırlıyor.</p></div>
-      <div class="bal"><small>İlgi önemli</small><p>Rüyalara ilgi duymak ve onları önemsemek, hatırlama sıklığını artırabiliyor.</p></div>
-      <div class="bal"><small>Rüyanın anlamı</small><p>Rüyaların anlamı konusunda tek bir görüş yok. Psikanaliz ve nörobilim rüyalara farklı açılardan bakıyor.</p></div>
-    </div>
-  </section>
-
-  <section id="yazilar" class="reveal">
-    <div class="baslik"><small>Blog</small><h2>Yazılar</h2></div>
-    <p class="altnot">Bir yazıya dokun, sayfa içinde açılır.</p>
-    <div class="yazilar">
-      <article class="yazi" data-yazi="y1" tabindex="0"><div class="etiket">Rüya<br>2 dk okuma</div><div><h3>Rüyalarımızı Neden Unuturuz?</h3><p>Sabah çok canlı bir rüyadan uyanıp birkaç dakika sonra hiçbir şey hatırlamamanın arkasında ne var?</p></div><div class="ok">→</div></article>
-      <article class="yazi" data-yazi="y2" tabindex="0"><div class="etiket">Zihin<br>2 dk okuma</div><div><h3>Zihnimiz Neden Başka Yerlerde Dolaşır?</h3><p>İnsanlar uyanık oldukları sürenin neredeyse yarısında yaptıkları işten başka bir şey düşünüyor.</p></div><div class="ok">→</div></article>
-      <article class="yazi" data-yazi="y3" tabindex="0"><div class="etiket">Günlük Hayat<br>2 dk okuma</div><div><h3>Alışkanlıklar Nasıl Oluşur?</h3><p>"21 günde alışkanlık" sözü doğru mu? Araştırmanın gerçek sayısı ne diyor?</p></div><div class="ok">→</div></article>
-    </div>
-  </section>
-
-  <div class="alinti reveal">
-    <p>Zihin, kendini en çok sessizlikte anlatır.</p>
-    <span>Sibel Demirel</span>
-  </div>
-
-  <section id="sss" class="reveal">
-    <div class="baslik"><small>Merak Edilenler</small><h2>Sık sorulan <em>sorular</em></h2></div>
-    <div class="sss">
-      <details><summary>Psikolog ile psikiyatrist arasındaki fark nedir?</summary><p>Psikiyatrist bir tıp doktorudur ve ilaç yazabilir. Psikolog ise psikoloji eğitimi almış bir uzmandır ve ilaç yazamaz.</p></details>
-      <details><summary>Psikolojik destek ne zaman alınmalı?</summary><p>Zor duygular günlük hayatını, uykunu, ilişkilerini ya da işini etkilemeye başladığında veya uzun süre geçmediğinde bir ruh sağlığı uzmanından destek almak iyi bir fikirdir.</p></details>
-      <details><summary>Rüyalarımın bir anlamı var mı?</summary><p>Rüyaların anlamı konusunda tek bir bilimsel görüş yok. Bu sitedeki rüya içerikleri genel bilgi amaçlıdır, kişiye özel yorum içermez.</p></details>
-      <details><summary>Konu önerebilir miyim?</summary><p>Elbette. Merak ettiğin bir konu olursa bana e-posta ile yazabilirsin.</p></details>
-    </div>
-  </section>
-
-  <section id="iletisim" class="reveal" style="padding-top:140px">
-    <div class="iletisim">
-      <h2>Birlikte <em>konuşalım</em></h2>
-      <p>Bir yazıya dair düşüncelerini paylaşmak, soru sormak ya da yeni içeriklerden haberdar olmak istersen bana yazabilirsin.</p>
-      <a class="buton dolu" href="#iletisim" data-mail>E-posta Gönder</a>
-    </div>
-  </section>
-
-  </main>
-
-  <footer>
-    <strong>Sibel Demirel</strong>
-    <a class="eposta-ikon" href="#iletisim" data-mail aria-label="E-posta">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-    </a>
-  </footer>
-
-  <div id="veri" hidden>
-    <div id="y1">
-      <h2>Rüyalarımızı Neden Unuturuz?</h2>
-      <div class="meta">Rüya · 2 dk okuma</div>
-      <div class="kisaca"><strong>Kısaca</strong><ul>
-        <li>Rüyalar en canlı hâlleriyle REM uykusunda görülür.</li>
-        <li>Unutmanın tek bir açıklaması yok, noradrenalinin düşük kalması bunlardan biri.</li>
-        <li>Uyanınca kıpırdamadan rüyayı zihinde tekrar etmek ve not almak yardımcı olabilir.</li>
-      </ul></div>
-      <p class="ilk">Sabah uyandığında az önce çok canlı bir rüyanın içindeydin, ama bir kahve sonra geriye hiçbir şey kalmadı. Bu hepimizin başına gelir.</p>
-      <p>Rüyaların çoğu, uykunun REM denen evresinde görülür. Rüya REM dışındaki evrelerde de görülür ama daha silik ve düşünceye benzer olur. Uyandırma deneylerinde, REM'den uyandırılanların yaklaşık yüzde 82'si bir rüya anlatabilirken, REM dışı uykudan uyandırılanlarda bu oran yüzde 43 civarında kalıyor.</p>
-      <p>Unutmanın tek bir cevabı yok. Bellekle ilişkili noradrenalin kimyasalının REM sırasında düşük kalması bir açıklama, ama bu tek başına yetmiyor. Bir başka fikre göre de beynin uyandıktan sonra yeni anıları kaydetme yeteneğini yeniden devreye alması en az iki dakika sürebiliyor. Yani rüya, o ilk dakikalarda kayıp gidiyor olabilir.</p>
-      <p>Daha çok hatırlamak için küçük adımlar var. Uyanınca hemen kalkma, gözlerin kapalıyken ve kıpırdamadan rüyayı bir kez baştan sona zihninde tekrar et. Yatağının yanına bir defter koyup birkaç kelime not al. Rüyalarına da ilgi göster, çünkü ilgi duyan insanlar daha çok hatırlıyor.</p>
-      <div class="sor"><strong>Kendine sor</strong><p>Son hatırladığın rüya neydi, uyandığında ilk ne hissettin?</p></div>
-    </div>
-    <div id="y2">
-      <h2>Zihnimiz Neden Başka Yerlerde Dolaşır?</h2>
-      <div class="meta">Zihin · 2 dk okuma</div>
-      <div class="kisaca"><strong>Kısaca</strong><ul>
-        <li>Bir araştırmada insanlar, uyanık sürenin ortalama %46,9'unda yaptıkları işten başka bir şey düşünüyordu.</li>
-        <li>Mutluluk, zihnin nerede olduğuyla yapılan etkinlikten daha güçlü ilişkili çıktı, ama neden-sonuç ilişkisi tartışmalı.</li>
-        <li>Zihin gezinmesi planlama ve hatırlamayı da mümkün kılıyor.</li>
-      </ul></div>
-      <p class="ilk">Bir kitap okurken bir sayfayı bitirip hiçbir şey hatırlamadığın oldu mu? Zihnin o sırada başka bir yerdeydi. Bu seni tembel yapmaz, insan zihni böyle çalışır.</p>
-      <p>Harvard'dan iki araştırmacı bunu ölçmeye karar verdi. 2010'da Science dergisinde yayımlanan çalışmada, 18 ile 88 yaş arasındaki yaklaşık 2.250 kişi gün içinde bir telefon uygulamasıyla ne yaptığını, ne düşündüğünü ve nasıl hissettiğini bildirdi. Sonuç şaşırtıcıydı: insanlar uyanık oldukları sürenin ortalama yüzde 46,9'unda, yaptıkları işten başka bir şey düşünüyordu.</p>
-      <p>Daha ilginç olan kısım mutlulukla ilgili. Mutluluktaki değişimin yaklaşık yüzde 10,8'i zihnin nerede olduğuyla, yüzde 4,6'sı ise yapılan etkinlikle açıklandı. Yani önemli olan, ne yaptığından çok o sırada zihninin orada olup olmaması çıktı. Araştırmacılar, zihin gezinmesinin çoğunlukla mutsuzluğun nedeni olduğunu düşündürdü. Sonraki bazı çalışmalar ise tam tersini savundu, yani tartışma sürüyor.</p>
-      <p>Zihin gezinmesinin kötü bir yanı yok, aslında planlamayı, geçmişi hatırlamayı ve geleceği düşünmeyi mümkün kılan da bu yetenek. Sadece duygusal bir bedeli olabiliyor.</p>
-      <div class="sor"><strong>Kendine sor</strong><p>Bugün zihnin seni en çok nereye götürdü?</p></div>
-    </div>
-    <div id="y3">
-      <h2>Alışkanlıklar Nasıl Oluşur?</h2>
-      <div class="meta">Günlük Hayat · 2 dk okuma</div>
-      <div class="kisaca"><strong>Kısaca</strong><ul>
-        <li>"21 gün" sözü bilimsel bir bulgu değil.</li>
-        <li>Araştırmada ortalama 66 gün sürdü, kişiye göre 18 ile 254 gün arasında değişti.</li>
-        <li>Tek bir günü atlamak uzun vadede belirgin zarar vermedi.</li>
-      </ul></div>
-      <p class="ilk">"Alışkanlık 21 günde oluşur" sözünü duymuşsundur. Bilimsel bir bulgu değil. Bu fikir, plastik cerrah Maxwell Maltz'ın hastalarına dair gözlemlerinden yayıldı.</p>
-      <p>Gerçek rakamı Londra'daki UCL'den Phillippa Lally ve ekibi 2009'da ölçtü. 96 kişi, öğle yemeğinde meyve yemek ya da günlük 15 dakika koşmak gibi yeni bir davranış seçti ve her gün onun ne kadar otomatik hissettirdiğini bildirdi. Otomatik hâle gelme ortalama 66 günde bir plato noktasına ulaştı. Ama kişiden kişiye çok fark vardı: kimi için 18 gün, kimi için 254 gün sürdü. Çalışma 12 hafta sürdü, en uzun süreler verilerden tahmin edildi.</p>
-      <p>İki rahatlatıcı bilgi daha var. Tek bir günü atlamak uzun vadede belirgin zarar vermedi. Ayrıca yeni alışkanlık eskisini silmiyor. Eski alışkanlık hâlâ orada duruyor, yeni davranışın ondan daha güçlü bir etki hâline gelmesi gerekiyor.</p>
-      <div class="sor"><strong>Kendine sor</strong><p>Bu ay hangi küçük alışkanlığı denemek isterdin?</p></div>
-    </div>
-  </div>
-
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="ilerleme" id="ilerleme"></div>
-    <div class="modal-kutu" id="kutu">
-      <button class="kapat" id="kapat">✕ Kapat</button>
-      <div id="icerik"></div>
-    </div>
-  </div>
-
-  <script>
-    // E-POSTA ADRESİNİ SADECE BURADA DEĞİŞTİR:
-    var EPOSTA = 'psk.sibeldemirel@gmail.com';
-
-    document.documentElement.classList.add('js');
-
-    document.querySelectorAll('a[data-mail]').forEach(function(a){ a.href = 'mailto:' + EPOSTA; });
-
-    document.querySelectorAll('.flip').forEach(function(f){
-      f.addEventListener('click', function(){ f.classList.toggle('cevrildi'); });
-    });
-
-    var yil = document.getElementById('yildizlar');
-    for (var i = 0; i < 90; i++) {
-      var s = document.createElement('span');
-      var b = Math.random() * 2 + 1;
-      s.style.width = b + 'px'; s.style.height = b + 'px';
-      s.style.left = (Math.random() * 100) + '%';
-      s.style.top = (Math.random() * 100) + '%';
-      s.style.animationDelay = (Math.random() * 5) + 's, ' + (Math.random() * 26) + 's';
-      yil.appendChild(s);
-    }
-
-    var tema = document.getElementById('tema');
-    function temaAyarla(gunduz) {
-      document.documentElement.classList.toggle('gunduz', gunduz);
-      tema.textContent = gunduz ? '☾' : '☀';
-      var m = document.querySelector('meta[name="theme-color"]');
-      if (m) m.setAttribute('content', gunduz ? '#fbf4ee' : '#0d0713');
-    }
-    try { if (localStorage.getItem('tema') === 'gunduz') temaAyarla(true); } catch (e) {}
-    tema.addEventListener('click', function(){
-      var g = !document.documentElement.classList.contains('gunduz');
-      temaAyarla(g);
-      try { localStorage.setItem('tema', g ? 'gunduz' : 'gece'); } catch (e) {}
-    });
-
-    var modal = document.getElementById('modal');
-    var kutu = document.getElementById('kutu');
-    var icerik = document.getElementById('icerik');
-    var ilerleme = document.getElementById('ilerleme');
-    function ac(id) {
-      var kaynak = document.getElementById(id);
-      if (!kaynak) return;
-      icerik.innerHTML = kaynak.innerHTML;
-      modal.classList.add('acik');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      kutu.scrollTop = 0;
-      ilerleme.style.width = '0%';
-    }
-    function kapat() {
-      modal.classList.remove('acik');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      ilerleme.style.width = '0%';
-    }
-    document.querySelectorAll('.yazi').forEach(function(y){
-      y.addEventListener('click', function(){ ac(y.getAttribute('data-yazi')); });
-      y.addEventListener('keydown', function(e){ if (e.key === 'Enter') ac(y.getAttribute('data-yazi')); });
-    });
-    document.getElementById('kapat').addEventListener('click', kapat);
-    modal.addEventListener('click', function(e){ if (e.target === modal) kapat(); });
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') kapat(); });
-    kutu.addEventListener('scroll', function(){
-      var toplam = kutu.scrollHeight - kutu.clientHeight;
-      var oran = toplam > 0 ? (kutu.scrollTop / toplam) * 100 : 0;
-      ilerleme.style.width = oran + '%';
-    });
-
-    var ogeler = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      var g = new IntersectionObserver(function(k){
-        k.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('goster'); g.unobserve(e.target); } });
-      }, {threshold: 0.08});
-      ogeler.forEach(function(o){ g.observe(o); });
-    } else {
-      ogeler.forEach(function(o){ o.classList.add('goster'); });
-    }
-  </script>
-</body>
-</html>
+<h2 class="k">İletişim</h2>
+<p>Bir yazıya dair düşüncelerini paylaşmak, soru sormak ya da yeni içeriklerden haberdar olmak istersen bana yazabilirsin: <a href="mailto:mailadresin@gmail.com">mailadresin@gmail.com</a></p>
+</div>
+<footer><div class="w">Sibel Demirel</div></footer>
+</body></html>
