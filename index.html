@@ -22,18 +22,16 @@ header a{font-size:15px;color:var(--ac);text-decoration:none}
 .hero small{display:block;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:18px}
 .hero h1{font-size:46px;line-height:1.15;margin:0 0 18px;font-weight:normal}
 .hero h1 em{color:var(--ac)}
-.hero p{max-width:520px;margin:0 auto 22px;color:var(--mu);font-size:20px}
-.rozet{display:inline-block;border:1px solid var(--ac);color:var(--ac);border-radius:30px;padding:5px 18px;font-size:14px;letter-spacing:.08em}
-.hakkimda{background:var(--soft);border-left:3px solid var(--ac);border-radius:4px 14px 14px 4px;padding:22px 26px;margin:6px 0 10px;font-size:18px}
+.hero p{max-width:520px;margin:0 auto 6px;color:var(--mu);font-size:20px}
+.hakkimda{background:#c8392b;color:#fff;border-radius:14px;padding:22px 26px;margin:20px 0 10px;font-size:18px}
 .hakkimda p{margin:0}
 .orn{display:flex;align-items:center;gap:14px;margin:38px 0 6px;color:var(--ac)}
 .orn:before,.orn:after{content:"";flex:1;height:1px;background:var(--ln)}
 .orn i{width:8px;height:8px;border:1.5px solid var(--ac);transform:rotate(45deg)}
-.kats{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 6px}
-.kats a{border:1px solid var(--ln);background:var(--card);color:var(--tx);text-decoration:none;font-size:15px;padding:7px 16px;border-radius:30px}
-.kats a:hover{border-color:var(--ac);color:var(--ac)}
-h2.k{font-size:13px;text-transform:uppercase;letter-spacing:.18em;color:var(--ac);margin:42px 0 14px;font-weight:normal}
-.kart{display:block;background:var(--card);border:1px solid var(--ln);border-left:3px solid var(--ac);border-radius:4px 12px 12px 4px;padding:18px 22px;margin-bottom:12px;text-decoration:none;color:var(--tx)}
+.sec{position:relative}
+.dek{position:absolute;right:4px;top:-16px;width:86px;height:100px;color:var(--ac);opacity:.18;pointer-events:none}
+h2.k{font-size:13px;text-transform:uppercase;letter-spacing:.18em;color:var(--ac);margin:42px 0 14px;font-weight:normal;position:relative}
+.kart{display:block;position:relative;background:var(--card);border:1px solid var(--ln);border-left:3px solid var(--ac);border-radius:4px 12px 12px 4px;padding:18px 22px;margin-bottom:12px;text-decoration:none;color:var(--tx)}
 .kart:hover{border-color:var(--ac)}
 .kart b{display:block;font-size:21px;line-height:1.35;font-weight:normal}
 .kart span{display:block;color:var(--mu);font-size:16px;line-height:1.5;margin-top:6px}
@@ -47,7 +45,17 @@ a{color:var(--ac)}
 .top{display:inline-block;margin-top:20px;font-size:16px}
 .mail{text-align:center;margin:46px 0 0}
 footer{margin-top:56px;padding:28px 0 50px;text-align:center;color:var(--mu);font-size:15px;border-top:1px solid var(--ln);position:relative;z-index:1}
-@media(max-width:560px){.hero h1{font-size:36px}.hero{padding:40px 0 26px}.bust{width:120px;right:-14px;opacity:.12}article h2{font-size:27px}}
+.lav{display:block;margin:0 auto 10px;width:140px;color:var(--ac);opacity:.5}
+.ky{position:fixed;width:3px;height:3px;border-radius:50%;background:var(--ac);box-shadow:0 0 7px 2px var(--ac);opacity:0;z-index:2;pointer-events:none;animation:kay 9s linear infinite}
+.ky:after{content:"";position:absolute;left:1px;top:1px;width:80px;height:1.5px;background:linear-gradient(90deg,var(--ac),transparent);transform-origin:0 50%;transform:rotate(-35deg)}
+@keyframes kay{0%{opacity:0;transform:translate(0,0)}3%{opacity:1}14%{opacity:0;transform:translate(-420px,300px)}100%{opacity:0;transform:translate(-420px,300px)}}
+.k1{top:6%;left:92%;animation-delay:1s}
+.k2{top:22%;left:70%;animation-delay:4s;animation-duration:11s}
+.k3{top:40%;left:98%;animation-delay:7s;animation-duration:10s}
+.k4{top:12%;left:48%;animation-delay:9s;animation-duration:13s}
+.k5{top:55%;left:85%;animation-delay:13s;animation-duration:12s}
+@media(prefers-reduced-motion:reduce){.ky{display:none}}
+@media(max-width:560px){.hero h1{font-size:36px}.hero{padding:40px 0 26px}.bust{width:120px;right:-14px;opacity:.12}article h2{font-size:27px}.dek{width:66px;height:78px}}
 </style>
 </head><body>
 
@@ -56,6 +64,12 @@ footer{margin-top:56px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 <path d="M15 30V266M45 30V266M24 32V266M30 32V266M36 32V266"/>
 <path d="M12 266H48V276H8V288H52V276H48"/>
 </svg>
+
+<div class="ky k1"></div>
+<div class="ky k2"></div>
+<div class="ky k3"></div>
+<div class="ky k4"></div>
+<div class="ky k5"></div>
 
 <header><div class="w"><b>Sibel Demirel</b><a href="#yazilar" id="geri" hidden>← Tüm yazılar</a></div></header>
 
@@ -69,42 +83,46 @@ footer{margin-top:56px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 <path d="M92 206C70 212 40 218 18 240L18 256M116 206C140 212 166 220 186 240L186 256M18 256H186"/>
 <path d="M100 40C120 40 134 56 134 78M104 92C98 92 96 104 102 114C106 118 112 114 112 104M66 90Q70 87 74 90"/>
 </svg>
-<small>Psikoloji · Rüya · Zihin</small>
+<small>Psikoloji · Rüya</small>
 <h1>İç dünyana <em>hoş geldin</em></h1>
 <p>Kendini dinlemeye ve psikolojiyi keşfetmeye davetlisin.</p>
-<span class="rozet">Psikoloji · Son sınıf öğrencisi</span>
 </section>
 
 <div class="hakkimda"><p>Merhaba, ben Sibel, psikoloji bölümü son sınıf öğrencisiyim. İnsanı, rüyaları ve zihnin görünmeyen katmanlarını merak ediyorum. Bu sayfa, psikolojiye dair öğrendiklerimi ve düşündüklerimi sade bir dille paylaştığım küçük bir köşe.</p></div>
 
-<div class="orn"><i></i></div>
+<div id="yazilar"></div>
 
-<nav class="kats" id="yazilar">
-<a href="#kat-deney">Klasik deneyler</a>
-<a href="#kat-kavram">Psikoloji kavramları</a>
-<a href="#kat-ruya">Rüyalar ve zihin</a>
-<a href="#kat-mit">Mitler ve gerçekler</a>
-</nav>
-
+<div class="sec">
+<svg class="dek" viewBox="0 0 100 130" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M38 8H62M42 8V44L16 104C12 114 20 122 30 122H70C80 122 88 114 84 104L58 44V8M28 88H72"/></svg>
 <h2 class="k" id="kat-deney">Klasik deneyler</h2>
 <a class="kart" href="#milgram"><b>Milgram itaat deneyi: Gerçekte ne oldu, ne düşünülüyor?</b><span>Psikolojinin en ünlü deneyi sık sık yarım anlatılır. Düzeneği, sonuçları ve eleştirileri.</span></a>
+</div>
 
 <div class="orn"><i></i></div>
+<div class="sec">
+<svg class="dek" viewBox="0 0 100 160" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 8H68M36 8C36 22 42 26 42 34C30 44 20 60 20 88C20 120 40 140 50 146C60 140 80 120 80 88C80 60 70 44 58 34C58 26 64 22 64 8M20 72C4 72 4 104 22 106M80 72C96 72 96 104 78 106M42 146H58V154H42Z"/></svg>
 <h2 class="k" id="kat-kavram">Psikoloji kavramları</h2>
 <a class="kart" href="#icedonuk"><b>İçe dönüklük ile utangaçlık aynı şey mi?</b><span>Gündelik dilde karışıyorlar, ama psikolojide farklı şeyleri anlatıyorlar.</span></a>
 <a class="kart" href="#zihin"><b>Zihnin dalıp gitmesi: Neden sürekli başka yerdeyiz?</b><span>Günün neredeyse yarısında aklımız yaptığımız işte değil.</span></a>
 <a class="kart" href="#onay"><b>Onay yanlılığı: Neden hep haklı çıkmak isteriz?</b><span>İki klasik deney ve gündelik hayattaki karşılığı.</span></a>
+</div>
 
 <div class="orn"><i></i></div>
+<div class="sec">
+<svg class="dek" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M62 10C34 14 16 36 16 62C16 84 34 94 54 92C36 84 30 62 40 40C46 26 54 16 62 10ZM80 24V36M74 30H86M86 60V66M83 63H89"/></svg>
 <h2 class="k" id="kat-ruya">Rüyalar ve zihin</h2>
 <a class="kart" href="#ruya"><b>Rüyalar nasıl oluşur? Uyku evreleri ve REM</b><span>Neden çoğunu unutuyoruz? Bilimin bildiği ve hâlâ tartıştığı noktalar.</span></a>
 <a class="kart" href="#bilincli"><b>Bilinçli rüya nedir? Rüya gördüğünü fark etmek</b><span>Ne kadar yaygın, nasıl çalışılıyor ve neleri bilmiyoruz?</span></a>
+</div>
 
 <div class="orn"><i></i></div>
+<div class="sec">
+<svg class="dek" viewBox="0 0 100 60" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 30C24 6 76 6 96 30C76 54 24 54 4 30Z"/><circle cx="50" cy="30" r="12"/><circle cx="50" cy="30" r="4"/></svg>
 <h2 class="k" id="kat-mit">Mitler ve gerçekler</h2>
 <a class="kart" href="#beyin"><b>Beyin hakkında üç yaygın mit</b><span>Yüzde 10, sol-sağ beyin ve öğrenme stilleri bilimsel olarak ne kadar sağlam?</span></a>
 <a class="kart" href="#aliskanlik"><b>Alışkanlık kaç günde oluşur?</b><span>21 gün cümlesi nereden çıktı ve gerçek bir çalışma ne söylüyor?</span></a>
 <a class="kart" href="#yalan"><b>Yalan söyleyen göz mü kaçırır?</b><span>"Gözlerime bak da söyle" cümlesinin bilimsel karşılığı yok denecek kadar az.</span></a>
+</div>
 
 <div class="orn"><i></i></div>
 <p class="mail"><a href="mailto:psk.sibeldemirel.com">Bana e-posta gönder</a></p>
@@ -238,7 +256,10 @@ footer{margin-top:56px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 
 </div>
 
-<footer>Sibel Demirel</footer>
+<footer>
+<svg class="lav" viewBox="0 0 120 30" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 15H112M14 15C16 6 24 5 26 8C24 14 20 15 14 15ZM14 15C16 24 24 25 26 22C24 16 20 15 14 15ZM34 15C36 6 44 5 46 8C44 14 40 15 34 15ZM34 15C36 24 44 25 46 22C44 16 40 15 34 15ZM106 15C104 6 96 5 94 8C96 14 100 15 106 15ZM106 15C104 24 96 25 94 22C96 16 100 15 106 15ZM86 15C84 6 76 5 74 8C76 14 80 15 86 15ZM86 15C84 24 76 25 74 22C76 16 80 15 86 15Z"/></svg>
+Sibel Demirel
+</footer>
 
 <script>
 (function(){
