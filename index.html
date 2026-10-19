@@ -11,18 +11,18 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--tx);font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.8}
 .w{max-width:700px;margin:0 auto;padding:0 22px}
 header{padding:20px 0;border-bottom:1px solid var(--ln)}
-header .w{display:flex;justify-content:space-between;align-items:baseline}
 header b{font-size:21px;letter-spacing:.02em}
-header a{color:var(--mu);text-decoration:none;font-size:15px}
-.hero{padding:70px 0 40px;text-align:center}
+.hero{padding:64px 0 36px;text-align:center}
 .hero small{display:block;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--ac);margin-bottom:18px}
 .hero h1{font-size:46px;line-height:1.15;margin:0 0 18px;font-weight:normal}
 .hero h1 em{color:var(--ac)}
 .hero p{max-width:520px;margin:0 auto;color:var(--mu);font-size:20px}
-.hero i{display:block;width:46px;height:2px;background:var(--ac);margin:34px auto 0}
-.hakkimda{background:var(--soft);border-radius:14px;padding:22px 26px;margin:10px 0 10px;font-size:18px}
+.hakkimda{background:var(--soft);border-radius:14px;padding:22px 26px;margin:6px 0 10px;font-size:18px}
 .hakkimda p{margin:0}
-h2.k{font-size:13px;text-transform:uppercase;letter-spacing:.18em;color:var(--ac);margin:46px 0 14px;font-weight:normal}
+.kats{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 6px}
+.kats a{border:1px solid var(--ln);background:var(--card);color:var(--tx);text-decoration:none;font-size:15px;padding:7px 16px;border-radius:30px}
+.kats a:hover{border-color:var(--ac);color:var(--ac)}
+h2.k{font-size:13px;text-transform:uppercase;letter-spacing:.18em;color:var(--ac);margin:44px 0 14px;font-weight:normal}
 .kart{display:block;background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:18px 22px;margin-bottom:12px;text-decoration:none;color:var(--tx)}
 .kart:hover{border-color:var(--ac)}
 .kart b{display:block;font-size:21px;line-height:1.35;font-weight:normal}
@@ -31,41 +31,44 @@ article{margin-top:64px;padding-top:34px;border-top:1px solid var(--ln)}
 article .et{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--ac)}
 article h2{font-size:32px;line-height:1.25;margin:8px 0 26px;font-weight:normal}
 article p{margin:0 0 1.25em}
-article p:first-of-type{font-size:21px;color:var(--tx)}
+article p:first-of-type{font-size:21px}
 a{color:var(--ac)}
 .top{font-size:15px;color:var(--mu)}
-.ic{background:var(--soft);border-radius:14px;padding:22px 26px;margin-top:50px}
-.ic p{margin:0}
 footer{margin-top:60px;padding:28px 0 50px;text-align:center;color:var(--mu);font-size:15px;border-top:1px solid var(--ln)}
-@media(max-width:520px){.hero h1{font-size:36px}.hero{padding:50px 0 30px}article h2{font-size:27px}}
+@media(max-width:520px){.hero h1{font-size:36px}.hero{padding:44px 0 26px}article h2{font-size:27px}}
 </style>
 </head><body>
-<header><div class="w"><b>Sibel Demirel</b><a href="#yazilar">Yazılar</a></div></header>
+<header><div class="w"><b>Sibel Demirel</b></div></header>
 <div class="w">
 
 <section class="hero">
 <small>Psikoloji · Rüya · Zihin</small>
 <h1>İç dünyana <em>hoş geldin</em></h1>
 <p>Kendini dinlemeye ve psikolojiyi keşfetmeye davetlisin.</p>
-<i></i>
 </section>
 
 <div class="hakkimda"><p>Merhaba, ben Sibel. İnsanı, rüyaları ve zihnin görünmeyen katmanlarını merak ediyorum. Bu sayfa, psikolojiye dair öğrendiklerimi ve düşündüklerimi sade bir dille paylaştığım küçük bir köşe.</p></div>
 
-<div id="yazilar"></div>
-<h2 class="k">Klasik deneyler</h2>
+<nav class="kats" id="yazilar">
+<a href="#kat-deney">Klasik deneyler</a>
+<a href="#kat-kavram">Psikoloji kavramları</a>
+<a href="#kat-ruya">Rüyalar ve zihin</a>
+<a href="#kat-mit">Mitler ve gerçekler</a>
+</nav>
+
+<h2 class="k" id="kat-deney">Klasik deneyler</h2>
 <a class="kart" href="#milgram"><b>Milgram itaat deneyi: Gerçekte ne oldu, ne düşünülüyor?</b><span>Psikolojinin en ünlü deneyi sık sık yarım anlatılır. Düzeneği, sonuçları ve eleştirileri.</span></a>
 
-<h2 class="k">Psikoloji kavramları</h2>
+<h2 class="k" id="kat-kavram">Psikoloji kavramları</h2>
 <a class="kart" href="#icedonuk"><b>İçe dönüklük ile utangaçlık aynı şey mi?</b><span>Gündelik dilde karışıyorlar, ama psikolojide farklı şeyleri anlatıyorlar.</span></a>
 <a class="kart" href="#zihin"><b>Zihnin dalıp gitmesi: Neden sürekli başka yerdeyiz?</b><span>Günün neredeyse yarısında aklımız yaptığımız işte değil.</span></a>
 <a class="kart" href="#onay"><b>Onay yanlılığı: Neden hep haklı çıkmak isteriz?</b><span>İki klasik deney ve gündelik hayattaki karşılığı.</span></a>
 
-<h2 class="k">Rüyalar ve zihin</h2>
+<h2 class="k" id="kat-ruya">Rüyalar ve zihin</h2>
 <a class="kart" href="#ruya"><b>Rüyalar nasıl oluşur? Uyku evreleri ve REM</b><span>Neden çoğunu unutuyoruz? Bilimin bildiği ve hâlâ tartıştığı noktalar.</span></a>
 <a class="kart" href="#bilincli"><b>Bilinçli rüya nedir? Rüya gördüğünü fark etmek</b><span>Ne kadar yaygın, nasıl çalışılıyor ve neleri bilmiyoruz?</span></a>
 
-<h2 class="k">Mitler ve gerçekler</h2>
+<h2 class="k" id="kat-mit">Mitler ve gerçekler</h2>
 <a class="kart" href="#beyin"><b>Beyin hakkında üç yaygın mit</b><span>Yüzde 10, sol-sağ beyin ve öğrenme stilleri bilimsel olarak ne kadar sağlam?</span></a>
 <a class="kart" href="#aliskanlik"><b>Alışkanlık kaç günde oluşur?</b><span>21 gün cümlesi nereden çıktı ve gerçek bir çalışma ne söylüyor?</span></a>
 <a class="kart" href="#yalan"><b>Yalan söyleyen göz mü kaçırır?</b><span>"Gözlerime bak da söyle" cümlesinin bilimsel karşılığı yok denecek kadar az.</span></a>
@@ -182,10 +185,8 @@ footer{margin-top:60px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 <p>Gündelik hayat için çıkarım şu: Birinin gözünü kaçırması sana onun yalan söylediğini göstermez. Bu, çoğu zaman sadece utangaç, heyecanlı ya da düşünüyor olmasının işareti olabilir. Birinin sözlerinin doğruluğunu merak ediyorsan bakışlara değil, anlatının tutarlılığına, doğrulanabilir ayrıntılara ve başka kaynaklara bakmak çok daha sağlam bir yol.</p>
 <a class="top" href="#yazilar">↑ Yazılara dön</a>
 </article>
+  <p style="margin-top:50px;text-align:center"><a href="mailto:BURAYA@ADRESIN.com">Bana e-posta gönder</a></p>
 
-<div class="ic">
-<p>Bir yazıya dair düşüncelerini paylaşmak, soru sormak ya da yeni içeriklerden haberdar olmak istersen bana yazabilirsin: <a href="mailto:mailadresin@gmail.com">mailadresin@gmail.com</a></p>
-</div>
 </div>
 <footer>Sibel Demirel</footer>
 </body></html>
