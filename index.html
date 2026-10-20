@@ -292,7 +292,7 @@ Sibel Demirel
 </footer>
 
 <script>
-/* GÖRSELLER: GitHub'a kökte f-inception.jpg, k-frankl.jpg gibi adlarla yükle. Sayfa .jpg, .png, .webp ve .jpeg dener. */
+/* GÖRSELLER: GitHub'a kökte f-inception, k-frankl gibi adlarla yükle. Uzantı büyük/küçük harf ya da çift uzantı olsa da sayfa bulur. */
 var F=[
 {id:"inception",g:1,t:"Inception (Başlangıç)",alt:"Christopher Nolan · 2010",
 s:"Başkalarının rüyalarına girip zihinlerine fikir yerleştirebilen bir ekibin, imkânsız görünen son görevi.",
@@ -434,7 +434,8 @@ function gor(o,t){
   return '<img class="'+c+'" src="'+b+'.jpg" data-b="'+b+'" data-n="0" alt="'+ad+'" onerror="hata(this)">';
 }
 function hata(im){
-  var e=["png","webp","jpeg"],n=parseInt(im.getAttribute("data-n"),10);
+  var e=["png","webp","jpeg","JPG","PNG","WEBP","JPEG","jpg.JPG","jpg.jpg","jpg.jpeg","jpg.png","png.PNG","png.png","jpeg.JPEG","jpg.JPEG"];
+  var n=parseInt(im.getAttribute("data-n"),10);
   if(n<e.length){im.setAttribute("data-n",n+1);im.src=im.getAttribute("data-b")+"."+e[n];}
   else{
     var d=document.createElement("div");
