@@ -35,16 +35,20 @@ h2.k{font-size:13px;text-transform:uppercase;letter-spacing:.18em;color:var(--ac
 .kart:hover{border-color:var(--ac)}
 .kart b{display:block;font-size:21px;line-height:1.35;font-weight:normal}
 .kart span{display:block;color:var(--mu);font-size:16px;line-height:1.5;margin-top:6px}
-.oge{display:grid;grid-template-columns:104px 1fr;gap:18px;background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:16px;margin-bottom:14px;color:var(--tx);text-decoration:none;position:relative}
-.oge.link{border-left:3px solid var(--ac)}
-.oge.link:hover{border-color:var(--ac)}
-.kapak{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:8px;min-height:150px;padding:12px 8px;border-radius:6px;color:#fff;font-size:11px;letter-spacing:.14em;background:linear-gradient(160deg,var(--g1),var(--g2))}
+.oge{display:grid;gap:18px;background:var(--card);border:1px solid var(--ln);border-left:3px solid var(--ac);border-radius:4px 12px 12px 4px;padding:16px;margin-bottom:14px;color:var(--tx);text-decoration:none;position:relative}
+.oge:hover{border-color:var(--ac)}
+.oge.f{grid-template-columns:150px 1fr}
+.oge.k{grid-template-columns:100px 1fr}
 .g1{--g1:#5b2050;--g2:#a3335a}.g2{--g1:#46285f;--g2:#8a4a8f}.g3{--g1:#7a2547;--g2:#c0486a}.g4{--g1:#3b2a55;--g2:#7a4a86}
-.ik{width:44px;height:44px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.gor{display:block;width:100%;height:auto;border-radius:6px;background:linear-gradient(160deg,var(--g1),var(--g2));align-self:start;object-fit:cover}
+.gor.f{aspect-ratio:16/9}
+.gor.k{aspect-ratio:2/3}
 .oge h3{font-size:20px;line-height:1.3;margin:0 0 2px;font-weight:normal}
 .oge .alt{font-size:14px;color:var(--ac);margin-bottom:8px}
 .oge p{margin:0 0 .7em;font-size:16px;line-height:1.6}
 .acik{font-size:14px;color:var(--ac)}
+.gv.k{width:150px;margin-bottom:22px}
+.gv.f{margin-bottom:22px}
 article{margin-top:40px;padding-top:10px}
 article .et{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--ac)}
 article h2{font-size:32px;line-height:1.25;margin:8px 0 14px;font-weight:normal}
@@ -65,7 +69,7 @@ footer{margin-top:56px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 .k4{top:12%;left:48%;animation-delay:9s;animation-duration:13s}
 .k5{top:55%;left:85%;animation-delay:13s;animation-duration:12s}
 @media(prefers-reduced-motion:reduce){.ky{display:none}}
-@media(max-width:560px){.hero h1{font-size:36px}.hero{padding:40px 0 26px}.bust{width:120px;right:-14px;opacity:.12}article h2{font-size:27px}.dek{width:66px;height:78px}.oge{grid-template-columns:80px 1fr;gap:12px}.kapak{min-height:120px;font-size:10px}.ik{width:34px;height:34px}}
+@media(max-width:560px){.hero h1{font-size:36px}.hero{padding:40px 0 26px}.bust{width:120px;right:-14px;opacity:.12}article h2{font-size:27px}.dek{width:66px;height:78px}.oge{gap:12px;padding:12px}.oge.f{grid-template-columns:112px 1fr}.oge.k{grid-template-columns:84px 1fr}.oge h3{font-size:18px}.oge p{font-size:15px}}
 </style>
 </head><body>
 
@@ -160,31 +164,13 @@ footer{margin-top:56px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 <div class="orn"><i></i></div>
 <div class="sec">
 <h2 class="k" id="kat-film">Psikolojik filmler</h2>
-<div class="oge"><div class="kapak g1"><span>FİLM</span><svg class="ik"><use href="#i-spiral"/></svg><span>2010</span></div><div><h3>Inception (Başlangıç)</h3><div class="alt">Christopher Nolan · 2010</div><p>Başkalarının rüyalarına girerek zihinlerine fikir yerleştirebilen bir ekibin, imkânsız görünen son görevi.</p><p><b>Psikolojiyle bağlantısı:</b> Rüya içinde rüya, rüyada gerçeği sorgulama ve rüyada olduğunu fark etme (bilinçli rüya) gibi konulara dokunuyor. Rüyalara girmek bilimkurgu, ama rüyaların gerçek gibi yaşanması gerçek bir araştırma konusu.</p></div></div>
-<div class="oge"><div class="kapak g2"><span>FİLM</span><svg class="ik"><use href="#i-flower"/></svg><span>2004</span></div><div><h3>Eternal Sunshine of the Spotless Mind (Sil Baştan)</h3><div class="alt">Michel Gondry · 2004</div><p>Ayrılık sonrası acıyı dindirmek için birbirlerine ait anıları sildirmeye karar veren bir çift.</p><p><b>Psikolojiyle bağlantısı:</b> Bellek bir video kaydı gibi çalışmıyor, her hatırlayışta yeniden kuruluyor. Film, acı veren anıları silmenin kim olduğumuzu da silip silmediğini soruyor.</p></div></div>
-<div class="oge"><div class="kapak g3"><span>FİLM</span><svg class="ik"><use href="#i-nodes"/></svg><span>2001</span></div><div><h3>A Beautiful Mind (Akıl Oyunları)</h3><div class="alt">Ron Howard · 2001</div><p>Matematikçi John Nash'in hayatından esinlenen, şizofreniyle mücadele öyküsü.</p><p><b>Psikolojiyle bağlantısı:</b> Sanrı ve varsanı kavramlarını gösteriyor. Ama film gerçek hayatı sadeleştiriyor; özellikle görsel varsanıların gerçeği tam yansıtmadığı belirtilir. Tanı ya da tedavi kaynağı olarak okunmamalı.</p></div></div>
-<div class="oge"><div class="kapak g4"><span>FİLM</span><svg class="ik"><use href="#i-board"/></svg><span>1997</span></div><div><h3>Good Will Hunting (Can Dostum)</h3><div class="alt">Gus Van Sant · 1997</div><p>Dahi ama öfkeli bir genç ile onunla çalışmaya başlayan bir terapistin hikâyesi.</p><p><b>Psikolojiyle bağlantısı:</b> Terapide güvenin ve ilişkinin önemini, geçmiş yaralanmaların insanı nasıl korumacı yaptığını anlatıyor. Psikoterapi araştırmaları da terapist ile danışan arasındaki ilişkinin sonuçla bağlantılı olduğunu söylüyor.</p></div></div>
-<div class="oge"><div class="kapak g1"><span>FİLM</span><svg class="ik"><use href="#i-emo"/></svg><span>2015</span></div><div><h3>Inside Out (Ters Yüz)</h3><div class="alt">Pete Docter · 2015</div><p>Bir kızın zihninde yaşayan duyguların, taşınma sonrası yaşadığı zorlukta onunla birlikte verdiği mücadele.</p><p><b>Psikolojiyle bağlantısı:</b> Duyguların işlevini ve üzüntünün de gerekli olabildiğini anlatıyor; anılar ile duygular arasındaki bağı gösteriyor. Temel duygular fikrinden esinlendiği söyleniyor, ama duygular beş taneyle sınırlı değil.</p></div></div>
-<div class="oge"><div class="kapak g2"><span>FİLM</span><svg class="ik"><use href="#i-feather"/></svg><span>2010</span></div><div><h3>Black Swan (Siyah Kuğu)</h3><div class="alt">Darren Aronofsky · 2010</div><p>Bir bale dansçısının başrol baskısı altında kendini kaybetmeye başlaması.</p><p><b>Psikolojiyle bağlantısı:</b> Mükemmeliyetçilik, performans baskısı, kimlik ve gerçeklik algısındaki bozulma işleniyor. Bir psikolojik gerilim olduğu için belirli bir tanıyı doğru biçimde anlatmaya çalışmıyor.</p></div></div>
-<div class="oge"><div class="kapak g3"><span>FİLM</span><svg class="ik"><use href="#i-lighthouse"/></svg><span>2010</span></div><div><h3>Shutter Island (Zindan Adası)</h3><div class="alt">Martin Scorsese · 2010</div><p>1954'te bir hastane adasında kaybolan bir hastayı arayan federal polis memurunun öyküsü.</p><p><b>Psikolojiyle bağlantısı:</b> Spoiler vermeden: Travma, inkâr ve zihnin acıdan kendini koruma biçimleri üzerine. Dönemin psikiyatri tedavilerine dair tartışmalara da değiniyor.</p></div></div>
-<div class="oge"><div class="kapak g4"><span>FİLM</span><svg class="ik"><use href="#i-bird"/></svg><span>1975</span></div><div><h3>One Flew Over the Cuckoo's Nest (Guguk Kuşu)</h3><div class="alt">Miloš Forman · 1975</div><p>Hapisten kurtulmak için akıl hastası numarası yapan bir adamın, bir psikiyatri servisindeki düzene başkaldırması.</p><p><b>Psikolojiyle bağlantısı:</b> Kurum düzeni, damgalama ve hasta hakları tartışmalarını etkilemiş bir film. 1975 yapımı olduğu için bugünkü uygulamaları yansıtmıyor; bazı tedavilerin gösterimi eleştirilmiştir.</p></div></div>
-<div class="oge"><div class="kapak g1"><span>FİLM</span><svg class="ik"><use href="#i-ring"/></svg><span>1999</span></div><div><h3>Girl, Interrupted (Genç Kızlar)</h3><div class="alt">James Mangold · 1999</div><p>Susanna Kaysen'in anı kitabından uyarlanan film; 1960'larda bir psikiyatri kliniğine yatırılan genç bir kadının hikâyesi.</p><p><b>Psikolojiyle bağlantısı:</b> Tanı koymanın kişiyi nasıl etiketleyebildiğini, gençlikte kimlik arayışını ve normal sayılan ile hasta sayılan arasındaki sınırı tartışıyor. Kaysen'e sınırda kişilik bozukluğu tanısı konulduğu kitapta anlatılır.</p></div></div>
-<div class="oge"><div class="kapak g2"><span>FİLM</span><svg class="ik"><use href="#i-eye"/></svg><span>1998</span></div><div><h3>The Truman Show</h3><div class="alt">Peter Weir · 1998</div><p>Hayatının tamamı farkında olmadan canlı yayınlanan bir adamın gerçeği keşfi.</p><p><b>Psikolojiyle bağlantısı:</b> Gerçeklik algısı ve kontrol temalarını işliyor. Joel ve Ian Gold, kendini bir televizyon şovunun parçası sanan hastaları tanımlamak için "Truman Show sanrısı" terimini ortaya attı.</p></div></div>
+<div id="film-list"></div>
 </div>
 
 <div class="orn"><i></i></div>
 <div class="sec">
 <h2 class="k" id="kat-kitap">Psikoloji kitapları</h2>
-<a class="oge link" href="#frankl"><div class="kapak g3"><span>KİTAP</span><svg class="ik"><use href="#i-sun"/></svg><span>1946</span></div><div><h3>İnsanın Anlam Arayışı</h3><div class="alt">Viktor E. Frankl · 1946</div><p>Frankl'ın toplama kamplarındaki deneyimlerini ve bu deneyimden doğan logoterapi görüşünü anlattığı kitap.</p><p><b>Psikolojiyle bağlantısı:</b> İnsanın temel güdüsünün anlam arayışı olduğunu savunur; acı kaçınılmaz olduğunda bile ona karşı tutumun seçilebileceğini söyler.</p><span class="acik">Sayfayı aç →</span></div></a>
-<div class="oge"><div class="kapak g4"><span>KİTAP</span><svg class="ik"><use href="#i-scales"/></svg><span>2011</span></div><div><h3>Hızlı ve Yavaş Düşünme</h3><div class="alt">Daniel Kahneman · 2011</div><p>Zihnin hızlı, sezgisel düşünme ile yavaş, çabalı düşünme arasında nasıl bölündüğünü anlatır.</p><p><b>Psikolojiyle bağlantısı:</b> Bilişsel yanlılıklar ve karar verme psikolojisinin popüler özeti. Kahneman 2002'de Nobel Ekonomi Ödülü aldı. Kitaptaki bazı bulguların, özellikle hazırlama (priming) çalışmalarının sonradan yeniden üretilemediği tartışıldı.</p></div></div>
-<div class="oge"><div class="kapak g1"><span>KİTAP</span><svg class="ik"><use href="#i-moon"/></svg><span>1899</span></div><div><h3>Rüyaların Yorumu</h3><div class="alt">Sigmund Freud · 1899</div><p>Rüyaların bastırılmış isteklerin örtülü bir ifadesi olduğunu savunur.</p><p><b>Psikolojiyle bağlantısı:</b> Psikanalizin kurucu metinlerinden. Bilimsel olarak sınanması zor bulunduğu için bugün ana akım nörobilimde pek kabul görmüyor, ama rüyaya psikolojik anlam arama geleneğini başlattı.</p></div></div>
-<div class="oge"><div class="kapak g2"><span>KİTAP</span><svg class="ik"><use href="#i-hat"/></svg><span>1985</span></div><div><h3>Karısını Şapka Sanan Adam</h3><div class="alt">Oliver Sacks · 1985</div><p>Nörolog Sacks'in beyin hasarı yaşayan hastalarını anlattığı vaka öyküleri.</p><p><b>Psikolojiyle bağlantısı:</b> Algı, bellek ve benliğin beyne ne kadar bağlı olduğunu gösterir; hastaları birer vaka değil, insan olarak anlatır. Edebî bir anlatımı var, bilimsel makale değil.</p></div></div>
-<div class="oge"><div class="kapak g3"><span>KİTAP</span><svg class="ik"><use href="#i-wave"/></svg><span>1990</span></div><div><h3>Akış</h3><div class="alt">Mihaly Csikszentmihalyi · 1990</div><p>İnsanların bir işe tamamen daldığı, zamanın akıp gittiği hâli inceler.</p><p><b>Psikolojiyle bağlantısı:</b> Pozitif psikolojinin temel kavramlarından. Akışın, zorluk ile becerinin dengeli olduğu işlerde ortaya çıktığı öne sürülür.</p></div></div>
-<div class="oge"><div class="kapak g4"><span>KİTAP</span><svg class="ik"><use href="#i-single"/></svg><span>2012</span></div><div><h3>Sessiz Güç</h3><div class="alt">Susan Cain · 2012</div><p>İçe dönük insanların toplumda hak ettiği değeri görmediğini savunur.</p><p><b>Psikolojiyle bağlantısı:</b> Kişilik psikolojisi ve içe dönüklük. Popüler bir kitap; içe dönüklük ile utangaçlığın farkını sitedeki yazıyla birlikte okumak faydalı.</p></div></div>
-<div class="oge"><div class="kapak g1"><span>KİTAP</span><svg class="ik"><use href="#i-arrows"/></svg><span>1984</span></div><div><h3>Etki</h3><div class="alt">Robert Cialdini · 1984</div><p>İnsanların neden "evet" dediğini ikna ilkeleri üzerinden açıklar: karşılıklılık, tutarlılık, toplumsal kanıt, beğenilirlik, otorite ve kıtlık.</p><p><b>Psikolojiyle bağlantısı:</b> Sosyal psikoloji. Otorite bölümü, sitedeki Milgram yazısıyla birlikte okunabilir.</p></div></div>
-<div class="oge"><div class="kapak g2"><span>KİTAP</span><svg class="ik"><use href="#i-figure"/></svg><span>2014</span></div><div><h3>Beden Kaydeder</h3><div class="alt">Bessel van der Kolk · 2014</div><p>Travmanın zihinde ve bedende bıraktığı izleri ve iyileşme yollarını anlatır.</p><p><b>Psikolojiyle bağlantısı:</b> Travma psikolojisi. Klinik gözleme dayanan ve bazı iddiaları bilimsel olarak tartışmalı olan bir kitap, tek kaynak olarak okunmamalı.</p></div></div>
-<div class="oge"><div class="kapak g3"><span>KİTAP</span><svg class="ik"><use href="#i-chairs"/></svg><span>1989</span></div><div><h3>Aşkın Celladı</h3><div class="alt">Irvin D. Yalom · 1989</div><p>Bir psikiyatristin terapi odasındaki hastalarından yola çıkarak yazdığı öyküler.</p><p><b>Psikolojiyle bağlantısı:</b> Varoluşçu psikoterapiyi ve terapi ilişkisinin insani yanını gösterir. Öyküler edebî bir anlatımla yazılmıştır.</p></div></div>
-<div class="oge"><div class="kapak g4"><span>KİTAP</span><svg class="ik"><use href="#i-sprout"/></svg><span>2006</span></div><div><h3>Mindset</h3><div class="alt">Carol Dweck · 2006</div><p>Yeteneğin sabit olduğuna inanmak ile geliştirilebileceğine inanmak arasındaki farkı anlatır (büyüme zihniyeti).</p><p><b>Psikolojiyle bağlantısı:</b> Eğitim ve motivasyon psikolojisi. Büyüme zihniyetinin etkisi sonraki büyük çalışmalarda küçük bulundu; iddialarını temkinle okumak gerekir.</p></div></div>
+<div id="kitap-list"></div>
 </div>
 
 <div class="orn"><i></i></div>
@@ -194,19 +180,6 @@ footer{margin-top:56px;padding:28px 0 50px;text-align:center;color:var(--mu);fon
 </div>
 
 <div class="w" id="yazilar-alani">
-
-<article id="frankl">
-<div class="et">Kitaplar · Viktor E. Frankl · 1946</div>
-<h2>İnsanın Anlam Arayışı</h2>
-<div class="cizgi"></div>
-<p>Viktor Frankl, 1905'te Viyana'da doğdu ve nörolog ve psikiyatrist olarak çalışıyordu. İkinci Dünya Savaşı sırasında Yahudi olduğu için eşi ve ailesiyle birlikte Theresienstadt gettosuna götürüldü. Sonraki yıllarda Auschwitz dahil birkaç toplama kampında tutuldu ve 1945'te kurtarıldı. Annesi, babası, kardeşi ve eşi dahil ailesinin büyük bölümünü bu süreçte kaybetti. Bu kitap, o deneyimin hem bir tanıklığı hem de ondan çıkardığı psikolojik görüşün anlatımı.</p>
-<p>Kitap ilk kez 1946'da Almanca yayımlandı. İlk baskının adı kabaca "Bir psikolog toplama kampını yaşıyor" anlamına gelir. Yapısı iki parçalı: İlk bölüm kamptaki günlük yaşamı, insanların ruhsal tepkilerini ve Frankl'ın gözlemlerini anlatır. İkinci bölüm ise onun geliştirdiği terapi yaklaşımı olan logoterapiyi tanıtır. Kitabın gücü, bir kuramın bir insanın en zor koşullarda yaşadıklarıyla birlikte sunulmasından geliyor.</p>
-<p>Logoterapi adı, Yunanca "logos" sözcüğünden gelir ve burada "anlam" demektir. Frankl, Viyana'daki iki büyük akımla, yani Freud'un haz arayışı ve Adler'in güç arayışı vurgusuyla kendi görüşünü karşılaştırır. Ona göre insanın temel itkisi anlam bulmaktır. Anlam üç yolla bulunabilir: Bir iş ya da eser ortaya koymak, bir değeri ya da bir insanı deneyimlemek (örneğin sevmek) ve kaçınılmaz bir acıya karşı bir tutum almak. En çok alıntılanan fikir de sonuncusu: Koşullarımızı değiştiremesek bile, onlara nasıl yaklaşacağımızı seçebiliriz.</p>
-<p>Bu fikir günümüz psikolojisinde de karşılık buluyor. "Yaşamda anlam" bugün ayrı bir araştırma alanı ve anlam duygusu yüksek insanların genel olarak daha iyi bir iyilik hâli bildirdiğini gösteren çalışmalar var. Bu ilişkinin yönünü ve nedenini kesin söylemek ise zor. Anlamlı bir hayatı olanlar mı daha iyi hissediyor, yoksa iyi hissedenler hayatı daha anlamlı mı görüyor? Çalışmalar bunu tam ayıramıyor.</p>
-<p>Kitabı okurken akılda tutulması gereken sınırlar da var. Kitap bir anı ile bir kuramın karışımı, bir deney raporu değil. Hayatta kalmayı yalnızca kişinin tutumuna bağlamak yanlış olur; kampta pek çok şey tesadüfe ve koşullara bağlıydı. Ayrıca logoterapinin bir tedavi yöntemi olarak etkililiğine dair kanıt, kitabın popülerliği kadar güçlü değil. Frankl'ın görüşleri ilham verici bir bakış olarak okunmalı, bir tedavi kılavuzu olarak değil.</p>
-<p>Kitap kısa ama duygusal olarak ağır. İlk bölüm şiddet ve ölüm anlatımları içerir. Ağır bir yas ya da kriz yaşıyorsan, bu kitabı tek başına okumak yerine bir uzmanla ya da güvendiğin biriyle birlikte düşünmek daha iyi olabilir. Kendi hayatındaki anlam sorusuna ise iyi bir başlangıç noktası olabilir: Seni sabahları ayağa kaldıran şey ne ve acı karşısında nasıl bir tutum seçiyorsun?</p>
-<a class="top" href="#yazilar">← Tüm yazılar</a>
-</article>
 
 <article id="milgram">
 <div class="et">Klasik deneyler</div>
@@ -338,6 +311,188 @@ Sibel Demirel
 </footer>
 
 <script>
+/* FİLMLER: Gerçek görsel eklemek istersen bir öğeye img:"dosya.jpg" satırı ekle */
+var F=[
+{id:"inception",g:1,ic:"spiral",t:"Inception (Başlangıç)",alt:"Christopher Nolan · 2010",
+s:"Başkalarının rüyalarına girip zihinlerine fikir yerleştirebilen bir ekibin, imkânsız görünen son görevi.",
+b:"Rüya içinde rüya, rüyada gerçeği sorgulama ve rüyada olduğunu fark etme (bilinçli rüya) temalarına dokunuyor.",
+p:["Film, Dom Cobb (Leonardo DiCaprio) ve ekibinin rüyalar aracılığıyla birinin zihninden bilgi çaldığı, bu kez ise tersini, yani bir fikri yerleştirmeyi denediği bir soygun hikâyesi. Rüya katmanları iç içe geçiyor ve her katmanda zaman farklı akıyor. Yönetmen ve senarist Christopher Nolan.",
+"Psikoloji açısından filmin en gerçekçi tarafı, rüyada olduğunu fark etmek. Bilinçli rüya çalışmalarında insanlar gün içinde “şu an rüyada mıyım?” diye kontrol yapmayı bir alıştırma olarak deniyor. Filmdeki “totem” de buna benzer bir gerçeklik kontrolü. Bunun dışında rüyalara girip fikir yerleştirmek tamamen bilimkurgu. Rüyanın içeriğini dışarıdan değiştirebildiğimizi gösteren bir kanıt yok.",
+"Rüyada zamanın çok yavaşladığı fikri de filmin kurgusu. Bilinçli rüya deneylerinde, rüyada bir görevi yapan kişilerin harcadığı sürenin gerçek süreye yakın olduğu bildirilmiş. Filmi bir rüya bilimi belgeseli gibi değil, rüya ile gerçeklik arasındaki sınırı oynayan bir hikâye olarak izlemek en doğrusu."],
+r:["bilincli","Bilinçli rüya yazısı"]},
+{id:"eternal",g:2,ic:"flower",t:"Eternal Sunshine of the Spotless Mind (Sil Baştan)",alt:"Michel Gondry · 2004",
+s:"Ayrılık sonrası acıyı dindirmek için birbirlerine ait anıları sildirmeye karar veren bir çift.",
+b:"Belleğin bir video kaydı gibi değil, her hatırlayışta yeniden kurulan bir süreç olduğunu düşündürüyor.",
+p:["Joel (Jim Carrey) ve Clementine (Kate Winslet) ayrıldıktan sonra Clementine'in kendisini sildirdiğini öğrenen Joel de aynısını yaptırmaya karar verir. Anılar silinirken Joel onları yeniden yaşar ve bazılarını korumaya çalışır. Film, Michel Gondry'nin yönetmenliğinde ve Charlie Kaufman'ın senaryosuyla 2004'te çıktı.",
+"Belleğin nasıl çalıştığına dair gerçek bir bağlantı var: Bellek bir kayıt cihazı gibi değil, hatırladıkça yeniden kurulan bir şey. Hayvanlar üzerindeki deneylerde, bir anı hatırlandığında geçici olarak değişime açık hâle geldiği ve yeniden kaydedildiği gösterildi. Buna yeniden pekiştirme (reconsolidation) deniyor. İnsanlarda acı verici anıların bu yolla hedefli biçimde silinebildiğine dair kesin bir sonuç yok. Filmdeki gibi bir silme işlemi de yok.",
+"Film aynı zamanda psikolojik bir soruyu soruyor: Acı veren bir deneyimi silmek, ondan öğrendiklerimizi de siler mi? Bu bilimsel bir cevap değil, bir düşünme daveti. Acı anıların yerinde durup zamanla başka bir anlam kazanması ise psikoterapide sık işlenen bir konu."]},
+{id:"beautiful",g:3,ic:"nodes",t:"A Beautiful Mind (Akıl Oyunları)",alt:"Ron Howard · 2001",
+s:"Matematikçi John Nash'in hayatından esinlenen, şizofreniyle yaşama öyküsü.",
+b:"Sanrı ve varsanı kavramlarını gösteriyor; ama gerçek hayatı sadeleştiriyor, tanı ya da tedavi kaynağı olarak okunmamalı.",
+p:["Film, matematikçi John Nash'in hayatından esinleniyor ve 2001'de Ron Howard yönetmenliğinde çekildi, başrolde Russell Crowe var. Senaryo, Sylvia Nasar'ın Nash biyografisinden uyarlandı. 2002 Oscar'larında En İyi Film dahil dört ödül aldı. Nash gerçekte 1994'te ekonomi alanında Nobel Ödülü'nü paylaşan isimlerden biri oldu.",
+"Filmde Nash'in şizofreni belirtileri, yani sanrılar ve varsanılar, gerçek gibi görünen insanlar üzerinden anlatılıyor. Psikolojide sanrı, kanıt olmasına rağmen değişmeyen yanlış inanç; varsanı ise gerçek bir uyaran olmadan algılanan deneyim demek. Nash'in kendi anlatımlarında ağırlıklı olarak işitsel varsanılardan söz edilir. Film dramatik etki için görsel karakterler kullanıyor. Bu yüzden filmdeki hâli, hastalığın tipik görünümü olarak alınmamalı.",
+"Film aynı zamanda damgalamanın ve destekleyici ilişkilerin önemini gösteriyor. Ama iyileşmeyi olduğundan daha düzgün ve çabuk anlatıyor. Şizofreni, gerçek hayatta çoğu zaman uzun süreli tedavi ve destek gerektiren bir durum."]},
+{id:"goodwill",g:4,ic:"board",t:"Good Will Hunting (Can Dostum)",alt:"Gus Van Sant · 1997",
+s:"Dahi ama öfkeli bir genç ile onunla çalışmaya başlayan bir terapistin hikâyesi.",
+b:"Terapide güvenin ve ilişkinin önemini, geçmiş yaralanmaların insanı nasıl korumacı yaptığını anlatıyor.",
+p:["Matt Damon ve Ben Affleck'in yazdığı film 1997'de Gus Van Sant yönetmenliğinde çekildi ve senaryosuyla Oscar kazandı. Will Hunting (Matt Damon), matematikte olağanüstü yetenekli ama öfkeli ve kendini kapatmış bir gençtir. Mahkeme kararıyla terapiye giderek psikolog Sean Maguire (Robin Williams) ile tanışır. Williams bu rolüyle En İyi Yardımcı Erkek Oyuncu Oscar'ını aldı.",
+"Psikoterapi araştırmalarının uzun süredir bulduğu şeylerden biri, terapist ile danışan arasındaki bağın (terapötik ittifak) tedavi sonucuyla ilişkili olduğu. Filmde Will'in önce herkesi uzak tutması, sonra güvenmeye başlaması bu süreci hatırlatıyor. Geçmişte yaşanan ihmal ve şiddetin insanı bağ kurmaktan korkutabileceği fikri de psikolojide bağlanma konusuyla ilişkili.",
+"Film bir sinema anlatısı ve terapiyi sadeleştiriyor: Tek bir cümlenin ya da bir kucaklaşmanın bir anda her şeyi çözmesi gerçek terapiye benzemez. Gerçek terapide süreç yavaş ilerler ve terapistin sınırları net olmalıdır."]},
+{id:"insideout",g:1,ic:"emo",t:"Inside Out (Ters Yüz)",alt:"Pete Docter · 2015",
+s:"Bir kızın zihninde yaşayan duyguların, taşınma sonrası yaşadığı zorlukta onunla birlikte verdiği mücadele.",
+b:"Duyguların işlevini ve üzüntünün de gerekli olabildiğini anlatıyor; anılar ile duygular arasındaki bağı gösteriyor.",
+p:["Pixar yapımı film, Pete Docter yönetmenliğinde 2015'te çıktı. 11 yaşındaki Riley ailesiyle yeni bir şehre taşınınca, zihnindeki Neşe, Üzüntü, Korku, Öfke ve Tiksinti duyguları onu yönetmeye çalışır. Yapım sürecinde psikologlar Dacher Keltner ve Paul Ekman'dan danışmanlık alındığı belirtilir.",
+"Duyguların işlevi psikolojinin temel konularından. Paul Ekman'ın çalışmaları altı temel duygu önerir: mutluluk, üzüntü, korku, öfke, tiksinti ve şaşkınlık. Filmde beşi var. Duyguların sayısı ve ayrımı bilimde hâlâ tartışmalı; film bu tartışmayı sadeleştirerek anlatıyor. Filmin en güzel yanı, üzüntünün de bir işlevi olabileceğini göstermesi. Üzüntü, başkalarından destek istemenin ve olanı kabullenmenin bir yolu olabilir.",
+"Bellek de filmde renkli toplar olarak gösteriliyor. Gerçekte bellek bu kadar düzenli bir depo gibi çalışmaz. Film, çocuklara duygularını adlandırmayı öğretmek için güzel bir başlangıç olabilir; ama bir bilimsel model gibi okunmamalı."]},
+{id:"blackswan",g:2,ic:"feather",t:"Black Swan (Siyah Kuğu)",alt:"Darren Aronofsky · 2010",
+s:"Bir bale dansçısının başrol baskısı altında kendini kaybetmeye başlaması.",
+b:"Mükemmeliyetçilik, performans baskısı, kimlik ve gerçeklik algısındaki bozulma işleniyor.",
+p:["Darren Aronofsky'nin 2010 yapımı filminde Nina (Natalie Portman), bir bale topluluğunda Kuğu Gölü'nün başrolünü kazanır. Hem masum beyaz kuğuyu hem de baştan çıkarıcı siyah kuğuyu oynaması gerekir. Portman bu rolle En İyi Kadın Oyuncu Oscar'ını aldı.",
+"Filmde psikolojiyle ilgili birkaç tema iç içe: mükemmeliyetçilik, performans baskısı, aşırı kontrolcü bir ebeveyn ilişkisi ve kimlik. Mükemmeliyetçiliğin her türü zararlı değil; ama başkalarının beklentilerine göre kendini sürekli ölçmek, kaygı ve tükenmişlikle ilişkili bulunuyor. Nina'nın baskı altında gerçeklikten kopması ise filmin kurgusal gerilimi.",
+"Bu film bir psikolojik gerilim ve belirli bir hastalığı doğru biçimde anlatmayı amaçlamıyor. Bu yüzden Nina'ya bakıp bir tanı çıkarmak yanlış olur. Filmin değeri, başarı baskısının insanı nasıl daraltabileceğini hissettirmesinde."]},
+{id:"shutter",g:3,ic:"lighthouse",t:"Shutter Island (Zindan Adası)",alt:"Martin Scorsese · 2010",
+s:"1954'te bir hastane adasında kaybolan bir hastayı arayan federal polis memurunun öyküsü.",
+b:"Spoiler vermeden: Travma, inkâr ve zihnin acıdan kendini koruma biçimleri üzerine.",
+p:["Martin Scorsese'nin 2010 yapımı filmi, Dennis Lehane'in romanından uyarlandı. 1954'te federal polis memuru Teddy Daniels (Leonardo DiCaprio), akıl hastalarının tutulduğu bir adadaki hastaneden kaybolan bir hastayı aramaya gelir. Filmin geri kalanını anlatmak izleyenin keyfini bozar, bu yüzden burada hikâyeyi açmıyorum.",
+"Filmin psikolojiyle ilgili tarafı, travmanın ve suçluluğun zihni nasıl etkileyebileceği. Zihnin dayanılmaz bir acıdan kendini korumak için kullandığı yollara savunma mekanizmaları deniyor; inkâr bunlardan biri. Film bunları çok dramatik bir şekilde kullanıyor, gerçek hayatta bu kadar sinematik değil.",
+"Film aynı zamanda 1950'lerin psikiyatrisine dair bir fikir veriyor. O yıllar, ilaç tedavilerinin yeni yeni başladığı ve kurumsal bakımın tartışıldığı bir dönemdi. Filmdeki uygulamalar kurgu ve abartı içerir; bugünkü psikiyatrik bakımı yansıtmıyor."]},
+{id:"cuckoo",g:4,ic:"bird",t:"One Flew Over the Cuckoo's Nest (Guguk Kuşu)",alt:"Miloš Forman · 1975",
+s:"Hapisten kurtulmak için akıl hastası numarası yapan bir adamın, bir psikiyatri servisindeki düzene başkaldırması.",
+b:"Kurum düzeni, damgalama ve hasta hakları tartışmalarını etkilemiş bir film; bugünkü uygulamaları yansıtmıyor.",
+p:["Miloš Forman'ın 1975 filmi, Ken Kesey'in 1962 tarihli romanından uyarlandı. Hapishane yerine akıl hastanesine gönderilen McMurphy (Jack Nicholson), servisin katı düzenini yöneten Hemşire Ratched'e (Louise Fletcher) kafa tutar. Film, en önemli beş Oscar kategorisinin hepsini (film, yönetmen, erkek ve kadın oyuncu, uyarlama senaryo) kazanan üç filmden biri.",
+"Film, kurumların insanı nasıl edilgenleştirebileceği, gücün kötüye kullanımı ve ruhsal hastalık damgası üzerine bir eleştiri. Dönemin kurumsal bakım tartışmalarını etkilediği söylenir. Filmde gösterilen elektrokonvülsif tedavi (EKT), anestezisiz ve ceza gibi yansıtılıyor. Bugünkü EKT, anestezi altında ve özellikle ağır depresyon gibi durumlarda uzmanlarca uygulanan bir tedavi; filmin görüntüsünün EKT'ye dair korkuları artırdığı sık dile getirilir.",
+"Yani film hem tarihsel bir eleştiri hem de bir kurgu olarak okunmalı. Bugünkü psikiyatrik bakımı tanımlayan bir belgesel değil."]},
+{id:"girl",g:1,ic:"ring",t:"Girl, Interrupted (Genç Kızlar)",alt:"James Mangold · 1999",
+s:"Susanna Kaysen'in anı kitabından uyarlanan film; 1960'larda bir psikiyatri kliniğine yatırılan genç bir kadının hikâyesi.",
+b:"Tanının kişiyi nasıl etiketleyebildiğini, gençlikte kimlik arayışını ve normal ile hasta arasındaki sınırı tartışıyor.",
+p:["James Mangold'un 1999 filmi, Susanna Kaysen'in 1993 tarihli anı kitabına dayanıyor. Kaysen, 1960'ların sonunda 18 yaşında bir psikiyatri hastanesine yatırıldı ve sınırda kişilik bozukluğu tanısı aldığı kitapta anlatılıyor. Filmde Susanna'yı Winona Ryder, arkadaşı Lisa'yı ise Angelina Jolie oynadı; Jolie bu rolle En İyi Yardımcı Kadın Oyuncu Oscar'ını aldı.",
+"Hem kitap hem film, bir tanının kişiyi nasıl etiketleyebildiğini ve “normal” ile “hasta” arasındaki çizginin kimin tarafından çizildiğini soruyor. Kaysen kitabında tanı ölçütlerinin geniş ve bazen belirsiz olabileceğine dair düşüncelerini paylaşıyor. Gençlerde kimlik arayışı ile bir bozukluğun belirtilerini ayırmak da gerçekten zor bir iş.",
+"Bu, tanının önemsiz olduğu anlamına gelmiyor. Sınırda kişilik bozukluğu, ciddi sıkıntıya yol açan ve tedavisi olan bir durum. Film bir kişinin deneyimini anlatıyor ve herkes için genelleme yapmaz."]},
+{id:"truman",g:2,ic:"eye",t:"The Truman Show",alt:"Peter Weir · 1998",
+s:"Hayatının tamamı farkında olmadan canlı yayınlanan bir adamın gerçeği keşfi.",
+b:"Gerçeklik algısı ve kontrol temalarını işliyor; “Truman Show sanrısı” terimine de adını verdi.",
+p:["Peter Weir'in 1998 filmi, Andrew Niccol'un senaryosundan çekildi. Truman Burbank (Jim Carrey), doğduğu günden beri farkında olmadan bir televizyon programının merkezindedir; yaşadığı kasaba bir stüdyodur, çevresindeki herkes oyuncudur. Zamanla çevresindeki tuhaflıkları fark etmeye başlar.",
+"Film gerçeklik algısı, sürekli izlenme ve özgür irade gibi temaları işliyor. 2012'de psikiyatrist Joel Gold ve filozof Ian Gold, kendilerini bir televizyon programının merkezi sanan bazı hastaları anlatmak için “Truman Show sanrısı” terimini kullandı. Bu resmî bir tanı değil, bir sanrı temasının adı. Filmin bu hastalara bir şablon sunduğu düşünülüyor; ama bu henüz kanıtlanmış bir neden-sonuç ilişkisi değil.",
+"Bir başka yön, izlendiğimizi bilmenin davranışımızı değiştirebilmesi. Psikolojide bu, araştırmalarda dikkate alınması gereken bir sorun olarak karşımıza çıkar."]}
+];
+
+var K=[
+{id:"frankl",g:3,ic:"sun",t:"İnsanın Anlam Arayışı",yz:"Viktor E. Frankl",alt:"Viktor E. Frankl · 1946",
+s:"Frankl'ın toplama kamplarındaki deneyimlerini ve bu deneyimden doğan logoterapi görüşünü anlattığı kitap.",
+b:"İnsanın temel güdüsünün anlam arayışı olduğunu savunur; acı kaçınılmaz olduğunda bile ona karşı tutumun seçilebileceğini söyler.",
+p:["Viktor Frankl, 1905'te Viyana'da doğdu ve nörolog ve psikiyatrist olarak çalışıyordu. İkinci Dünya Savaşı sırasında Yahudi olduğu için eşi ve ailesiyle birlikte Theresienstadt gettosuna götürüldü. Sonraki yıllarda Auschwitz dahil birkaç toplama kampında tutuldu ve 1945'te kurtarıldı. Annesi, babası, kardeşi ve eşi dahil ailesinin büyük bölümünü bu süreçte kaybetti. Bu kitap, o deneyimin hem bir tanıklığı hem de ondan çıkardığı psikolojik görüşün anlatımı.",
+"Kitap ilk kez 1946'da Almanca yayımlandı. İlk baskının adı kabaca “Bir psikolog toplama kampını yaşıyor” anlamına gelir. Yapısı iki parçalı: İlk bölüm kamptaki günlük yaşamı, insanların ruhsal tepkilerini ve Frankl'ın gözlemlerini anlatır. İkinci bölüm ise onun geliştirdiği terapi yaklaşımı olan logoterapiyi tanıtır. Kitabın gücü, bir kuramın bir insanın en zor koşullarda yaşadıklarıyla birlikte sunulmasından geliyor.",
+"Logoterapi adı, Yunanca “logos” sözcüğünden gelir ve burada “anlam” demektir. Frankl, Viyana'daki iki büyük akımla, yani Freud'un haz arayışı ve Adler'in güç arayışı vurgusuyla kendi görüşünü karşılaştırır. Ona göre insanın temel itkisi anlam bulmaktır. Anlam üç yolla bulunabilir: Bir iş ya da eser ortaya koymak, bir değeri ya da bir insanı deneyimlemek (örneğin sevmek) ve kaçınılmaz bir acıya karşı bir tutum almak. En çok alıntılanan fikir de sonuncusu: Koşullarımızı değiştiremesek bile, onlara nasıl yaklaşacağımızı seçebiliriz.",
+"Bu fikir günümüz psikolojisinde de karşılık buluyor. “Yaşamda anlam” bugün ayrı bir araştırma alanı ve anlam duygusu yüksek insanların genel olarak daha iyi bir iyilik hâli bildirdiğini gösteren çalışmalar var. Bu ilişkinin yönünü ve nedenini kesin söylemek ise zor. Anlamlı bir hayatı olanlar mı daha iyi hissediyor, yoksa iyi hissedenler hayatı daha anlamlı mı görüyor? Çalışmalar bunu tam ayıramıyor.",
+"Kitabı okurken akılda tutulması gereken sınırlar da var. Kitap bir anı ile bir kuramın karışımı, bir deney raporu değil. Hayatta kalmayı yalnızca kişinin tutumuna bağlamak yanlış olur; kampta pek çok şey tesadüfe ve koşullara bağlıydı. Ayrıca logoterapinin bir tedavi yöntemi olarak etkililiğine dair kanıt, kitabın popülerliği kadar güçlü değil. Frankl'ın görüşleri ilham verici bir bakış olarak okunmalı, bir tedavi kılavuzu olarak değil.",
+"Kitap kısa ama duygusal olarak ağır. İlk bölüm şiddet ve ölüm anlatımları içerir. Ağır bir yas ya da kriz yaşıyorsan, bu kitabı tek başına okumak yerine bir uzmanla ya da güvendiğin biriyle birlikte düşünmek daha iyi olabilir. Kendi hayatındaki anlam sorusuna ise iyi bir başlangıç noktası olabilir: Seni sabahları ayağa kaldıran şey ne ve acı karşısında nasıl bir tutum seçiyorsun?"]},
+{id:"thinking",g:4,ic:"scales",t:"Hızlı ve Yavaş Düşünme",yz:"Daniel Kahneman",alt:"Daniel Kahneman · 2011",
+s:"Zihnin hızlı, sezgisel düşünme ile yavaş, çabalı düşünme arasında nasıl bölündüğünü anlatır.",
+b:"Bilişsel yanlılıklar ve karar verme psikolojisinin popüler özeti; bazı bulguları sonradan tartışıldı.",
+p:["Daniel Kahneman, psikolog olmasına rağmen 2002'de ekonomi alanında Nobel Ödülü aldı (Vernon Smith ile paylaştı). Çalışmalarının büyük kısmını Amos Tversky ile yaptı; Tversky 1996'da öldüğü için ödülü alamadı. Bu kitap, o araştırmaların geniş okuyucuya anlatımı. 2011'de yayımlandı.",
+"Kitabın ana fikri, zihnin iki tarzda çalıştığı. Birincisi (Sistem 1) hızlı, otomatik ve sezgisel; ikincisi (Sistem 2) yavaş, çabalı ve dikkat isteyen. Sistem 1 çoğu zaman işe yarıyor ama sistematik hatalara da yol açıyor: çıpalama (verilen bir sayının tahmini etkilemesi), kolay akla gelenin daha olası sanılması ve kayıptan kaçınma gibi. Kitap bu yanılgıları gündelik örneklerle gösteriyor.",
+"Kitabın sınırı da var. Hazırlama (priming) üzerine bölümde anılan bazı çalışmalar, sonradan tekrarlanmasında sorun yaşandığı için eleştirildi. Kahneman'ın bu bölümdeki bazı çalışmalara gereğinden fazla güvendiğini kabul ettiği aktarılır. Bu yüzden kitabı bir bilgi hazinesi olarak okurken, her bulguyu kesin saymamak gerekir."],
+r:["onay","Onay yanlılığı yazısı"]},
+{id:"dreams",g:1,ic:"moon",t:"Rüyaların Yorumu",yz:"Sigmund Freud",alt:"Sigmund Freud · 1899",
+s:"Rüyaların bastırılmış isteklerin örtülü bir ifadesi olduğunu savunur.",
+b:"Psikanalizin kurucu metinlerinden; rüyaya psikolojik anlam arama geleneğini başlattı ama bilimsel olarak tartışmalı.",
+p:["Sigmund Freud'un Rüyaların Yorumu kitabı 1899'un sonunda yayımlandı ama kitabın üzerinde 1900 yazar. Psikanalizin kurucu metinlerinden sayılır. Freud'a göre rüya, bastırılmış isteklerin örtülü biçimde doyurulmasıdır.",
+"Kitapta rüyanın iki katmanı ayrılır: hatırladığımız görünür içerik ve altında yatan örtük anlam. Rüya sırasında bu anlamın bir tür sansürden geçmesi için yoğunlaştırma ve yer değiştirme gibi süreçlerin çalıştığı öne sürülür. Freud ayrıca kendi rüyalarını da örnek olarak çözümler.",
+"Bugün Freud'un rüya kuramı bilimsel olarak sınanması zor olduğu için ana akım rüya araştırmalarında geniş kabul görmüyor. Rüya araştırmaları beynin uyku sırasındaki durumuna ve belleğe odaklanıyor. Buna rağmen kitap, rüyaların kişisel anlam taşıyabileceği fikrini ve psikolojide anlamı yorumlama geleneğini başlattı. Tarihsel bir metin olarak okumak en doğrusu."],
+r:["ruya","Rüyalar nasıl oluşur? yazısı"]},
+{id:"sacks",g:2,ic:"hat",t:"Karısını Şapka Sanan Adam",yz:"Oliver Sacks",alt:"Oliver Sacks · 1985",
+s:"Nörolog Sacks'in beyin hasarı yaşayan hastalarını anlattığı vaka öyküleri.",
+b:"Algı, bellek ve benliğin beyne ne kadar bağlı olduğunu gösterir; hastaları birer vaka değil, insan olarak anlatır.",
+p:["Oliver Sacks, New York'ta çalışan İngiliz doğumlu bir nörologdu. 1985'te yayımlanan bu kitap, beyin hasarı ya da nörolojik bir durumu olan hastalarının öykülerinden oluşuyor. Adını, yüzleri ve nesneleri tanımakta güçlük çeken bir müzik hocasının karısının başını şapka sanıp tutmasını anlatan ilk öyküden alır.",
+"Kitapta hastalar birer “vaka” değil, kendi dünyası olan insanlar olarak anlatılır. Bellek, algı ve benlik duygusunun beynin belli bölgelerine ne kadar bağlı olduğunu görmek mümkün. Nöropsikolojide, hasarın ne yaptığını gözlemleyerek beyin işlevlerini anlamak yaygın bir yöntem.",
+"Yine de kitabı okurken şunu akılda tutmak gerekir: Sacks vakaları anlatırken edebî bir dil kullanıyor ve bazı ayrıntıları değiştirdiği yönünde eleştiriler yapılmıştır. Bu bir bilimsel makale değil, nörolojiyle edebiyat arasında bir kitap."]},
+{id:"flow",g:3,ic:"wave",t:"Akış",yz:"Mihaly Csikszentmihalyi",alt:"Mihaly Csikszentmihalyi · 1990",
+s:"İnsanların bir işe tamamen daldığı, zamanın akıp gittiği hâli inceler.",
+b:"Pozitif psikolojinin temel kavramlarından; akışın zorluk ile becerinin dengeli olduğu işlerde ortaya çıktığı öne sürülür.",
+p:["Macar kökenli psikolog Mihaly Csikszentmihalyi'nin 1990 tarihli kitabı, insanların bir işe tamamen daldığı, zamanın nasıl geçtiğini fark etmediği hâli “akış” olarak adlandırır. Bu, pozitif psikolojinin en bilinen kavramlarından biridir.",
+"Akışın koşulları arasında net bir hedef, yapılanın hemen geri bildirim vermesi ve zorluk ile becerinin dengede olması sayılır. İş çok kolaysa can sıkıntısı, çok zorsa kaygı doğar. Akış hâlinde kişi kendini fazla izlemeyi bırakır ve zaman algısı değişir. Kavram, sporcular, müzisyenler ve oyun oynayanlar için tanıdık gelir.",
+"Çalışmaların çoğu insanların günlük deneyimlerini anlık yoklamalarla ölçmeye dayanıyor. Akışın ölçülmesi ve nedenlerinin ayrıştırılması ise zor. Kavram yararlı ve sezgisel olarak anlaşılır ama araştırması hâlâ geliştiriliyor."]},
+{id:"quiet",g:4,ic:"single",t:"Sessiz Güç",yz:"Susan Cain",alt:"Susan Cain · 2012",
+s:"İçe dönük insanların toplumda hak ettiği değeri görmediğini savunur.",
+b:"Kişilik psikolojisi ve içe dönüklük; içe dönüklük ile utangaçlığın farkını sitedeki yazıyla birlikte okumak faydalı.",
+p:["Susan Cain, avukatlık yaptıktan sonra yazar olmuş biri. 2012'de yayımlanan kitabı, günümüz toplumunun dışadönük davranışları ödüllendirdiğini, içe dönük insanların değerinin ise gözden kaçtığını savunuyor. Kitap geniş kitlelere ulaştı.",
+"Psikoloji açısından kitap, kişilik özellikleri ve içe dönüklük üzerine araştırmaları popüler dille toplar. Önemli bir ayrım da şu: İçe dönüklük bir kişilik özelliği, utangaçlık ise sosyal ortamlardaki kaygı ve çekingenlik. Bu ayrımı sitedeki yazıda ayrıca anlattım.",
+"Kitap popüler bir yayın olduğu için bazı genellemeler içerebiliyor. İnsanları “içe dönük” ya da “dışa dönük” diye kesin iki gruba ayırmak da gerçeği çok sadeleştirir. Çoğu insan bu iki ucun arasında bir yerde."],
+r:["icedonuk","İçe dönüklük yazısı"]},
+{id:"influence",g:1,ic:"arrows",t:"Etki",yz:"Robert Cialdini",alt:"Robert Cialdini · 1984",
+s:"İnsanların neden “evet” dediğini ikna ilkeleri üzerinden açıklar.",
+b:"Sosyal psikoloji; otorite bölümü sitedeki Milgram yazısıyla birlikte okunabilir.",
+p:["Robert Cialdini, ikna ve uyum üzerine yıllarca araştırma yapmış bir sosyal psikolog. 1984'te yayımlanan kitabında, insanların neden “evet” dediğini altı ilke üzerinden anlatır: karşılıklılık, taahhüt ve tutarlılık, toplumsal kanıt, beğenilirlik, otorite ve kıtlık. Sonraki çalışmalarında yedinci olarak birlik (unity) ilkesini ekledi.",
+"Her ilke gündelik hayattan örneklerle anlatılıyor. Örneğin karşılıklılık, bir iyilik gördüğümüzde karşılık verme isteğini; toplumsal kanıt, belirsizken başkalarının davranışına bakmayı anlatır. Kitap, satış ve pazarlama taktiklerini fark etmeyi kolaylaştırdığı için hem bu alanda çalışanlar hem de tüketiciler tarafından okunuyor.",
+"Otorite bölümü, sitedeki Milgram yazısıyla birlikte okunabilir. Ancak ilkelerin etkisi duruma ve kişiye göre değişir; kitaptaki örnekler hikâyeleştirilmiş ve sadeleştirilmiştir."],
+r:["milgram","Milgram yazısı"]},
+{id:"body",g:2,ic:"figure",t:"Beden Kaydeder",yz:"Bessel van der Kolk",alt:"Bessel van der Kolk · 2014",
+s:"Travmanın zihinde ve bedende bıraktığı izleri ve iyileşme yollarını anlatır.",
+b:"Travma psikolojisi; bazı iddiaları bilimsel olarak tartışmalı olduğu için tek kaynak olarak okunmamalı.",
+p:["Bessel van der Kolk, travma alanında uzun yıllar çalışmış bir psikiyatrist. 2014'te yayımlanan kitabı, travmanın yalnızca anı değil, bedende de izler bırakabileceğini savunuyor. Kitap çok satanlar listelerine girdi ve travma bilgisini geniş kitlelere taşıdı.",
+"Kitapta, travmatik deneyimlerin stres sistemini, bedensel duyumları ve ilişkileri nasıl etkileyebileceği anlatılıyor. Travma sonrası stres bozukluğu (TSSB) gerçek ve tedavisi olan bir durum. Kanıtı en güçlü tedaviler arasında travmaya odaklı bilişsel davranışçı terapiler ve EMDR yer alıyor.",
+"Kitap bazı noktalarda eleştiriliyor: Beyin görüntüleme bulgularının yorumu ve bazı yöntemlerin (ör. yoga, nörogeribildirim) etkililiği konusunda iddiaların kanıttan ileri gittiği söyleniyor. Bu yüzden kitabı ilham verici ve düşündürücü bir giriş olarak okumak, tedavi kararlarını ise bir uzmanla vermek en doğrusu."]},
+{id:"yalom",g:3,ic:"chairs",t:"Aşkın Celladı",yz:"Irvin D. Yalom",alt:"Irvin D. Yalom · 1989",
+s:"Bir psikiyatristin terapi odasındaki hastalarından yola çıkarak yazdığı öyküler.",
+b:"Varoluşçu psikoterapiyi ve terapi ilişkisinin insani yanını gösterir.",
+p:["Irvin Yalom, Stanford'da psikiyatri profesörü ve varoluşçu psikoterapinin en bilinen isimlerinden biri. 1989'da yayımlanan kitap, kendi danışanlarından yola çıkarak yazdığı on öyküden oluşuyor. Öyküler kurmaca ile gerçeğin sınırında; kimlikler korunmak için değiştirilmiş.",
+"Yalom'a göre insanın yaşamında ölüm, özgürlük, yalnızlık ve anlamsızlık gibi temel kaygılar var ve terapi bunlarla yüzleşmeye yardımcı olabilir. Öyküler hem bu fikirleri hem de terapistin kendi şüphelerini ve yanılgılarını açıkça gösteriyor; terapist burada bir “uzman” değil, bir yol arkadaşı gibi.",
+"Kitap bir edebî anlatım olduğu için kanıta dayalı bir terapi kılavuzu değil. Okurken terapinin sinematik değil, çoğu zaman yavaş ve sıradan ilerlediğini aklında tut."]},
+{id:"mindset",g:4,ic:"sprout",t:"Mindset",yz:"Carol Dweck",alt:"Carol Dweck · 2006",
+s:"Yeteneğin sabit olduğuna inanmak ile geliştirilebileceğine inanmak arasındaki farkı anlatır (büyüme zihniyeti).",
+b:"Eğitim ve motivasyon psikolojisi; etkisi sonraki büyük çalışmalarda küçük bulundu, iddialarını temkinle okumak gerekir.",
+p:["Stanford'lı psikolog Carol Dweck'in 2006 tarihli kitabı, insanların yeteneklerine dair iki temel inanç tarif eder: Sabit zihniyet, yeteneğin doğuştan ve değişmez olduğuna; büyüme zihniyeti ise çabayla geliştirilebileceğine inanmaktır. Dweck'e göre bu inanç, zorluklara ve hatalara bakışımızı değiştirir.",
+"Kitap eğitim, iş ve ilişkiler gibi alanlardan örneklerle büyüme zihniyetinin yararını anlatıyor. “Henüz yapamıyorum” gibi cümleler bu fikrin popüler yüzü oldu ve birçok okulda programlara girdi.",
+"Ancak sonraki araştırmalar tablonun kitaptaki kadar parlak olmadığını gösterdi. 2018'de yapılan bir meta-analiz, zihniyet ile başarı arasındaki ilişkinin zayıf, müdahalelerin etkisinin de küçük olduğunu buldu. 2019'da büyük bir ulusal çalışma ise bazı öğrenci gruplarında küçük ama olumlu etkiler bildirdi. Yani fikir tamamen yanlış değil, ama sihirli bir çözüm olarak sunmak da yanlış."]}
+];
+
+function hs(s){var h=0;for(var i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))%9973;}return h;}
+function sar(t){var w=t.split(" "),l=[],c="";for(var i=0;i<w.length;i++){var n=(c?c+" ":"")+w[i];if(n.length>13&&c){l.push(c);c=w[i];}else{c=n;}}if(c){l.push(c);}return l;}
+function gor(o,t){
+  var c="gor "+t+" g"+o.g;
+  if(o.img){return '<img class="'+c+'" src="'+o.img+'" alt="'+o.t+'">';}
+  if(t==="f"){
+    var n=o.t.split(" (")[0].toLocaleUpperCase("tr"),fs=Math.min(6.5,135/(n.length*0.62)).toFixed(1),h=hs(o.id);
+    return '<svg class="'+c+'" viewBox="0 0 160 90" aria-hidden="true">'+
+      '<g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">'+
+      '<path d="M0 64Q40 54 80 64T160 64" stroke-width="1" opacity=".35"/>'+
+      '<circle cx="'+(18+h%124)+'" cy="'+(18+h%14)+'" r="'+(4+h%5)+'" stroke-width="1" opacity=".5"/>'+
+      '<g stroke-width="2"><use href="#i-'+o.ic+'" x="52" y="13" width="56" height="56"/></g></g>'+
+      '<g fill="#fff"><circle cx="'+(10+h*3%140)+'" cy="'+(14+h%30)+'" r=".9" opacity=".7"/><circle cx="'+(14+h*7%136)+'" cy="'+(40+h%20)+'" r=".7" opacity=".6"/><circle cx="'+(8+h*5%144)+'" cy="'+(20+h%36)+'" r=".8" opacity=".6"/></g>'+
+      '<rect width="160" height="8" fill="#000" opacity=".4"/><rect y="82" width="160" height="8" fill="#000" opacity=".4"/>'+
+      '<text x="80" y="78.5" text-anchor="middle" fill="#fff" font-size="'+fs+'" letter-spacing="1" opacity=".9" font-family="Georgia,serif">'+n+'</text></svg>';
+  }
+  var L=sar(o.t),tx="";
+  for(var i=0;i<L.length;i++){tx+='<text x="60" y="'+(98+i*13)+'" text-anchor="middle" fill="#fff" font-size="11" font-family="Georgia,serif">'+L[i]+'</text>';}
+  return '<svg class="'+c+'" viewBox="0 0 120 180" aria-hidden="true">'+
+    '<rect x="7" y="7" width="106" height="166" fill="none" stroke="#fff" stroke-width=".8" opacity=".45"/>'+
+    '<g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-'+o.ic+'" x="38" y="22" width="44" height="44"/></g>'+
+    '<path d="M46 82H74" stroke="#fff" stroke-width=".8" opacity=".6"/>'+tx+
+    '<text x="60" y="162" text-anchor="middle" fill="#fff" font-size="5.5" letter-spacing="1.2" opacity=".85" font-family="Georgia,serif">'+o.yz.toLocaleUpperCase("tr")+'</text></svg>';
+}
+function kart(o,t){
+  return '<a class="oge '+t+'" href="#'+t+'-'+o.id+'">'+gor(o,t)+'<div><h3>'+o.t+'</h3><div class="alt">'+o.alt+'</div><p>'+o.s+'</p><p><b>Psikolojiyle bağlantısı:</b> '+o.b+'</p><span class="acik">Sayfayı aç →</span></div></a>';
+}
+function sayfa(o,t){
+  var a=document.createElement("article");
+  a.id=t+"-"+o.id;
+  var film=(t==="f");
+  var h='<div class="gv '+t+'">'+gor(o,t)+'</div><div class="et">'+(film?"Psikolojik filmler":"Psikoloji kitapları")+' · '+o.alt+'</div><h2>'+o.t+'</h2><div class="cizgi"></div>';
+  for(var i=0;i<o.p.length;i++){h+='<p>'+o.p[i]+'</p>';}
+  if(o.r){h+='<p>İlgili yazı: <a href="#'+o.r[0]+'">'+o.r[1]+'</a></p>';}
+  h+='<a class="top" href="#kat-'+(film?"film":"kitap")+'">← '+(film?"Tüm filmler":"Tüm kitaplar")+'</a>';
+  a.innerHTML=h;
+  a.hidden=true;
+  document.getElementById("yazilar-alani").appendChild(a);
+}
+(function(){
+  var fl="",kl="",i;
+  for(i=0;i<F.length;i++){fl+=kart(F[i],"f");sayfa(F[i],"f");}
+  for(i=0;i<K.length;i++){kl+=kart(K[i],"k");sayfa(K[i],"k");}
+  document.getElementById("film-list").innerHTML=fl;
+  document.getElementById("kitap-list").innerHTML=kl;
+})();
+
 (function(){
 var home=document.getElementById('home');
 var geri=document.getElementById('geri');
